@@ -327,5 +327,33 @@
    "https://ja.wikipedia.org/wiki/ホタルイカ",
    "https://en.wikipedia.org/wiki/Watasenia_scintillans"
   ]
+ },
+ {
+  "id": "somenyadokari",
+  "name": "ソメンヤドカリ",
+  "yomi": "そめんやどかり",
+  "place": "umi",
+  "kind": "tsukeru",
+  "inJapan": true,
+  "placeS": "ソメンヤドカリが、うみの そこの すなの ところに かくれて います。",
+  "bodyS": "ソメンヤドカリは、イソギンチャクを つけた かいの からを もって います。",
+  "howS": "かいの からに イソギンチャクを つけて、イソギンチャクの かたまりに 見えるように なって、かくれます。",
+  "naze": "てきから みを まもる ためです。イソギンチャクの 手には さす ものが あるので、タコなども ちかづけません。",
+  "sumika": "あたたかい うみの、すなの そこや かいそうの 中。にほんでは みなみの うみで 見られます。",
+  "size": "かいの からを 入れて 10cm ぐらい。",
+  "tabemono": "うみの そこの かいそうや、しんだ 生きものの かけらを たべます。",
+  "itsu": "いちねんじゅう。すいぞくかんで 見られます。",
+  "nakama": "ヤドカリの なかま（えびや かにの なかま）",
+  "karada": "やわらかい おなかを まもる ため、まきがいの からの 中に からだを 入れて います。目は ぼうの 先に ついて いて、からの 中からでも まわりが 見えます。",
+  "motto": [
+   "ヤドカリの なかまは、ひっこしの ときに イソギンチャクを あたらしい からへ つけなおします。",
+   "イソギンチャクも、うごいて えさの ある ところへ はこんで もらえるので たすかります。",
+   "えさが たりない ときは、せなかの イソギンチャクを たべて しまう ことも あります。"
+  ],
+  "sources": [
+   "https://www.sealifebase.se/summary/Dardanus-pedunculatus.html",
+   "https://en.wikipedia.org/wiki/Dardanus_pedunculatus",
+   "https://www.seto.kyoto-u.ac.jp/shirahama_aqua/wp-content/uploads/2023/03/isoginchaku-riyou.pdf"
+  ]
  }
 ]

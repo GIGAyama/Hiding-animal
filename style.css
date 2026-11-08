@@ -115,9 +115,22 @@ main { max-width: 1180px; margin: 0 auto; padding: 8px 12px 48px; }
 .card:hover { border-color: var(--accent); }
 .card:focus-visible { outline: 4px solid var(--toi); outline-offset: 2px; }
 
-/* 写真。縦横比を そろえないと、カードの 高さが ばらばらに なる */
-.card .shot { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #dfe8e5; display: block; }
-.card .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* 写真。縦横比を そろえないと、カードの 高さが ばらばらに なる。
+   ⚠️ `aspect-ratio` だけでは そろわない。.card は flex なので .shot は
+      flex item に なり、中の <img> の もともとの 縦横比が かってしまう。
+      2026-11-08 に 実測: はばは ぜんぶ 216px なのに 高さが
+      162 / 215 / 253px と ばらばらで、たての ながい 写真の カードだけ
+      下へ はみ出して いた。
+      padding-top で 高さを 作り、<img> を position:absolute で
+      はめこむ 書き方なら、どの 縦横比でも 必ず 4:3 に なる。 */
+.card .shot {
+  position: relative; width: 100%; height: 0; padding-top: 75%;
+  background: #dfe8e5; display: block; overflow: hidden; flex: none;
+}
+.card .shot img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
 
 .card .cap { padding: 8px 10px 10px; }
 .card .nm { font-size: 16px; font-weight: 800; letter-spacing: .02em; line-height: 1.5; color: var(--s-name); }
@@ -152,11 +165,28 @@ dialog.sheet::backdrop { background: rgba(14, 30, 26, .55); }
 .sheet-body { padding: 14px 16px 22px; }
 
 .hero { margin: 0 0 6px; }
-.hero img { width: 100%; max-height: 46vh; object-fit: contain; background: #0d1a18; border-radius: 12px; display: block; }
+/* ⚠️ object-fit は contain。cover に すると 生きものの からだが
+      切れて、どこが かくれて いるのか 分からなく なる。
+   ⚠️ 高さは ひかえめに する。ここが たかいと、いちばん 大事な
+      「3つの 文」が 画面の 外へ 押し出される。たての ながい 写真で
+      46vh だと 3つの 文が ぜんぶ 下に かくれて いた（2026-11-08）。
+   ⚠️ 地は くらく しない。contain なので よこに あく ところが
+      まっくろな おびに 見える。 */
+.hero img {
+  width: 100%; max-height: 34vh; object-fit: contain;
+  background: #eaf1ef; border: 1px solid var(--line);
+  border-radius: 12px; display: block;
+}
 
 /* 写真の 出どころ。CC BY / CC BY-SA は 作者と ライセンスを 出すのが きまり */
 .credit { font-size: 12px; color: var(--ink-soft); line-height: 1.7; margin: 5px 0 14px; }
-.credit a { color: var(--accent); }
+/* ⚠️ 字だけの リンクは 行の 高さしか なく、48px 角を 割る。
+      おとなが 押す ところでも 押せる ものは 押せる 大きさに する。 */
+.credit a {
+  color: var(--accent);
+  display: inline-flex; align-items: center;
+  min-height: var(--tap); padding: 0 4px;
+}
 
 h3.sec { font-size: 15px; margin: 18px 0 6px; color: var(--accent); letter-spacing: .06em; }
 

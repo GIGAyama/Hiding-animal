@@ -199,7 +199,7 @@
     document.getElementById('empty').hidden = list.length > 0;
 
     var place = state.place === 'all' ? 'ぜんぶの ばしょ' : labelOf(DATA.places, state.place);
-    var kind = state.kind === 'all' ? '' : '／かくれ方：' + labelOf(DATA.kinds, state.kind);
+    var kind = state.kind === 'all' ? '' : '／かくれかた：' + labelOf(DATA.kinds, state.kind);
     var q = state.q.trim() ? '／「' + state.q.trim() + '」で さがして います' : '';
     document.getElementById('count').textContent =
       place + kind + q + ' の かくれんぼ名人が ' + list.length + 'ひき。カードを おすと くわしい ページが ひらきます。';
@@ -264,12 +264,12 @@
 
     var chips = el('div', { class: 'chips' });
     chips.appendChild(el('span', { class: 'chip', text: labelOf(DATA.places, a.place) }));
-    chips.appendChild(el('span', { class: 'chip', text: 'かくれ方：' + labelOf(DATA.kinds, a.kind) }));
-    chips.appendChild(el('span', { class: 'chip', text: a.inJapan ? '日本で 見られる' : 'せかいの 生きもの' }));
+    chips.appendChild(el('span', { class: 'chip', text: 'かくれかた：' + labelOf(DATA.kinds, a.kind) }));
+    chips.appendChild(el('span', { class: 'chip', text: a.inJapan ? 'にほんで 見られる' : 'せかいの 生きもの' }));
     if (a.textbook) chips.appendChild(el('span', { class: 'chip is-textbook', text: 'きょうかしょに 出て きた 生きもの' }));
     body.appendChild(chips);
 
-    body.appendChild(el('h3', { class: 'sec', text: 'かくれんぼの 3つ（ここを 文に つかいます）' }));
+    body.appendChild(el('h3', { class: 'sec', text: 'かくれんぼの 3つ（ここを ぶんに つかいます）' }));
     var ul = el('ul', { class: 'steps body-text' });
     [
       { n: '1', tag: 'どこに', s: a.placeS },
@@ -356,7 +356,7 @@
 
   function buildWriter(a) {
     var box = el('div', { class: 'writer' });
-    box.appendChild(el('h3', { text: '✎ この 生きもので、じぶんの 文を かこう' }));
+    box.appendChild(el('h3', { text: '✎ この 生きもので、じぶんの ぶんを かこう' }));
     box.appendChild(el('p', { class: 'howto', text: 'きょうかしょと おなじ ならびで かきます。①どこに → ②からだの とくちょう → ③どのように かくれるか。' }));
 
     box.appendChild(field('name', 'w-name', 'しらべた 生きものの 名まえ',
@@ -383,18 +383,18 @@
       true, 'れい：その けに かいそうを つけて'));
 
     box.appendChild(el('div', { class: 'field' }, [
-      el('label', { text: 'できあがった 文' }),
+      el('label', { text: 'できあがった ぶん' }),
       el('div', { class: 'preview', id: 'preview', tabindex: '0' }),
       el('div', { class: 'draw-box', 'aria-hidden': 'true' }, [el('span', { text: 'えを かこう' })]),
     ]));
 
     var tools = el('div', { class: 'tools' });
     if (speech.ok) {
-      var sp = el('button', { class: 'btn primary', type: 'button', text: 'かいた 文を きく' });
+      var sp = el('button', { class: 'btn primary', type: 'button', text: 'かいた ぶんを きく' });
       sp.addEventListener('click', function () { speech.speak(composed().replace(/＿+/g, ''), sp); });
       tools.appendChild(sp);
     }
-    var copy = el('button', { class: 'btn', type: 'button', text: '文を コピー' });
+    var copy = el('button', { class: 'btn', type: 'button', text: 'ぶんを コピー' });
     copy.addEventListener('click', function () { copyText(composed(), copy); });
     tools.appendChild(copy);
 
@@ -402,13 +402,13 @@
     print.addEventListener('click', function () { window.print(); });
     tools.appendChild(print);
 
-    var sample = el('button', { class: 'btn', type: 'button', text: 'お手本を 見る' });
+    var sample = el('button', { class: 'btn', type: 'button', text: 'おてほんを 見る' });
     sample.addEventListener('click', function () { toggleSample(a, sample); });
     tools.appendChild(sample);
 
     var clear = el('button', { class: 'btn', type: 'button', text: 'ぜんぶ けす' });
     clear.addEventListener('click', function () {
-      if (!window.confirm('かいた 文を ぜんぶ けしますか？')) return;
+      if (!window.confirm('かいた ぶんを ぜんぶ けしますか？')) return;
       Object.keys(fields).forEach(function (k) { fields[k].value = ''; });
       refreshPreview();
       fields.name.focus();
@@ -417,7 +417,7 @@
     box.appendChild(tools);
 
     box.appendChild(el('p', { class: 'notice', text:
-      'かいた 文は、この たんまつの 中だけに のこります。ほかの 人には 見えません。名まえや クラスは かかないで ください。' }));
+      'かいた ぶんは、この たんまつの 中だけに のこります。ほかの 人には 見えません。名まえや クラスは かかないで ください。' }));
     return box;
   }
 
@@ -435,10 +435,10 @@
     pairs.forEach(function (p) {
       var node = document.getElementById('s-' + p[0]);
       if (!node) return;
-      node.textContent = 'お手本（' + a.name + '）：' + p[1];
+      node.textContent = 'おてほん（' + a.name + '）：' + p[1];
       node.hidden = shown;
     });
-    button.textContent = shown ? 'お手本を 見る' : 'お手本を かくす';
+    button.textContent = shown ? 'おてほんを 見る' : 'おてほんを かくす';
   }
 
   function fieldValues() {

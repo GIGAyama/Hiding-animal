@@ -128,14 +128,14 @@
         "https://museum.wa.gov.au/online-collections/names/Camposcia-retusa"
       ],
       "photo": {
-        "by": "Daderot",
+        "by": "Philippe Bourjon",
         "caption": "モクズショイの しゃしん",
-        "commonsFile": "File:Camposcia_retusa_-_National_Museum_of_Nature_and_Science,_Tokyo_-_DSC07557.JPG",
+        "commonsFile": "File:Camposcia retusa Réunion.JPG",
         "file": "mokuzushoi.jpg",
-        "h": 760,
-        "license": "CC0",
-        "source": "https://commons.wikimedia.org/wiki/File:Camposcia_retusa_-_National_Museum_of_Nature_and_Science%2C_Tokyo_-_DSC07557.JPG",
-        "w": 769
+        "h": 662,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Camposcia_retusa_Réunion.JPG",
+        "w": 900
       }
     },
     {
@@ -628,6 +628,44 @@
       }
     },
     {
+      "id": "somenyadokari",
+      "name": "ソメンヤドカリ",
+      "yomi": "そめんやどかり",
+      "place": "umi",
+      "kind": "tsukeru",
+      "inJapan": true,
+      "placeS": "ソメンヤドカリが、うみの そこの すなの ところに かくれて います。",
+      "bodyS": "ソメンヤドカリは、イソギンチャクを つけた かいの からを もって います。",
+      "howS": "かいの からに イソギンチャクを つけて、イソギンチャクの かたまりに 見えるように なって、かくれます。",
+      "naze": "てきから みを まもる ためです。イソギンチャクの 手には さす ものが あるので、タコなども ちかづけません。",
+      "sumika": "あたたかい うみの、すなの そこや かいそうの 中。にほんでは みなみの うみで 見られます。",
+      "size": "かいの からを 入れて 10cm ぐらい。",
+      "tabemono": "うみの そこの かいそうや、しんだ 生きものの かけらを たべます。",
+      "itsu": "いちねんじゅう。すいぞくかんで 見られます。",
+      "nakama": "ヤドカリの なかま（えびや かにの なかま）",
+      "karada": "やわらかい おなかを まもる ため、まきがいの からの 中に からだを 入れて います。目は ぼうの 先に ついて いて、からの 中からでも まわりが 見えます。",
+      "motto": [
+        "ヤドカリの なかまは、ひっこしの ときに イソギンチャクを あたらしい からへ つけなおします。",
+        "イソギンチャクも、うごいて えさの ある ところへ はこんで もらえるので たすかります。",
+        "えさが たりない ときは、せなかの イソギンチャクを たべて しまう ことも あります。"
+      ],
+      "sources": [
+        "https://www.sealifebase.se/summary/Dardanus-pedunculatus.html",
+        "https://en.wikipedia.org/wiki/Dardanus_pedunculatus",
+        "https://www.seto.kyoto-u.ac.jp/shirahama_aqua/wp-content/uploads/2023/03/isoginchaku-riyou.pdf"
+      ],
+      "photo": {
+        "by": "Nhobgood Nick Hobgood",
+        "caption": "ソメンヤドカリの しゃしん",
+        "commonsFile": "File:Dardanus pedunculatus (Hermit crab).jpg",
+        "file": "somenyadokari.jpg",
+        "h": 675,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Dardanus_pedunculatus_(Hermit_crab).jpg",
+        "w": 900
+      }
+    },
+    {
       "id": "agohaze",
       "name": "アゴハゼ",
       "yomi": "あごはぜ",
@@ -694,52 +732,14 @@
         "https://www.zukan-bouz.com/syu/%E3%82%AB%E3%83%A1%E3%83%8E%E3%83%86"
       ],
       "photo": {
-        "by": "Eric A. Lazo-Wasem | source = Gall L (2019). Invertebrate Zoology Division, Yale Peabody Museum. Yale Universi",
+        "by": "Harum Koh",
         "caption": "カメノテの しゃしん",
-        "commonsFile": "File:Capitulum_mitella_(YPM_IZ_049075).jpeg",
+        "commonsFile": "File:Capitulum mitella koh.jpg",
         "file": "kamenote.jpg",
-        "h": 760,
-        "license": "CC0",
-        "source": "https://commons.wikimedia.org/wiki/File:Capitulum_mitella_%28YPM_IZ_049075%29.jpeg",
-        "w": 486
-      }
-    },
-    {
-      "id": "mimiika",
-      "name": "ミミイカ",
-      "yomi": "みみいか",
-      "place": "iso",
-      "kind": "moguru",
-      "inJapan": true,
-      "placeS": "ミミイカが、うみべの すなの 中に かくれて います。",
-      "bodyS": "ミミイカは、すなを かきよせる ための ひれと あしを もって います。",
-      "howS": "ねばつく せなかに すなを つけて、からだを すなで すっかり おおって、かくれます。",
-      "naze": "てきから みを まもる ためです。",
-      "sumika": "にほんの あさい うみの、すなの そこ。うみべの ちかくにも います。",
-      "size": "どうの ながさは 3cm から 4cm ぐらい。",
-      "tabemono": "小さな えびを たべます。",
-      "itsu": "ふゆから はるに あさい ところへ きます。よるに うごきます。",
-      "nakama": "いかの なかま（ダンゴイカの なかま）",
-      "karada": "どうの よこに、みみの ような まるい ひれが ついて います。からだは たまごの ように まるいです。",
-      "motto": [
-        "名まえは、ひれが みみの ように 見える ことから つきました。",
-        "すなを かぶった すがたは、小さな すなの もり その ものに 見えます。",
-        "ハワイに すむ なかまは、ひかる 小さな 生きものを からだに すまわせて、月の あかりに まぎれます。"
-      ],
-      "sources": [
-        "https://en.wikipedia.org/wiki/Euprymna_morsei",
-        "https://www.zukan-bouz.com/syu/ミミイカ",
-        "https://ja.wikipedia.org/wiki/コウイカ目"
-      ],
-      "photo": {
-        "by": "A. Pollock",
-        "caption": "ミミイカの しゃしん",
-        "commonsFile": "File:Euprymna_morsei.jpg",
-        "file": "mimiika.jpg",
-        "h": 760,
-        "license": "Public domain",
-        "source": "https://commons.wikimedia.org/wiki/File:Euprymna_morsei.jpg",
-        "w": 607
+        "h": 600,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Capitulum_mitella_koh.jpg",
+        "w": 900
       }
     },
     {
@@ -1047,45 +1047,6 @@
       }
     },
     {
-      "id": "ningyoutobikera",
-      "name": "ニンギョウトビケラ",
-      "yomi": "にんぎょうとびけら",
-      "place": "mizube",
-      "kind": "tsukeru",
-      "inJapan": true,
-      "placeS": "ニンギョウトビケラが、川の そこの 石の 上に かくれて います。",
-      "bodyS": "ニンギョウトビケラは、いとを 出す 口を もって います。",
-      "howS": "小石を いとで つなげて つつを つくり、その 中に 入って、かくれます。",
-      "naze": "さかなに たべられない ように する ためです。はやい ながれに ながされない ように する ためでも あります。",
-      "sumika": "にほんの きれいな 川。ながれの ある ところの、石の 上や 下に います。",
-      "size": "つつの ながさは 1cm ぐらい。おとなは 1cm から 1.2cm です。",
-      "tabemono": "石に ついた こまかい そうるいを たべます。",
-      "itsu": "いちねんじゅう 水の 中に います。おとなに なるのは はるから なつ。",
-      "nakama": "こんちゅうの 子ども（トビケラの なかま）",
-      "karada": "つつの 左と 右に、大きめの 小石を 3つずつ はって おもりに して います。これが 人の 手足の ように 見えます。",
-      "motto": [
-        "名まえは、小石の ついた つつが にんぎょうの ように 見える ことから。",
-        "やまぐちけんの きんたいきょうでは、この つつを 「いしにんぎょう」と よんで おみやげに して います。",
-        "よこの 大きな 小石は、はやい ながれに ながされない ための おもりだと かんがえられて います。"
-      ],
-      "sources": [
-        "https://ja.wikipedia.org/wiki/%E3%83%8B%E3%83%B3%E3%82%AE%E3%83%A7%E3%82%A6%E3%83%88%E3%83%93%E3%82%B1%E3%83%A9",
-        "https://mushinavi.com/navi-insect/data-tobikera_ningyo.htm",
-        "https://www.pref.kyoto.jp/hokanken/documents/tobikera.pdf",
-        "https://publish.csiro.au/MF/MF07067"
-      ],
-      "photo": {
-        "by": "KKPCW",
-        "caption": "ニンギョウトビケラの しゃしん",
-        "commonsFile": "File:Goera japonica on the grass - 1.jpg",
-        "file": "ningyoutobikera.jpg",
-        "h": 675,
-        "license": "CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Goera_japonica_on_the_grass_-_1.jpg",
-        "w": 900
-      }
-    },
-    {
       "id": "oniyanma_yago",
       "name": "オニヤンマの ヤゴ",
       "yomi": "おにやんまのやご",
@@ -1111,13 +1072,13 @@
         "https://ja.wikipedia.org/wiki/オニヤンマ"
       ],
       "photo": {
-        "by": "R78G addz",
+        "by": "OpenCage",
         "caption": "オニヤンマの ヤゴの しゃしん",
-        "commonsFile": "File:Anotogaster_sieboldii,2017-07-16.jpg",
+        "commonsFile": "File:Anotogaster sieboldii larva.jpg",
         "file": "oniyanma_yago.jpg",
-        "h": 675,
-        "license": "CC0",
-        "source": "https://commons.wikimedia.org/wiki/File:Anotogaster_sieboldii%2C2017-07-16.jpg",
+        "h": 900,
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Anotogaster_sieboldii_larva.jpg",
         "w": 900
       }
     },
@@ -1223,14 +1184,14 @@
         "https://kotobank.jp/word/%E3%81%82%E3%82%8F%E3%81%B5%E3%81%8D%E3%82%80%E3%81%97-3142325"
       ],
       "photo": {
-        "by": "B kimmel",
+        "by": "Katja Schulz from Washington, D. C., USA",
         "caption": "アワフキムシの しゃしん",
-        "commonsFile": "File:Cercopis_vulnerata.JPG",
+        "commonsFile": "File:Spittle Bug Nymph - Flickr - treegrow.jpg",
         "file": "awafukimushi.jpg",
-        "h": 760,
-        "license": "GFDL",
-        "source": "https://commons.wikimedia.org/wiki/File:Cercopis_vulnerata.JPG",
-        "w": 814
+        "h": 675,
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Spittle_Bug_Nymph_-_Flickr_-_treegrow.jpg",
+        "w": 900
       }
     },
     {
@@ -1636,14 +1597,14 @@
         "https://doi.org/10.1126/science.abl6620"
       ],
       "photo": {
-        "by": "Taucce, P. P., Costa-Campos, C. E., Carvalho, T. R., & Michalski, F. (2022). Anurans (Amphibia: Anura) of the",
+        "by": "Carlos Funes",
         "caption": "グラスフロッグの しゃしん",
-        "commonsFile": "File:Anurans (10.5852-ejt.2022.836.1919) Figure 4.png",
+        "commonsFile": "File:Hyalinobatrachium fleischmanni 246060834.jpg",
         "file": "glassfrog.jpg",
-        "h": 760,
+        "h": 1100,
         "license": "CC BY 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Anurans_%2810.5852-ejt.2022.836.1919%29_Figure_4.png",
-        "w": 517
+        "source": "https://commons.wikimedia.org/wiki/File:Hyalinobatrachium_fleischmanni_246060834.jpg",
+        "w": 825
       }
     },
     {
@@ -1711,13 +1672,13 @@
         "https://ja.wikipedia.org/wiki/コブガ科"
       ],
       "photo": {
-        "by": "Hsu Hong Lin",
+        "by": "LiCheng Shih",
         "caption": "キノカワガの しゃしん",
-        "commonsFile": "File:Blenina_senex.jpg",
+        "commonsFile": "File:Blenina senex (35533165746).jpg",
         "file": "kinokawaga.jpg",
         "h": 600,
-        "license": "CC BY-SA 2.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Blenina_senex.jpg",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Blenina_senex_(35533165746).jpg",
         "w": 900
       }
     },
@@ -1970,13 +1931,13 @@
         "https://en.wikipedia.org/wiki/Antlion"
       ],
       "photo": {
-        "by": "dhobern",
+        "by": "LoKiLeCh",
         "caption": "アリジゴクの しゃしん",
-        "commonsFile": "File:Myrmeleon acer.jpg",
+        "commonsFile": "File:Ameisenlöwe.jpg",
         "file": "arijigoku.jpg",
-        "h": 487,
-        "license": "CC BY 2.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Myrmeleon_acer.jpg",
+        "h": 494,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ameisenlöwe.jpg",
         "w": 900
       }
     },
@@ -2382,14 +2343,14 @@
         "https://kotobank.jp/word/%E3%82%AA%E3%82%B3%E3%82%B8%E3%83%A7"
       ],
       "photo": {
-        "by": "Steve Hillebrand, USFWS",
+        "by": "Sasha Sanbith",
         "caption": "オコジョの しゃしん",
-        "commonsFile": "File:Mustela_erminea_upright.jpg",
+        "commonsFile": "File:Hermine et son pelage hivernal.jpg",
         "file": "okojo.jpg",
-        "h": 760,
-        "license": "Public domain",
-        "source": "https://commons.wikimedia.org/wiki/File:Mustela_erminea_upright.jpg",
-        "w": 556
+        "h": 645,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Hermine_et_son_pelage_hivernal.jpg",
+        "w": 900
       }
     },
     {
