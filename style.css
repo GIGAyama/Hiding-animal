@@ -343,3 +343,15 @@ footer.site { border-top: 2px solid var(--line); background: #fff; padding: 18px
 .install-go { background: var(--accent); color: #fff; border: 2px solid var(--accent); }
 .install-no { background: var(--panel); color: var(--ink-soft); border: 2px solid var(--line); }
 @media print { .install-bar { display: none; } }
+
+/* ── しらべた もと（たたんで おく）────────────────────── */
+
+.sources { margin: 18px 0 4px; font-size: 14px; }
+.sources summary {
+  cursor: pointer; color: var(--ink-soft);
+  min-height: var(--tap); display: flex; align-items: center;
+}
+.sources ul { margin: 2px 0 0; padding-left: 1.3em; }
+.sources li { margin: 3px 0; }
+.sources a { color: var(--accent); word-break: break-all; }
+@media print { .sources { display: none; } }

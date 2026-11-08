@@ -298,6 +298,26 @@
       body.appendChild(ol);
     }
 
+    /* しらべた もと。
+       ⚠️ 1年生は 読まない。読むのは 先生と、気に なった 子。
+          だから たたんで おいて、ひらいた ときだけ 出す。
+       ⚠️ 外へ 出る リンクだが、<a href> は「読みこみ」では ないので
+          Zero-CDN の 検査には かからない（tools/check-no-external.test.mjs
+          に その 回帰試験が ある）。 */
+    if (a.sources && a.sources.length) {
+      var det = el('details', { class: 'sources' });
+      det.appendChild(el('summary', { text: 'しらべた もと（' + a.sources.length + '件）' }));
+      var sl = el('ul');
+      a.sources.forEach(function (u) {
+        var host = String(u).replace(/^https?:\/\//, '').split('/')[0];
+        sl.appendChild(el('li', {}, [
+          el('a', { href: u, target: '_blank', rel: 'noopener noreferrer', text: host }),
+        ]));
+      });
+      det.appendChild(sl);
+      body.appendChild(det);
+    }
+
     if (speech.ok) {
       var listen = el('button', { class: 'btn', type: 'button' }, ['こえで きく']);
       listen.addEventListener('click', function () {
