@@ -25,6 +25,8 @@ jobs:
         run: node tools/check-data.mjs
       - name: 外から読み込んでいないか（Zero-CDN）
         run: node tools/check-no-external.mjs
+      - name: ページの中のリンクが切れていないか
+        run: node tools/check-links.mjs
       - name: 写真の出どころページが データと合っているか
         run: node tools/build-credits.mjs --check
 
