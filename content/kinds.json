@@ -1,0 +1,33 @@
+[
+ {
+  "key": "moguru",
+  "label": "もぐる・かくれ家",
+  "teach": "はまぐりの なかま"
+ },
+ {
+  "key": "iro",
+  "label": "いろを かえる",
+  "teach": "たこの なかま"
+ },
+ {
+  "key": "tsukeru",
+  "label": "まわりの ものを つける",
+  "teach": "もくずしょいの なかま"
+ },
+ {
+  "key": "sokkuri",
+  "label": "まわりと おなじ いろ"
+ },
+ {
+  "key": "katachi",
+  "label": "かたちを まねる"
+ },
+ {
+  "key": "hikari",
+  "label": "ひかりを つかう"
+ },
+ {
+  "key": "sukitoru",
+  "label": "すきとおる"
+ }
+]

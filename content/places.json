@@ -1,0 +1,42 @@
+[
+ {
+  "key": "umi",
+  "label": "うみの 中",
+  "glyph": "<path d=\"M2 15c4-2 6-2 10 0s6 2 10 0M2 19c4-2 6-2 10 0s6 2 10 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M9 5c3 0 5 3 5 6 0 2-2 4-5 4s-5-2-5-4c0-3 2-6 5-6z\" fill=\"currentColor\"/>"
+ },
+ {
+  "key": "iso",
+  "label": "うみべ・いそ",
+  "glyph": "<path d=\"M2 18h20M4 18l4-7 3 4 3-6 4 9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\"/><circle cx=\"19\" cy=\"5\" r=\"2.5\" fill=\"currentColor\"/>"
+ },
+ {
+  "key": "mizube",
+  "label": "かわ・みずべ",
+  "glyph": "<path d=\"M2 17c4-2 6-2 10 0s6 2 10 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M7 14V5M11 14V7M15 14V4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/>"
+ },
+ {
+  "key": "kusamura",
+  "label": "くさむら",
+  "glyph": "<path d=\"M4 21c0-7 2-11 4-14M12 21c0-8 0-13 0-16M20 21c0-7-2-11-4-14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>"
+ },
+ {
+  "key": "mori",
+  "label": "もり・はやし",
+  "glyph": "<path d=\"M12 21v-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M12 2l6 9H6zM12 8l5 7H7z\" fill=\"currentColor\"/>"
+ },
+ {
+  "key": "tsuchi",
+  "label": "つち・おちば",
+  "glyph": "<path d=\"M2 20h20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M6 16c0-4 3-7 7-7 0 4-3 7-7 7zM18 16c0-3-2-5-5-5 0 3 2 5 5 5z\" fill=\"currentColor\"/>"
+ },
+ {
+  "key": "yuki",
+  "label": "ゆき・こおり",
+  "glyph": "<path d=\"M12 2v20M3 7l18 10M21 7L3 17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\"/>"
+ },
+ {
+  "key": "sabaku",
+  "label": "さばく・かわら",
+  "glyph": "<path d=\"M2 20h20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M3 17c3-5 6-8 9-8s6 3 9 8z\" fill=\"currentColor\"/>"
+ }
+]

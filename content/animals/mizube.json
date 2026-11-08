@@ -1,0 +1,252 @@
+[
+ {
+  "id": "dojou",
+  "name": "ドジョウ",
+  "yomi": "どじょう",
+  "place": "mizube",
+  "kind": "moguru",
+  "inJapan": true,
+  "placeS": "ドジョウが、田の どろの 中に かくれて います。",
+  "bodyS": "ドジョウは、ほそながい からだと、口の まわりの ひげを もって います。",
+  "howS": "あたまから どろに もぐりこんで、からだを すっかり うめて、かくれます。",
+  "naze": "とりや さかなから みを まもる ためです。水が へっても どろの 中なら いきのびられます。",
+  "sumika": "にほんの 田や 水ろ、ぬま。どろの そこが ある しずかな 水べに すんで います。",
+  "size": "10cm から 15cm ぐらい。",
+  "tabemono": "どろの 中の 小さな 生きものや、くさの かけらを たべます。",
+  "itsu": "いちねんじゅう。はるから なつに よく うごきます。",
+  "nakama": "さかなの なかま（コイの なかま）",
+  "karada": "口の まわりに 10ぽんの ひげが あり、まっくらな どろの 中でも えさを さがせます。",
+  "motto": [
+   "水が すくない ときは、口から 空気を すって、おなかで いきを します。",
+   "田が すくなく なって、見られる ところが へって います。",
+   "ひげで さぐるので、よるでも えさを 見つけられます。"
+  ],
+  "sources": [
+   "https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%B8%E3%83%A7%E3%82%A6",
+   "https://en.wikipedia.org/wiki/Pond_loach",
+   "https://www.fishbase.se/summary/Misgurnus-anguillicaudatus.html"
+  ]
+ },
+ {
+  "id": "oniyanma_yago",
+  "name": "オニヤンマの ヤゴ",
+  "yomi": "おにやんまのやご",
+  "place": "mizube",
+  "kind": "moguru",
+  "inJapan": true,
+  "placeS": "オニヤンマの ヤゴが、川の そこの すなや おちばの 下に かくれて います。",
+  "bodyS": "オニヤンマの ヤゴは、さっと のびる 下あごを もって います。",
+  "howS": "すなや おちばに もぐって 目だけ 出して、えものを まって、かくれます。",
+  "naze": "ちかづいて きた えものを つかまえる ためです。じぶんも さかなに 見つかりません。",
+  "sumika": "にほんの、きれいな 水が ながれる 小川や しみ水の ある ところ。そこの すなや おちばの 中に います。",
+  "size": "大きく なった ヤゴは 4cm から 5cm ぐらい。",
+  "tabemono": "おたまじゃくしや 小さな さかな、水の 中の 生きものを たべます。",
+  "itsu": "いちねんじゅう 水の 中に います。おとなに なるのは なつ。",
+  "nakama": "トンボの 子ども（こんちゅうの なかま）",
+  "karada": "下あごが さっと 手の ように すばやく のびて、えものを つかみます。おしりから 水を おし出して、すばやく すすむ ことも できます。",
+  "motto": [
+   "ヤゴの まま、3ねんから 5ねんも 水の 中で すごします。",
+   "おとなの オニヤンマは、にほんで いちばん 大きい トンボです。",
+   "水から 上がって、くさの くきに つかまって おとなに なります。"
+  ]
+ },
+ {
+  "id": "nihonamagaeru",
+  "name": "ニホンアマガエル",
+  "yomi": "にほんあまがえる",
+  "place": "mizube",
+  "kind": "iro",
+  "inJapan": true,
+  "placeS": "ニホンアマガエルが、田の くさの はの 上に かくれて います。",
+  "bodyS": "ニホンアマガエルは、からだの いろを みどりから ちゃいろに かえる ことが できます。",
+  "howS": "いる ところの いろに あわせて からだの いろを かえて、かくれます。",
+  "naze": "とりや へびから みを まもる ためです。",
+  "sumika": "にほんの ほとんど どこでも 見られます。田や 水べの くさむら、にわの 木の 上に います。",
+  "size": "2cm から 4.5cm ぐらい。おとなの おやゆびぐらいの 小さな カエルです。",
+  "tabemono": "小さな こんちゅうや くもを たべます。",
+  "itsu": "はるから あきに 見られます。ふゆは 土の 中で ねて います。",
+  "nakama": "カエルの なかま",
+  "karada": "手足の 先に まるい きゅうばんが あって、つるつるの はや まどガラスにも はりつけます。はだから よわい しるが 出るので、さわったら 手を あらいます。",
+  "motto": [
+   "みどりの 上では みどりに、土の 上では ちゃいろに なります。かわるまで 30ぷんから 2じかんぐらい かかります。",
+   "あめが ふりそうな とき、よく なきます。",
+   "オスは のどを ふくろの ように ふくらませて なきます。"
+  ],
+  "sources": [
+   "https://www.honda.co.jp/outdoor/adventure/nihonamagaeru.html",
+   "https://www.cbr.mlit.go.jp/tenjyo/jimusyo/publication/pbl_vertebrate/pdf/009_04.pdf",
+   "https://www.nagoya-u.ac.jp/about-nu/public-relations/researchinfo/upload_images/20180628_engg_1.pdf",
+   "https://www.city.kawaguchi.lg.jp/material/files/group/228/14.pdf"
+  ]
+ },
+ {
+  "id": "kajika",
+  "name": "カジカ",
+  "yomi": "かじか",
+  "place": "mizube",
+  "kind": "sokkuri",
+  "inJapan": true,
+  "placeS": "カジカが、川の そこの 石の あいだに かくれて います。",
+  "bodyS": "カジカは、石と おなじ まだらの はだと、大きな あたまを もって います。",
+  "howS": "石の あいだに からだを 入れて、じっと うごかないで、かくれます。",
+  "naze": "ちかづいて きた えものを つかまえる ためです。とりにも 見つかりません。",
+  "sumika": "にほんの きれいな 川の 上の ほう。水が つめたく、石が ごろごろ した ところに すんで います。",
+  "size": "10cm から 17cm ぐらい。おおくは 15cm ぐらいです。",
+  "tabemono": "水の 中の 小さな 生きものや、小さな さかなを たべます。",
+  "itsu": "いちねんじゅう。たまごを うむのは はるです。",
+  "nakama": "さかなの なかま（カジカの なかま）",
+  "karada": "ういぶくろが ないので、ういて こないで いつも そこに います。むねの ひれが 大きく、はやい ながれの 中でも 石に とまって いられます。",
+  "motto": [
+   "石を そっと もちあげると、下から とび出して きます。",
+   "オスが たまごの そばに のこって まもります。",
+   "きれいな 水の ある ところにしか すめないので、川の ようすを しらせて くれます。"
+  ],
+  "sources": [
+   "https://www.honda.co.jp/fishing/picture-book/kajika/",
+   "https://www.pref.nagano.lg.jp/suisan/joho/sakanatachi/kajika.html",
+   "https://www.pref.ibaraki.jp/nourinsuisan/naisuishi/gyogancho/documents/026_kajika.pdf"
+  ]
+ },
+ {
+  "id": "mizukamakiri",
+  "name": "ミズカマキリ",
+  "yomi": "みずかまきり",
+  "place": "mizube",
+  "kind": "katachi",
+  "inJapan": true,
+  "placeS": "ミズカマキリが、水べの くさの あいだに かくれて います。",
+  "bodyS": "ミズカマキリは、かれた くきに そっくりな ほそながい からだを もって います。",
+  "howS": "水の 中の くきに つかまって じっと して、くきの ように 見えるように なって、かくれます。",
+  "naze": "ちかづいて きた えものを つかまえる ためです。さかなからも みを まもれます。",
+  "sumika": "にほんの ぬまや いけ、田。水くさが たくさん ある しずかな ところに すんで います。",
+  "size": "からだは 4cm から 5cm。おしりの くだを 入れると 6cm ぐらいです。",
+  "tabemono": "おたまじゃくしや 小さな さかな、水の 中の 生きものを たべます。",
+  "itsu": "はるから あきに よく 見られます。ふゆは 水の そばで ねて います。",
+  "nakama": "こんちゅうの なかま（カメムシの なかま）",
+  "karada": "おしりに ながい くだが あって、水の 上に 出して いきを します。まえあしは かまの ように まがって いて、えものを はさみます。",
+  "motto": [
+   "名まえは、まえあしが カマキリに にて いる ことから。でも カマキリの なかまでは ありません。",
+   "はねが あるので、とんで ほかの いけへ うつります。",
+   "おしりの くだは いきを する ための もので、はりでは ありません。"
+  ],
+  "sources": [
+   "https://www.honda.co.jp/outdoor/knowledge/adventure/picture-book/mizukamakiri/",
+   "https://mdc.mo.gov/discover-nature/field-guide/water-scorpions",
+   "https://www.kentwildlifetrust.org.uk/wildlife-explorer/invertebrates/bugs/water-stick-insect",
+   "https://kotobank.jp/word/%E3%81%BF%E3%81%9A%E3%81%8B%E3%81%BE%E3%81%8D%E3%82%8A-3172114"
+  ]
+ },
+ {
+  "id": "taikouchi",
+  "name": "タイコウチ",
+  "yomi": "たいこうち",
+  "place": "mizube",
+  "kind": "tsukeru",
+  "inJapan": true,
+  "placeS": "タイコウチが、水の そこの おちばの 中に かくれて います。",
+  "bodyS": "タイコウチは、どろが つきやすい ざらざらの からだを もって います。",
+  "howS": "あさい 水の そこで、からだに どろを つけたまま じっと して、かくれます。",
+  "naze": "ちかづいて きた えものを つかまえる ためです。",
+  "sumika": "にほんの 田や いけ、ぬま。水が あさく、おちばが たまった ところに すんで います。",
+  "size": "からだは 3cm から 3.5cm。おしりの くだは 入れないで はかります。",
+  "tabemono": "おたまじゃくしや 小さな さかなを たべます。",
+  "itsu": "はるから あきに 見られます。ふゆは 水の そばの 土の 中に います。",
+  "nakama": "こんちゅうの なかま（カメムシの なかま）",
+  "karada": "まえあしが かまの ように なって いて、えものを はさみます。おしりの ながい くだを 水の 上に 出して いきを します。",
+  "motto": [
+   "名まえは、まえあしを うごかす すがたが たいこを たたく ように 見える ことから。",
+   "そとの くにでは 「水の サソリ」と よばれます。ながい くだが しっぽの とげに 見えるからです。",
+   "田の 水が なく なると すめなく なるので、田の 水は とても 大せつです。"
+  ],
+  "sources": [
+   "https://www.honda.co.jp/outdoor/adventure/taikouchi.html",
+   "https://kotobank.jp/word/%E3%81%9F%E3%81%84%E3%81%93%E3%81%86%E3%81%A1-3157824",
+   "https://www.pref.mie.lg.jp/common/content/000968001.pdf"
+  ]
+ },
+ {
+  "id": "ningyoutobikera",
+  "name": "ニンギョウトビケラ",
+  "yomi": "にんぎょうとびけら",
+  "place": "mizube",
+  "kind": "tsukeru",
+  "inJapan": true,
+  "placeS": "ニンギョウトビケラが、川の そこの 石の 上に かくれて います。",
+  "bodyS": "ニンギョウトビケラは、いとを 出す 口を もって います。",
+  "howS": "小石を いとで つなげて つつを つくり、その 中に 入って、かくれます。",
+  "naze": "さかなに たべられない ように する ためです。はやい ながれに ながされない ように する ためでも あります。",
+  "sumika": "にほんの きれいな 川。ながれの ある ところの、石の 上や 下に います。",
+  "size": "つつの ながさは 1cm ぐらい。おとなは 1cm から 1.2cm です。",
+  "tabemono": "石に ついた こまかい そうるいを たべます。",
+  "itsu": "いちねんじゅう 水の 中に います。おとなに なるのは はるから なつ。",
+  "nakama": "こんちゅうの 子ども（トビケラの なかま）",
+  "karada": "つつの 左と 右に、大きめの 小石を 3つずつ はって おもりに して います。これが 人の 手足の ように 見えます。",
+  "motto": [
+   "名まえは、小石の ついた つつが にんぎょうの ように 見える ことから。",
+   "やまぐちけんの きんたいきょうでは、この つつを 「いしにんぎょう」と よんで おみやげに して います。",
+   "よこの 大きな 小石は、はやい ながれに ながされない ための おもりだと かんがえられて います。"
+  ],
+  "sources": [
+   "https://ja.wikipedia.org/wiki/%E3%83%8B%E3%83%B3%E3%82%AE%E3%83%A7%E3%82%A6%E3%83%88%E3%83%93%E3%82%B1%E3%83%A9",
+   "https://mushinavi.com/navi-insect/data-tobikera_ningyo.htm",
+   "https://www.pref.kyoto.jp/hokanken/documents/tobikera.pdf",
+   "https://publish.csiro.au/MF/MF07067"
+  ]
+ },
+ {
+  "id": "suppon",
+  "name": "スッポン",
+  "yomi": "すっぽん",
+  "place": "mizube",
+  "kind": "moguru",
+  "inJapan": true,
+  "placeS": "スッポンが、水の そこの すなや どろの 中に かくれて います。",
+  "bodyS": "スッポンは、ひらたい こうらと、とても ながい くびを もって います。",
+  "howS": "すなや どろに からだを うめて、ながい くびだけ のばして、かくれます。",
+  "naze": "ちかづいて きた さかなを つかまえる ためです。じぶんも 見つかりません。",
+  "sumika": "にほんの 川や いけ、ぬま。すなや どろの そこが ある しずかな ところに すんで います。",
+  "size": "こうらの ながさは 20cm から 35cm ぐらい。",
+  "tabemono": "さかなや えび、かいや 水の 中の 生きものを たべます。",
+  "itsu": "はるから あきに 見られます。ふゆは どろの 中で ねて います。",
+  "nakama": "カメの なかま",
+  "karada": "こうらは かたく なくて、かわの ように やわらかいです。はなの 先が くだの ように のびて いて、水の 上に 出して いきが できます。",
+  "motto": [
+   "どろに うまって いても、はなの 先だけ 出して いきが できます。",
+   "くびが とても ながく のびるので、こうらの うしろの ほうまで とどきます。",
+   "足に みずかきが あって、はやく およげます。"
+  ],
+  "sources": [
+   "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%83%E3%83%9D%E3%83%B3",
+   "https://en.wikipedia.org/wiki/Chinese_softshell_turtle"
+  ]
+ },
+ {
+  "id": "matamata",
+  "name": "マタマタ",
+  "yomi": "またまた",
+  "place": "mizube",
+  "kind": "katachi",
+  "inJapan": false,
+  "placeS": "マタマタが、水の そこの おちばの 中に かくれて います。",
+  "bodyS": "マタマタは、かれた はに そっくりな ひらたい あたまを もって います。",
+  "howS": "おちばに まぎれて うごかないで、おちばの ように 見えるように なって、かくれます。",
+  "naze": "ちかづいて きた さかなを つかまえる ためです。",
+  "sumika": "みなみアメリカの アマゾン川など。水が くらくて、おちばが たまった しずかな ところに います。",
+  "size": "こうらの ながさは 40cm から 50cm ぐらい。",
+  "tabemono": "さかなを たべます。",
+  "itsu": "アマゾンでは いちねんじゅう。よるに よく うごきます。",
+  "nakama": "カメの なかま",
+  "karada": "あたまに ひらひらした かわが たくさん ついて いて、水くさの ように 見えます。口が とても 大きく ひろがります。",
+  "motto": [
+   "さかなを かまないで、口を さっと ひろげて、水ごと すいこみます。",
+   "こうらに そうるいが はえて、もっと 見つけにくく なります。",
+   "ほとんど およがないで、水の そこを あるきます。"
+  ],
+  "sources": [
+   "https://www.worldwildlife.org/magazine/issues/spring-2022/articles/nocturnal-and-camoflagued-mata-mata-turtles-hide-in-plain-sight",
+   "https://www.adventureaquarium.com/Explore/Animals/Mata-Mata-Turtle",
+   "https://en.wikipedia.org/wiki/Mata_mata",
+   "https://ppbio.inpa.gov.br/en/node/1136"
+  ]
+ }
+]
