@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="くさの あいだから のぞく 目">
+  <rect width="64" height="64" rx="14" fill="#1f7a5a"/>
+  <circle cx="32" cy="30" r="15" fill="#f4efe0"/>
+  <circle cx="26" cy="28" r="3.6" fill="#1d2b2f"/>
+  <circle cx="38" cy="28" r="3.6" fill="#1d2b2f"/>
+  <circle cx="27.2" cy="26.8" r="1.2" fill="#ffffff"/>
+  <circle cx="39.2" cy="26.8" r="1.2" fill="#ffffff"/>
+  <g stroke="#8fbb55" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M8 60 Q10 42 16 32"/><path d="M22 60 Q22 44 28 38"/>
+    <path d="M42 60 Q42 44 36 38"/><path d="M56 60 Q54 42 48 32"/>
+  </g>
+  <g stroke="#4f7c33" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M15 60 Q16 48 22 40"/><path d="M49 60 Q48 48 42 40"/><path d="M32 60 L32 46"/>
+  </g>
+</svg>

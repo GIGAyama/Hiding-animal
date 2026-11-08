@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>しぜんの かくれんぼ ずかん｜うみ・くさむら・もり・ゆきの かくれんぼ名人</title>
+<meta name="description" content="小学1年生の国語「うみのかくれんぼ」で、自分の生きものの かくれ方を 書くための ずかんです。うみ・うみべ・みずべ・くさむら・もり・つち・ゆき・さばく の生きものを、写真と、教材文と同じ「ばしょ → からだ → かくれ方」の文で しらべられます。">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="しぜんの かくれんぼ ずかん">
+<meta property="og:description" content="うみ・くさむら・もり・ゆき…… いろいろな しぜんの 中で かくれる 生きものを、写真と 1年生の 文で しらべられます。">
+<meta property="og:type" content="website">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/icon-180.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#1f7a5a">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#grid">カードまで すすむ</a>
+
+<header class="site">
+  <div class="site-inner">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="23" fill="#ffffff" opacity=".16"/>
+      <path d="M6 33c5-2 9-2 12 0 4 2 8 2 12 0 4-2 8-2 12 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <path d="M17 26c0-5 3-9 7-9s7 4 7 9c0 3-2 5-4 6l1 5-4-2-4 2 1-5c-2-1-4-3-4-6z" fill="#fff"/>
+      <circle cx="21" cy="25" r="1.8" fill="#17654a"/>
+      <circle cx="27" cy="25" r="1.8" fill="#17654a"/>
+    </svg>
+    <h1>しぜんの かくれんぼ ずかん</h1>
+    <p class="lead">うみ・うみべ・みずべ・くさむら・もり・つち・ゆき・さばく。かくれて いる 生きものを しらべて、じぶんの 文を かこう。</p>
+  </div>
+</header>
+
+<nav class="toolbar" aria-label="生きものの えらびかた">
+  <div class="toolbar-inner">
+    <p class="tab-label" id="lbl-place">① どこの かくれんぼを 見る？</p>
+    <div class="tabs" id="place-tabs" role="group" aria-labelledby="lbl-place"></div>
+
+    <p class="tab-label" id="lbl-kind">
+      ② かくれ方で しぼる（そのままでも いいよ）
+      <span class="tab-note">はじめの 3 つが、きょうかしょに 出て きた かくれ方です。</span>
+    </p>
+    <div class="tabs" id="kind-tabs" role="group" aria-labelledby="lbl-kind"></div>
+
+    <div class="toolbar-row">
+      <label class="skip-link" for="q">生きものを さがす</label>
+      <input class="search" id="q" type="search" placeholder="生きものの 名まえで さがす" autocomplete="off">
+      <button class="btn" type="button" id="quiz-toggle" aria-pressed="false">なまえを かくす</button>
+    </div>
+  </div>
+</nav>
+
+<p class="count-line" id="count" role="status" aria-live="polite"></p>
+
+<main>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>この くみあわせの 生きものは いません。①か ②を「ぜんぶ」に もどして みて ください。</p>
+</main>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+  <div class="sheet-head">
+    <h2 id="sheet-title">　</h2>
+    <button class="close" type="button" id="sheet-close">とじる</button>
+  </div>
+  <div class="sheet-body" id="sheet-body"></div>
+</dialog>
+
+<footer class="site">
+  <div class="footer-inner">
+    <p>しぜんの かくれんぼ ずかん — 小学1年生 国語「うみのかくれんぼ」の 書く 学習のために つくりました。</p>
+    <p>文は すべて 書きおろしです。教科書の 本文は のせて いません。</p>
+    <p>写真は Wikimedia Commons の、だれでも つかえる ライセンスの ものだけを つかって います。作者と ライセンスは、それぞれの 生きものの ページに 書いて あります。</p>
+    <p><a href="./for-teachers.html">先生へ（単元の どこで つかうか）</a></p>
+    <p id="local-links"><a href="./terms.html">りようきやく</a> ・ <a href="./privacy.html">こじんじょうほうの あつかい</a> ・ <a href="./credits.html">写真の 出どころ</a></p>
+    <span data-giga-links data-links="terms,privacy"></span>
+  </div>
+</footer>
+
+<script src="./data/animals.js"></script>
+<script src="./app.js"></script>
+<script src="./giga-app-links.js" defer></script>
+<script src="./giga-sw-updater.js" defer></script>
+<script src="./install-hook.js" defer></script>
+</body>
+</html>

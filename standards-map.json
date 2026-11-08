@@ -1,0 +1,14 @@
+{
+  "//": "正本（GIGAyama.github.io/standards/）との対応表。ここに載せたものは直接編集しない。",
+  "files": [
+    { "canonical": "sw/build-sw-static.mjs", "local": "tools/build-sw.mjs" },
+    { "canonical": "web/giga-sw-updater.js", "local": "giga-sw-updater.js" },
+    { "canonical": "web/giga-app-links.js", "local": "giga-app-links.js" }
+  ],
+  "unmanaged": [
+    {
+      "local": "sw.js",
+      "reason": "アプリ固有の配り方（骨組みは先読み、写真は見たぶんだけ後から）。版の行だけ tools/build-sw.mjs が書き換える"
+    }
+  ]
+}
