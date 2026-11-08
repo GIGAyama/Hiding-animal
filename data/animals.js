@@ -124,10 +124,8 @@
         "うごく ときも つけた ものは そのまま。あるく かいそうの ように 見えます。"
       ],
       "sources": [
-        "https://times.abema.tv/articles/-/10147557",
         "https://en.wikipedia.org/wiki/Camposcia_retusa",
-        "https://museum.wa.gov.au/online-collections/names/Camposcia-retusa",
-        "https://karapaia.com/archives/52305097.html"
+        "https://museum.wa.gov.au/online-collections/names/Camposcia-retusa"
       ],
       "photo": {}
     },
@@ -214,9 +212,7 @@
         "あなから 出て いる ながさで、その日の えさの おおさが わかります。"
       ],
       "sources": [
-        "https://marine-world.jp/wp-content/uploads/2022/11/f6ca0f8452a09a8bbb58b3bc7a1b81bf.pdf",
-        "https://weekly.ascii.jp/elem/000/002/618/2618951/",
-        "https://blog.padi.com/jp/jp_triviaofgardeneel/"
+        "https://marine-world.jp/wp-content/uploads/2022/11/f6ca0f8452a09a8bbb58b3bc7a1b81bf.pdf"
       ],
       "photo": {}
     },
@@ -273,8 +269,7 @@
       "sources": [
         "https://www.pref.chiba.lg.jp/lab-suisan/suisan/soshiki/futtsu/hirame.html",
         "https://kotobank.jp/word/%E3%81%B2%E3%82%89%E3%82%81-1582929",
-        "https://nh.kanagawa-museum.jp/assets/icp/contents/1599802908346/simple/tobira79_1iwasaki.pdf",
-        "https://www.daiwa.com/jp/column/fishworld/hirame_2"
+        "https://nh.kanagawa-museum.jp/assets/icp/contents/1599802908346/simple/tobira79_1iwasaki.pdf"
       ],
       "photo": {}
     },
@@ -416,7 +411,6 @@
       ],
       "sources": [
         "https://www.pref.kyoto.jp/kaiyo/kasago.html",
-        "https://www.daiwa.com/dyfc/manabu/suisangaku/kasago/",
         "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/59676.pdf"
       ],
       "photo": {}
@@ -445,7 +439,6 @@
       ],
       "sources": [
         "https://ja.wikipedia.org/wiki/コウイカ",
-        "https://www.daiwa.com/jp/column/fishworld/sumiika_1",
         "https://www.pref.wakayama.lg.jp/prefg/070100/syokuzai/index_d/fil/8kouika_1.pdf",
         "https://www.natureasia.com/ja-jp/life-sci/research/12736"
       ],
@@ -994,8 +987,7 @@
       ],
       "sources": [
         "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AF%E3%83%95%E3%82%AD%E3%83%A0%E3%82%B7",
-        "https://kotobank.jp/word/%E3%81%82%E3%82%8F%E3%81%B5%E3%81%8D%E3%82%80%E3%81%97-3142325",
-        "https://nazology.kusuguru.co.jp/archives/86697"
+        "https://kotobank.jp/word/%E3%81%82%E3%82%8F%E3%81%B5%E3%81%8D%E3%82%80%E3%81%97-3142325"
       ],
       "photo": {}
     },
@@ -1052,8 +1044,7 @@
       ],
       "sources": [
         "https://ja.wikipedia.org/wiki/%E3%83%92%E3%83%90%E3%83%AA",
-        "https://kotobank.jp/word/%E3%81%B2%E3%81%B0%E3%82%8A-732632",
-        "https://global.canon/ja/environment/bird-branch/photo-gallery/hibari/"
+        "https://kotobank.jp/word/%E3%81%B2%E3%81%B0%E3%82%8A-732632"
       ],
       "photo": {}
     },
@@ -1111,8 +1102,7 @@
       ],
       "sources": [
         "https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%A9",
-        "https://kotobank.jp/word/%E3%81%91%E3%82%89-1310610",
-        "https://www.bepal.net/archives/239705"
+        "https://kotobank.jp/word/%E3%81%91%E3%82%89-1310610"
       ],
       "photo": {}
     },
@@ -1706,9 +1696,7 @@
       ],
       "sources": [
         "https://www.pref.kyoto.jp/kankyo/rdb/bio/db/craw0005.html",
-        "https://www.qsr.mlit.go.jp/osumi/river/ikimono/hacyurui.htm",
-        "https://www.bepal.net/archives/583242",
-        "https://kids.rurubu.jp/article/224556/"
+        "https://www.qsr.mlit.go.jp/osumi/river/ikimono/hacyurui.htm"
       ],
       "photo": {}
     },
@@ -1794,7 +1782,6 @@
       ],
       "sources": [
         "https://www.jaza.jp/storage/enkan-news/V29lpHiZRw0IXwiFcWFzlnru0lE0J58i8SAUE1DE.pdf",
-        "https://webarchive.library.unt.edu/web/20201218022300/https://www.fisheries.noaa.gov/species/spotted-seal",
         "https://kotobank.jp/word/%E3%82%B4%E3%83%9E%E3%83%95%E3%82%A2%E3%82%B6%E3%83%A9%E3%82%B7-3152574"
       ],
       "photo": {}
@@ -1880,9 +1867,7 @@
         "じぶんの からだより 大きな えものも つかまえます。"
       ],
       "sources": [
-        "https://www.tepco.co.jp/rp/oze/shiru/life/animal/other/other04-j.html",
-        "https://kotobank.jp/word/%E3%82%AA%E3%82%B3%E3%82%B8%E3%83%A7",
-        "https://global.yamaha-motor.com/jp/showroom/entertainment-land/papercraft/animal-japan/okojo/"
+        "https://kotobank.jp/word/%E3%82%AA%E3%82%B3%E3%82%B8%E3%83%A7"
       ],
       "photo": {}
     },

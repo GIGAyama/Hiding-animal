@@ -352,6 +352,12 @@ footer.site { border-top: 2px solid var(--line); background: #fff; padding: 18px
   min-height: var(--tap); display: flex; align-items: center;
 }
 .sources ul { margin: 2px 0 0; padding-left: 1.3em; }
-.sources li { margin: 3px 0; }
-.sources a { color: var(--accent); word-break: break-all; }
+.sources li { margin: 0; }
+/* ⚠️ 押せる ものは 48px 角より 小さく しない（艦隊の ルール 2）。
+      字だけの リンクは 17px しか ないので、上下に あきを 足して のばす。 */
+.sources a {
+  color: var(--accent); word-break: break-all;
+  display: inline-flex; align-items: center; min-height: var(--tap);
+  padding: 0 4px;
+}
 @media print { .sources { display: none; } }
