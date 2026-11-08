@@ -273,7 +273,14 @@ footer.site { border-top: 2px solid var(--line); background: #fff; padding: 18px
   .field > label { display: none; }
   .field input[type="text"], .field textarea { display: none; }
 
-  dialog.sheet { position: static; display: block; box-shadow: none; max-height: none; width: auto; }
+  /* ⚠️ margin を 0 に 落とす ことを 忘れない。<dialog> は ブラウザの
+        もとの きまりで margin:auto を 持って いて、いんさつの ときも
+        のこる。2026-11-08 に はかったら 上に 208px（およそ 55mm）の
+        あきが できて、カードが 紙の 5 分の 1 ほど 下から 始まって いた。 */
+  dialog.sheet {
+    position: static; display: block; box-shadow: none;
+    max-height: none; width: auto; margin: 0 !important; border: 0;
+  }
   dialog.sheet::backdrop { display: none; }
   .sheet-body { padding: 0; }
   .writer { border-top: 0; margin-top: 0; padding-top: 0; }
@@ -285,7 +292,9 @@ footer.site { border-top: 2px solid var(--line); background: #fff; padding: 18px
   .preview-line { font-size: 16pt; line-height: 2.1; }
   .preview-line::before { background: #fff !important; color: #000; border: 2px solid #000; }
 
-  .draw-box { display: block; margin-top: 6mm; border: 2px solid #000; border-radius: 8px; height: 92mm; position: relative; }
+  /* 紙の のこりを つかいきる。A4 たて − 上下の あき 24mm − 文の らん で
+     およそ 150mm のこる。小さいと 絵が かきにくい。 */
+  .draw-box { display: block; margin-top: 6mm; border: 2px solid #000; border-radius: 8px; height: 150mm; position: relative; }
   .draw-box span { position: absolute; top: 3mm; left: 4mm; font-size: 11pt; font-weight: 800; }
 
   @page { margin: 12mm; }
