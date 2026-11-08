@@ -1,0 +1,42 @@
+{
+ "hirame": {
+  "by": "Daiju Azuma",
+  "caption": "ヒラメの しゃしん",
+  "commonsFile": "File:Paralichthys_olivaceus.jpg",
+  "file": "hirame.jpg",
+  "h": 760,
+  "license": "CC BY-SA 2.5",
+  "source": "https://commons.wikimedia.org/wiki/File:Paralichthys_olivaceus.jpg",
+  "w": 760
+ },
+ "kaeruankou": {
+  "by": "Christian Gloor from Wakatobi Dive Resort, Indonesia",
+  "caption": "カエルアンコウの しゃしん",
+  "commonsFile": "File:Antennarius_striatus_(14911110794).jpg",
+  "file": "kaeruankou.jpg",
+  "h": 600,
+  "license": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Antennarius_striatus_%2814911110794%29.jpg",
+  "w": 900
+ },
+ "kamisoriuo": {
+  "by": "Jenny (JennyHuang)",
+  "caption": "カミソリウオの しゃしん",
+  "commonsFile": "File:Solenostomus_cyanopterus.jpg",
+  "file": "kamisoriuo.jpg",
+  "h": 607,
+  "license": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Solenostomus_cyanopterus.jpg",
+  "w": 900
+ },
+ "kasago": {
+  "by": "User:OpenCage",
+  "caption": "カサゴの しゃしん",
+  "commonsFile": "File:Sebastiscus_marmoratus_by_OpenCage.jpg",
+  "file": "kasago.jpg",
+  "h": 760,
+  "license": "CC BY-SA 2.5",
+  "source": "https://commons.wikimedia.org/wiki/File:Sebastiscus_marmoratus_by_OpenCage.jpg",
+  "w": 759
+ }
+}

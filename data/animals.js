@@ -271,7 +271,16 @@
         "https://kotobank.jp/word/%E3%81%B2%E3%82%89%E3%82%81-1582929",
         "https://nh.kanagawa-museum.jp/assets/icp/contents/1599802908346/simple/tobira79_1iwasaki.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Daiju Azuma",
+        "caption": "ヒラメの しゃしん",
+        "commonsFile": "File:Paralichthys_olivaceus.jpg",
+        "file": "hirame.jpg",
+        "h": 760,
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Paralichthys_olivaceus.jpg",
+        "w": 760
+      }
     },
     {
       "id": "hotaruika",
@@ -327,7 +336,16 @@
         "https://ja.wikipedia.org/wiki/カエルアンコウ",
         "https://en.wikipedia.org/wiki/Antennarius_striatus"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Christian Gloor from Wakatobi Dive Resort, Indonesia",
+        "caption": "カエルアンコウの しゃしん",
+        "commonsFile": "File:Antennarius_striatus_(14911110794).jpg",
+        "file": "kaeruankou.jpg",
+        "h": 600,
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Antennarius_striatus_%2814911110794%29.jpg",
+        "w": 900
+      }
     },
     {
       "id": "kakurekumanomi",
@@ -385,7 +403,16 @@
         "https://fishesofaustralia.net.au/Home/species/1512",
         "https://koreascience.or.kr/article/JAKO200710103447222.pub?lang=en"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Jenny (JennyHuang)",
+        "caption": "カミソリウオの しゃしん",
+        "commonsFile": "File:Solenostomus_cyanopterus.jpg",
+        "file": "kamisoriuo.jpg",
+        "h": 607,
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Solenostomus_cyanopterus.jpg",
+        "w": 900
+      }
     },
     {
       "id": "kasago",
@@ -413,7 +440,16 @@
         "https://www.pref.kyoto.jp/kaiyo/kasago.html",
         "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/59676.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "User:OpenCage",
+        "caption": "カサゴの しゃしん",
+        "commonsFile": "File:Sebastiscus_marmoratus_by_OpenCage.jpg",
+        "file": "kasago.jpg",
+        "h": 760,
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Sebastiscus_marmoratus_by_OpenCage.jpg",
+        "w": 759
+      }
     },
     {
       "id": "kouika",
@@ -670,34 +706,6 @@
       "sources": [
         "https://ja.wikipedia.org/wiki/ウミホタル",
         "https://en.wikipedia.org/wiki/Vargula_hilgendorfii"
-      ],
-      "photo": {}
-    },
-    {
-      "id": "yoroiisoginchaku",
-      "name": "ヨロイイソギンチャク",
-      "yomi": "よろいいそぎんちゃく",
-      "place": "iso",
-      "kind": "tsukeru",
-      "inJapan": true,
-      "placeS": "ヨロイイソギンチャクが、いその いわの 上に かくれて います。",
-      "bodyS": "ヨロイイソギンチャクは、からだの そとがわに ねばつく こぶを もって います。",
-      "howS": "小石や かいの かけらを こぶに くっつけて、いわと 見わけが つかないように して、かくれます。",
-      "naze": "日ざしで からだが かわくのを ふせぐ ためです。てきからも 見つかりません。",
-      "sumika": "にほんの いそ。しおが ひく あたりの いわに、かたまって ついて います。",
-      "size": "ひらいた ときの 大きさは 3cm から 5cm ぐらい。",
-      "tabemono": "しょくしゅで 小さな 生きものを つかまえて たべます。",
-      "itsu": "いちねんじゅう。しおが ひいた ときに 見られます。",
-      "nakama": "イソギンチャクの なかま",
-      "karada": "水が ひくと しょくしゅを しまって、まるく 小さく なります。その とき、つけた 小石が ちょうど ふたに なります。",
-      "motto": [
-        "名まえの 「ヨロイ」は、小石を つけた すがたが よろいに 見える ことから。",
-        "ふたを して いるので、しおが ひいても からだが かわきません。",
-        "そっと さわると、すっと 小さく なります。"
-      ],
-      "sources": [
-        "https://ja.wikipedia.org/wiki/イソギンチャク",
-        "https://en.wikipedia.org/wiki/Starburst_anemone"
       ],
       "photo": {}
     },
@@ -1622,7 +1630,7 @@
       "inJapan": true,
       "placeS": "ジグモが、土の 中の いとの ふくろに かくれて います。",
       "bodyS": "ジグモは、いとで ながい ふくろを つくる しくみを もって います。",
-      "howS": "土の 中に いとの ふくろを つくり、そとがわに 土を つけて、その 中に かくれます。",
+      "howS": "土の 中に いとの ふくろを つくり、そとがわに 土を つけて、その 中に 入って、かくれます。",
       "naze": "とりに 見つからない ように する ためです。そばを とおる こんちゅうを つかまえる ためでも あります。",
       "sumika": "にほんの おてらの かべの そばや、大きな 木の ねもと、石がきの すきま。",
       "size": "メスは 1.8cm、オスは 1.3cm ぐらい。おとなの ゆびの つめぐらいです。",
