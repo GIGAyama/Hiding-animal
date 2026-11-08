@@ -1,14 +1,114 @@
 {
   "//": "正本（GIGAyama.github.io/standards/）との対応表。ここに載せたものは直接編集しない。",
   "files": [
-    { "canonical": "sw/build-sw-static.mjs", "local": "tools/build-sw.mjs" },
-    { "canonical": "web/giga-sw-updater.js", "local": "giga-sw-updater.js" },
-    { "canonical": "web/giga-app-links.js", "local": "giga-app-links.js" }
+    {
+      "canonical": "sw/build-sw-static.mjs",
+      "local": "tools/build-sw.mjs"
+    },
+    {
+      "canonical": "web/giga-sw-updater.js",
+      "local": "giga-sw-updater.js"
+    },
+    {
+      "canonical": "web/giga-app-links.js",
+      "local": "giga-app-links.js"
+    },
+    {
+      "canonical": "agents/CLAUDE.md",
+      "local": "CLAUDE.md"
+    },
+    {
+      "canonical": "agents/rules/gigaschool-standards.md",
+      "local": ".agents/rules/gigaschool-standards.md"
+    },
+    {
+      "canonical": "agents/settings.json",
+      "local": ".claude/settings.json"
+    },
+    {
+      "canonical": "agents/hooks/guard-canonical.mjs",
+      "local": ".claude/hooks/guard-canonical.mjs"
+    },
+    {
+      "canonical": "agents/hooks/announce-checks.mjs",
+      "local": ".claude/hooks/announce-checks.mjs"
+    },
+    {
+      "canonical": "agents/hooks/remind-changelog.mjs",
+      "local": ".claude/hooks/remind-changelog.mjs"
+    },
+    {
+      "canonical": "agents/subagents/giga-auditor.md",
+      "local": ".claude/agents/giga-auditor.md"
+    },
+    {
+      "canonical": "agents/subagents/giga-migrator.md",
+      "local": ".claude/agents/giga-migrator.md"
+    }
   ],
   "unmanaged": [
     {
       "local": "sw.js",
       "reason": "アプリ固有の配り方（骨組みは先読み、写真は見たぶんだけ後から）。版の行だけ tools/build-sw.mjs が書き換える"
     }
-  ]
+  ],
+  "dirs": [
+    {
+      "canonical": "skills/devlog-article",
+      "local": ".claude/skills/devlog-article"
+    },
+    {
+      "canonical": "skills/devlog-article",
+      "local": ".agents/skills/devlog-article"
+    },
+    {
+      "canonical": "skills/giga-changelog",
+      "local": ".claude/skills/giga-changelog"
+    },
+    {
+      "canonical": "skills/giga-changelog",
+      "local": ".agents/skills/giga-changelog"
+    },
+    {
+      "canonical": "skills/giga-fleet",
+      "local": ".claude/skills/giga-fleet"
+    },
+    {
+      "canonical": "skills/giga-fleet",
+      "local": ".agents/skills/giga-fleet"
+    },
+    {
+      "canonical": "skills/giga-manual",
+      "local": ".claude/skills/giga-manual"
+    },
+    {
+      "canonical": "skills/giga-manual",
+      "local": ".agents/skills/giga-manual"
+    },
+    {
+      "canonical": "skills/giga-reviewer",
+      "local": ".claude/skills/giga-reviewer"
+    },
+    {
+      "canonical": "skills/giga-reviewer",
+      "local": ".agents/skills/giga-reviewer"
+    },
+    {
+      "canonical": "skills/giga-scaffold",
+      "local": ".claude/skills/giga-scaffold"
+    },
+    {
+      "canonical": "skills/giga-scaffold",
+      "local": ".agents/skills/giga-scaffold"
+    },
+    {
+      "canonical": "skills/note-article",
+      "local": ".claude/skills/note-article"
+    },
+    {
+      "canonical": "skills/note-article",
+      "local": ".agents/skills/note-article"
+    }
+  ],
+  "//dirs": "スキルは .claude/skills と .agents/skills の 両方に 配る（Claude Code と Antigravity で 読む 場所が ちがう）。片方だけ 登録すると、もう片方は 書き替えても 緑の まま 通る。"
 }
