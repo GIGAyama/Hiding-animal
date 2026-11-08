@@ -290,3 +290,56 @@ footer.site { border-top: 2px solid var(--line); background: #fff; padding: 18px
 
   @page { margin: 12mm; }
 }
+
+/* ── 読みもの の ページ（先生へ・きやく・出どころ）────────────
+   ⚠️ index.html と 同じ style.css を つかう。ページごとに CSS を
+      足すと、SW の 先読み一覧（sw.js の PRECACHE_URLS）と
+      ずれて、オフラインで 字だけの ページに なる。 */
+
+.doc { max-width: 760px; margin: 0 auto; padding: 20px 16px 56px; }
+.doc h2 { font-size: 20px; margin: 30px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--line); }
+.doc h3 { font-size: 17px; margin: 22px 0 6px; color: var(--accent); }
+.doc p, .doc li { font-size: 16px; line-height: 1.95; }
+.doc ul, .doc ol { padding-left: 1.3em; }
+.doc li { margin: 5px 0; }
+.doc a { color: var(--accent); }
+.doc .note {
+  background: var(--accent-bg); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 12px 16px; margin: 16px 0;
+}
+.doc .note p:first-child { margin-top: 0; }
+.doc .note p:last-child { margin-bottom: 0; }
+.doc table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+.doc th, .doc td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+.doc th { background: var(--accent-bg); white-space: nowrap; }
+.doc .back {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: var(--tap); min-width: var(--tap); padding: 0 18px;
+  margin: 8px 0 4px; border-radius: 999px;
+  background: var(--panel); border: 2px solid var(--accent);
+  color: var(--accent); font-weight: 700; text-decoration: none;
+}
+
+/* 写真の 出どころの 一覧。長いので 1 行を 低くする */
+.credits { font-size: 14px; }
+.credits td { padding: 6px 8px; line-height: 1.6; }
+.credits .nm { white-space: nowrap; font-weight: 700; }
+
+/* ── 「ホーム画面に いれる」の おしらせ ────────────────── */
+
+.install-bar {
+  position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60;
+  max-width: 560px; margin: 0 auto;
+  background: var(--panel); border: 2px solid var(--accent);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 12px 14px;
+}
+.install-bar p { margin: 0 0 10px; font-size: 15px; line-height: 1.7; }
+.install-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.install-bar button {
+  min-height: var(--tap); min-width: 96px; padding: 0 18px;
+  border-radius: 999px; font: inherit; font-weight: 700; cursor: pointer;
+}
+.install-go { background: var(--accent); color: #fff; border: 2px solid var(--accent); }
+.install-no { background: var(--panel); color: var(--ink-soft); border: 2px solid var(--line); }
+@media print { .install-bar { display: none; } }

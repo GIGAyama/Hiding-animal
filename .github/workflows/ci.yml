@@ -14,7 +14,11 @@ jobs:
         with:
           node-version: '20'
       - name: 道具そのものの単体テスト
-        run: node --test tools/check-data.test.mjs tools/check-no-external.test.mjs
+        run: node --test tools/*.test.mjs
+      # ⚠️ 組み立てる 道具は --check だけを 呼ぶ。build を 先に 走らせると
+      #    生成物を 上書きして しまい、ずれが 素通りする（2026-08-28 の 教訓）。
+      - name: data/animals.js が content/ と そろっているか
+        run: node tools/build-animals.mjs --check
       - name: SW の版が中身と一致しているか
         run: node tools/build-sw.mjs --check
       - name: データの形と文の型・写真のライセンス
