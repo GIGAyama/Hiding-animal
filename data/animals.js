@@ -127,7 +127,16 @@
         "https://en.wikipedia.org/wiki/Camposcia_retusa",
         "https://museum.wa.gov.au/online-collections/names/Camposcia-retusa"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Daderot",
+        "caption": "モクズショイの しゃしん",
+        "commonsFile": "File:Camposcia_retusa_-_National_Museum_of_Nature_and_Science,_Tokyo_-_DSC07557.JPG",
+        "file": "mokuzushoi.jpg",
+        "h": 760,
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Camposcia_retusa_-_National_Museum_of_Nature_and_Science%2C_Tokyo_-_DSC07557.JPG",
+        "w": 769
+      }
     },
     {
       "id": "hamaguri",
@@ -157,7 +166,16 @@
         "https://www.zukan-bouz.com/syu/%E3%83%8F%E3%83%9E%E3%82%B0%E3%83%AA",
         "https://en.wikipedia.org/wiki/Meretrix_lusoria"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Almandine",
+        "caption": "ハマグリの しゃしん",
+        "commonsFile": "File:Meretrix_lusoria.jpg",
+        "file": "hamaguri.jpg",
+        "h": 675,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Meretrix_lusoria.jpg",
+        "w": 900
+      }
     },
     {
       "id": "madako",
@@ -187,7 +205,16 @@
         "https://en.wikipedia.org/wiki/Octopus_sinensis",
         "https://www.zukan-bouz.com/syu/%E3%83%9E%E3%83%80%E3%82%B3"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Daiju Azuma",
+        "caption": "マダコの しゃしん",
+        "commonsFile": "File:Octopus_sinensis.jpg",
+        "file": "madako.jpg",
+        "h": 760,
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Octopus_sinensis.jpg",
+        "w": 761
+      }
     },
     {
       "id": "chinanago",
@@ -214,7 +241,16 @@
       "sources": [
         "https://marine-world.jp/wp-content/uploads/2022/11/f6ca0f8452a09a8bbb58b3bc7a1b81bf.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Wisnia6522",
+        "caption": "チンアナゴの しゃしん",
+        "commonsFile": "File:Węgorz_ogrodowy.jpg",
+        "file": "chinanago.jpg",
+        "h": 760,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:W%C4%99gorz_ogrodowy.jpg",
+        "w": 647
+      }
     },
     {
       "id": "hanaokoze",
@@ -242,7 +278,16 @@
         "https://www.pref.kagawa.lg.jp/documents/19778/tp078hanaokoze.pdf",
         "https://www.pref.tottori.lg.jp/item/222484.htm"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Totti",
+        "caption": "ハナオコゼの しゃしん",
+        "commonsFile": "File:Histrio_histrio_Shimoda.jpg",
+        "file": "hanaokoze.jpg",
+        "h": 617,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Histrio_histrio_Shimoda.jpg",
+        "w": 900
+      }
     },
     {
       "id": "hirame",
@@ -308,7 +353,16 @@
         "https://ja.wikipedia.org/wiki/ホタルイカ",
         "https://en.wikipedia.org/wiki/Watasenia_scintillans"
       ],
-      "photo": {}
+      "photo": {
+        "by": ":ja:user:Dieno",
+        "caption": "ホタルイカの しゃしん",
+        "commonsFile": "File:Watasenia_scintillans.jpg",
+        "file": "hotaruika.jpg",
+        "h": 1100,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Watasenia_scintillans.jpg",
+        "w": 550
+      }
     },
     {
       "id": "kaeruankou",
@@ -373,7 +427,16 @@
         "https://ja.wikipedia.org/wiki/カクレクマノミ",
         "https://en.wikipedia.org/wiki/Amphiprion_ocellaris"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Metatron",
+        "caption": "カクレクマノミの しゃしん",
+        "commonsFile": "File:Ocellaris_clownfish.JPG",
+        "file": "kakurekumanomi.jpg",
+        "h": 675,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ocellaris_clownfish.JPG",
+        "w": 900
+      }
     },
     {
       "id": "kamisoriuo",
@@ -441,7 +504,7 @@
         "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/59676.pdf"
       ],
       "photo": {
-        "by": "User:OpenCage",
+        "by": "OpenCage",
         "caption": "カサゴの しゃしん",
         "commonsFile": "File:Sebastiscus_marmoratus_by_OpenCage.jpg",
         "file": "kasago.jpg",
@@ -478,7 +541,16 @@
         "https://www.pref.wakayama.lg.jp/prefg/070100/syokuzai/index_d/fil/8kouika_1.pdf",
         "https://www.natureasia.com/ja-jp/life-sci/research/12736"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Kuribo",
+        "caption": "コウイカの しゃしん",
+        "commonsFile": "File:Sepia_esculenta_Osaka.jpg",
+        "file": "kouika.jpg",
+        "h": 598,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Sepia_esculenta_Osaka.jpg",
+        "w": 900
+      }
     },
     {
       "id": "leafyseadragon",
@@ -508,7 +580,16 @@
         "https://reeflifesurvey.com/species/Phycodurus-eques",
         "https://cdn.environment.sa.gov.au/landscape/docs/hf/leafy-seadragon-poster-2020.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "James Rosindell",
+        "caption": "リーフィーシードラゴンの しゃしん",
+        "commonsFile": "File:Leafy_Seadragon_on_Kangaroo_Island.jpg",
+        "file": "leafyseadragon.jpg",
+        "h": 599,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Leafy_Seadragon_on_Kangaroo_Island.jpg",
+        "w": 900
+      }
     },
     {
       "id": "mizukurage",
@@ -535,7 +616,16 @@
       "sources": [
         "https://ja.wikipedia.org/wiki/ミズクラゲ"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Yosemite",
+        "caption": "ミズクラゲの しゃしん",
+        "commonsFile": "File:Aurelia_aurita_001.JPG",
+        "file": "mizukurage.jpg",
+        "h": 675,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Aurelia_aurita_001.JPG",
+        "w": 900
+      }
     },
     {
       "id": "agohaze",
@@ -565,7 +655,16 @@
         "https://www.zukan-bouz.com/syu/%E3%82%A2%E3%82%B4%E3%83%8F%E3%82%BC",
         "https://www.fishbase.se/summary/Chaenogobius-annularis.html"
       ],
-      "photo": {}
+      "photo": {
+        "by": "A. C. Tatarinov",
+        "caption": "アゴハゼの しゃしん",
+        "commonsFile": "File:Chaenogobius_annularis.JPG",
+        "file": "agohaze.jpg",
+        "h": 455,
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Chaenogobius_annularis.JPG",
+        "w": 900
+      }
     },
     {
       "id": "kamenote",
@@ -594,7 +693,16 @@
         "https://en.wikipedia.org/wiki/Capitulum_mitella",
         "https://www.zukan-bouz.com/syu/%E3%82%AB%E3%83%A1%E3%83%8E%E3%83%86"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Eric A. Lazo-Wasem | source = Gall L (2019). Invertebrate Zoology Division, Yale Peabody Museum. Yale Universi",
+        "caption": "カメノテの しゃしん",
+        "commonsFile": "File:Capitulum_mitella_(YPM_IZ_049075).jpeg",
+        "file": "kamenote.jpg",
+        "h": 760,
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Capitulum_mitella_%28YPM_IZ_049075%29.jpeg",
+        "w": 486
+      }
     },
     {
       "id": "mimiika",
@@ -623,7 +731,16 @@
         "https://www.zukan-bouz.com/syu/ミミイカ",
         "https://ja.wikipedia.org/wiki/コウイカ目"
       ],
-      "photo": {}
+      "photo": {
+        "by": "A. Pollock",
+        "caption": "ミミイカの しゃしん",
+        "commonsFile": "File:Euprymna_morsei.jpg",
+        "file": "mimiika.jpg",
+        "h": 760,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Euprymna_morsei.jpg",
+        "w": 607
+      }
     },
     {
       "id": "shirochidori",
@@ -651,7 +768,16 @@
         "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%AD%E3%83%81%E3%83%89%E3%83%AA",
         "https://en.wikipedia.org/wiki/Kentish_plover"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Bogbumper",
+        "caption": "シロチドリの しゃしん",
+        "commonsFile": "File:Charadrius_alexandrinus_0711.jpg",
+        "file": "shirochidori.jpg",
+        "h": 655,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Charadrius_alexandrinus_0711.jpg",
+        "w": 900
+      }
     },
     {
       "id": "sunagani",
@@ -679,7 +805,16 @@
         "https://ja.wikipedia.org/wiki/スナガニ",
         "https://www.zukan-bouz.com/syu/スナガニ"
       ],
-      "photo": {}
+      "photo": {
+        "by": "ふうけ",
+        "caption": "スナガニの しゃしん",
+        "commonsFile": "File:Sunagani060612.jpg",
+        "file": "sunagani.jpg",
+        "h": 675,
+        "license": "GFDL",
+        "source": "https://commons.wikimedia.org/wiki/File:Sunagani060612.jpg",
+        "w": 900
+      }
     },
     {
       "id": "umihotaru",
@@ -707,7 +842,16 @@
         "https://ja.wikipedia.org/wiki/ウミホタル",
         "https://en.wikipedia.org/wiki/Vargula_hilgendorfii"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Almandine",
+        "caption": "ウミホタルの しゃしん",
+        "commonsFile": "File:Vargula_hilgendorfii.jpg",
+        "file": "umihotaru.jpg",
+        "h": 760,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Vargula_hilgendorfii.jpg",
+        "w": 706
+      }
     },
     {
       "id": "dojou",
@@ -736,7 +880,16 @@
         "https://en.wikipedia.org/wiki/Pond_loach",
         "https://www.fishbase.se/summary/Misgurnus-anguillicaudatus.html"
       ],
-      "photo": {}
+      "photo": {
+        "by": "",
+        "caption": "ドジョウの しゃしん",
+        "commonsFile": "File:Misgurnus_anguillicaudatus.jpg",
+        "file": "dojou.jpg",
+        "h": 613,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Misgurnus_anguillicaudatus.jpg",
+        "w": 900
+      }
     },
     {
       "id": "kajika",
@@ -765,7 +918,16 @@
         "https://www.pref.nagano.lg.jp/suisan/joho/sakanatachi/kajika.html",
         "https://www.pref.ibaraki.jp/nourinsuisan/naisuishi/gyogancho/documents/026_kajika.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Seotaro",
+        "caption": "カジカの しゃしん",
+        "commonsFile": "File:Cottus_reinii(Hamamatsu,Shizuoka,Japan).jpg",
+        "file": "kajika.jpg",
+        "h": 598,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Cottus_reinii%28Hamamatsu%2CShizuoka%2CJapan%29.jpg",
+        "w": 900
+      }
     },
     {
       "id": "matamata",
@@ -795,7 +957,16 @@
         "https://en.wikipedia.org/wiki/Mata_mata",
         "https://ppbio.inpa.gov.br/en/node/1136"
       ],
-      "photo": {}
+      "photo": {
+        "by": "",
+        "caption": "マタマタの しゃしん",
+        "commonsFile": "File:Matamata_turtle_2048x1536.jpg",
+        "file": "matamata.jpg",
+        "h": 675,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Matamata_turtle_2048x1536.jpg",
+        "w": 900
+      }
     },
     {
       "id": "mizukamakiri",
@@ -825,7 +996,16 @@
         "https://www.kentwildlifetrust.org.uk/wildlife-explorer/invertebrates/bugs/water-stick-insect",
         "https://kotobank.jp/word/%E3%81%BF%E3%81%9A%E3%81%8B%E3%81%BE%E3%81%8D%E3%82%8A-3172114"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Daiju Azuma",
+        "caption": "ミズカマキリの しゃしん",
+        "commonsFile": "File:Ranatra_chinensis.jpg",
+        "file": "mizukamakiri.jpg",
+        "h": 760,
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Ranatra_chinensis.jpg",
+        "w": 760
+      }
     },
     {
       "id": "nihonamagaeru",
@@ -855,7 +1035,16 @@
         "https://www.nagoya-u.ac.jp/about-nu/public-relations/researchinfo/upload_images/20180628_engg_1.pdf",
         "https://www.city.kawaguchi.lg.jp/material/files/group/228/14.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "池田正樹 ( talk )masaki ikeda",
+        "caption": "ニホンアマガエルの しゃしん",
+        "commonsFile": "File:Tree_frog2.jpg",
+        "file": "nihonamagaeru.jpg",
+        "h": 760,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Tree_frog2.jpg",
+        "w": 466
+      }
     },
     {
       "id": "ningyoutobikera",
@@ -885,7 +1074,16 @@
         "https://www.pref.kyoto.jp/hokanken/documents/tobikera.pdf",
         "https://publish.csiro.au/MF/MF07067"
       ],
-      "photo": {}
+      "photo": {
+        "by": "KKPCW",
+        "caption": "ニンギョウトビケラの しゃしん",
+        "commonsFile": "File:Goera japonica on the grass - 1.jpg",
+        "file": "ningyoutobikera.jpg",
+        "h": 675,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Goera_japonica_on_the_grass_-_1.jpg",
+        "w": 900
+      }
     },
     {
       "id": "oniyanma_yago",
@@ -912,7 +1110,16 @@
       "sources": [
         "https://ja.wikipedia.org/wiki/オニヤンマ"
       ],
-      "photo": {}
+      "photo": {
+        "by": "R78G addz",
+        "caption": "オニヤンマの ヤゴの しゃしん",
+        "commonsFile": "File:Anotogaster_sieboldii,2017-07-16.jpg",
+        "file": "oniyanma_yago.jpg",
+        "h": 675,
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Anotogaster_sieboldii%2C2017-07-16.jpg",
+        "w": 900
+      }
     },
     {
       "id": "suppon",
@@ -940,7 +1147,16 @@
         "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%83%E3%83%9D%E3%83%B3",
         "https://en.wikipedia.org/wiki/Chinese_softshell_turtle"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Clunio",
+        "caption": "スッポンの しゃしん",
+        "commonsFile": "File:Pelodiscus.jpg",
+        "file": "suppon.jpg",
+        "h": 760,
+        "license": "GFDL",
+        "source": "https://commons.wikimedia.org/wiki/File:Pelodiscus.jpg",
+        "w": 570
+      }
     },
     {
       "id": "taikouchi",
@@ -969,7 +1185,16 @@
         "https://kotobank.jp/word/%E3%81%9F%E3%81%84%E3%81%93%E3%81%86%E3%81%A1-3157824",
         "https://www.pref.mie.lg.jp/common/content/000968001.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Totti",
+        "caption": "タイコウチの しゃしん",
+        "commonsFile": "File:Laccotrephes_japonensis_Kyoto_aquarium.jpg",
+        "file": "taikouchi.jpg",
+        "h": 760,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Laccotrephes_japonensis_Kyoto_aquarium.jpg",
+        "w": 558
+      }
     },
     {
       "id": "awafukimushi",
@@ -997,7 +1222,16 @@
         "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AF%E3%83%95%E3%82%AD%E3%83%A0%E3%82%B7",
         "https://kotobank.jp/word/%E3%81%82%E3%82%8F%E3%81%B5%E3%81%8D%E3%82%80%E3%81%97-3142325"
       ],
-      "photo": {}
+      "photo": {
+        "by": "B kimmel",
+        "caption": "アワフキムシの しゃしん",
+        "commonsFile": "File:Cercopis_vulnerata.JPG",
+        "file": "awafukimushi.jpg",
+        "h": 760,
+        "license": "GFDL",
+        "source": "https://commons.wikimedia.org/wiki/File:Cercopis_vulnerata.JPG",
+        "w": 814
+      }
     },
     {
       "id": "hanagumo",
@@ -1026,7 +1260,16 @@
         "https://www.higashiyama.city.nagoya.jp/document/education/selfguide_botanical4.pdf",
         "https://www.insects.ch/art/ebrechtelle-tricuspidata-misumenops-tricuspidatus"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Andreas Eichler",
+        "caption": "ハナグモの しゃしん",
+        "commonsFile": "File:2013.06.04.-14-Viernheimer_Heide_Viernheim--Dreieck-Krabbenspinne-Weibchen.jpg",
+        "file": "hanagumo.jpg",
+        "h": 760,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2013.06.04.-14-Viernheimer_Heide_Viernheim--Dreieck-Krabbenspinne-Weibchen.jpg",
+        "w": 899
+      }
     },
     {
       "id": "hibari",
@@ -1054,7 +1297,16 @@
         "https://ja.wikipedia.org/wiki/%E3%83%92%E3%83%90%E3%83%AA",
         "https://kotobank.jp/word/%E3%81%B2%E3%81%B0%E3%82%8A-732632"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Diliff",
+        "caption": "ヒバリの しゃしん",
+        "commonsFile": "File:Skylark_2,_Lake_District,_England_-_June_2009.jpg",
+        "file": "hibari.jpg",
+        "h": 675,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Skylark_2%2C_Lake_District%2C_England_-_June_2009.jpg",
+        "w": 900
+      }
     },
     {
       "id": "kayanezumi",
@@ -1084,7 +1336,16 @@
         "https://www.ses.usp.ac.jp/nenpou/np16/04-05np16gakuironnbunn.pdf",
         "https://www.bunka.pref.mie.lg.jp/common/content/001186017.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Hecke",
+        "caption": "カヤネズミの しゃしん",
+        "commonsFile": "File:Micromysminutus1.jpg",
+        "file": "kayanezumi.jpg",
+        "h": 623,
+        "license": "GFDL",
+        "source": "https://commons.wikimedia.org/wiki/File:Micromysminutus1.jpg",
+        "w": 900
+      }
     },
     {
       "id": "kera",
@@ -1112,7 +1373,16 @@
         "https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%A9",
         "https://kotobank.jp/word/%E3%81%91%E3%82%89-1310610"
       ],
-      "photo": {}
+      "photo": {
+        "by": "辻畠",
+        "caption": "ケラの しゃしん",
+        "commonsFile": "File:Mole_cricket03.jpg",
+        "file": "kera.jpg",
+        "h": 397,
+        "license": "GFDL",
+        "source": "https://commons.wikimedia.org/wiki/File:Mole_cricket03.jpg",
+        "w": 900
+      }
     },
     {
       "id": "ookamakiri",
@@ -1141,7 +1411,16 @@
         "https://www.cbr.mlit.go.jp/tenjyo/jimusyo/publication/pbl_insect/pdf/054_065.pdf",
         "https://www.pref.tottori.lg.jp/secure/1072938/1394.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Yasunori Koide",
+        "caption": "オオカマキリの しゃしん",
+        "commonsFile": "File:Tenodera_aridifolia_DSCN9675.jpg",
+        "file": "ookamakiri.jpg",
+        "h": 675,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Tenodera_aridifolia_DSCN9675.jpg",
+        "w": 900
+      }
     },
     {
       "id": "shouryoubatta",
@@ -1170,7 +1449,16 @@
         "https://www.honda.co.jp/outdoor/adventure/shouryoubatta.html",
         "https://www.pref.aichi.jp/uploaded/attachment/506306.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "cory",
+        "caption": "ショウリョウバッタの しゃしん",
+        "commonsFile": "File:Shoryobatta_06z1482sv.jpg",
+        "file": "shouryoubatta.jpg",
+        "h": 760,
+        "license": "GFDL",
+        "source": "https://commons.wikimedia.org/wiki/File:Shoryobatta_06z1482sv.jpg",
+        "w": 570
+      }
     },
     {
       "id": "tonosamabatta",
@@ -1198,7 +1486,16 @@
         "https://ja.wikipedia.org/wiki/トノサマバッタ",
         "https://en.wikipedia.org/wiki/Locusta_migratoria"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Matsumomushi",
+        "caption": "トノサマバッタの しゃしん",
+        "commonsFile": "File:Locusta_migratoria.jpg",
+        "file": "tonosamabatta.jpg",
+        "h": 675,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Locusta_migratoria.jpg",
+        "w": 900
+      }
     },
     {
       "id": "aburazemi",
@@ -1227,7 +1524,16 @@
         "https://en.wikipedia.org/wiki/Graptopsaltria_nigrofuscata",
         "https://www.insects.jp/kon-semiabura.htm"
       ],
-      "photo": {}
+      "photo": {
+        "by": "池田正樹",
+        "caption": "アブラゼミの しゃしん",
+        "commonsFile": "File:Large_Brown_Cicada_23aug12.jpg",
+        "file": "aburazemi.jpg",
+        "h": 760,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Large_Brown_Cicada_23aug12.jpg",
+        "w": 461
+      }
     },
     {
       "id": "akebikonoha",
@@ -1255,7 +1561,16 @@
         "https://ja.wikipedia.org/wiki/アケビコノハ",
         "https://www.insects.jp/kon-gaakebikonoha.htm"
       ],
-      "photo": {}
+      "photo": {
+        "by": "森津",
+        "caption": "アケビコノハの しゃしん",
+        "commonsFile": "File:アケビコノハ_Eudocima_tyrannus_成虫,_高知県.jpg",
+        "file": "akebikonoha.jpg",
+        "h": 600,
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:%E3%82%A2%E3%82%B1%E3%83%93%E3%82%B3%E3%83%8E%E3%83%8F_Eudocima_tyrannus_%E6%88%90%E8%99%AB%2C_%E9%AB%98%E7%9F%A5%E7%9C%8C.jpg",
+        "w": 900
+      }
     },
     {
       "id": "arigumo",
@@ -1283,7 +1598,16 @@
         "https://ja.wikipedia.org/wiki/アリグモ",
         "https://en.wikipedia.org/wiki/Myrmarachne"
       ],
-      "photo": {}
+      "photo": {
+        "by": "spidereyes",
+        "caption": "アリグモの しゃしん",
+        "commonsFile": "File:Myrmarachne_formicaria_76645969.jpg",
+        "file": "arigumo.jpg",
+        "h": 675,
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Myrmarachne_formicaria_76645969.jpg",
+        "w": 900
+      }
     },
     {
       "id": "glassfrog",
@@ -1311,7 +1635,16 @@
         "https://en.wikipedia.org/wiki/Glass_frog",
         "https://doi.org/10.1126/science.abl6620"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Taucce, P. P., Costa-Campos, C. E., Carvalho, T. R., & Michalski, F. (2022). Anurans (Amphibia: Anura) of the",
+        "caption": "グラスフロッグの しゃしん",
+        "commonsFile": "File:Anurans (10.5852-ejt.2022.836.1919) Figure 4.png",
+        "file": "glassfrog.jpg",
+        "h": 760,
+        "license": "CC BY 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Anurans_%2810.5852-ejt.2022.836.1919%29_Figure_4.png",
+        "w": 517
+      }
     },
     {
       "id": "heraoyamori",
@@ -1339,7 +1672,16 @@
         "https://ja.wikipedia.org/wiki/ヘラオヤモリ",
         "https://en.wikipedia.org/wiki/Uroplatus"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Frank Vassen from Brussels, Belgium",
+        "caption": "ヘラオヤモリの しゃしん",
+        "commonsFile": "File:Giant_Leaf-tailed_Gecko,_Nosy_Mangabe,_Madagascar_(4023062244).jpg",
+        "file": "heraoyamori.jpg",
+        "h": 675,
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Giant_Leaf-tailed_Gecko%2C_Nosy_Mangabe%2C_Madagascar_%284023062244%29.jpg",
+        "w": 900
+      }
     },
     {
       "id": "kinokawaga",
@@ -1368,7 +1710,16 @@
         "https://www.insects.jp/kon-gakinokawa.htm",
         "https://ja.wikipedia.org/wiki/コブガ科"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Hsu Hong Lin",
+        "caption": "キノカワガの しゃしん",
+        "commonsFile": "File:Blenina_senex.jpg",
+        "file": "kinokawaga.jpg",
+        "h": 600,
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Blenina_senex.jpg",
+        "w": 900
+      }
     },
     {
       "id": "konohachou",
@@ -1396,7 +1747,16 @@
         "https://ja.wikipedia.org/wiki/コノハチョウ",
         "https://en.wikipedia.org/wiki/Kallima_inachus"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Opencage",
+        "caption": "コノハチョウの しゃしん",
+        "commonsFile": "File:Kallima_inachus.jpg",
+        "file": "konohachou.jpg",
+        "h": 760,
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Kallima_inachus.jpg",
+        "w": 759
+      }
     },
     {
       "id": "konohamushi",
@@ -1424,7 +1784,16 @@
         "https://ja.wikipedia.org/wiki/コノハムシ",
         "https://en.wikipedia.org/wiki/Phyllium"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Drägüs",
+        "caption": "コノハムシの しゃしん",
+        "commonsFile": "File:Phyllium_siccifolium_-_female_larva_L4.JPG",
+        "file": "konohamushi.jpg",
+        "h": 641,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Phyllium_siccifolium_-_female_larva_L4.JPG",
+        "w": 900
+      }
     },
     {
       "id": "minomushi",
@@ -1452,7 +1821,16 @@
         "https://ja.wikipedia.org/wiki/ミノムシ",
         "https://en.wikipedia.org/wiki/Bagworm_moth"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Kyu3a",
+        "caption": "ミノムシの しゃしん",
+        "commonsFile": "File:Eumeta variegata on the window of convenience store.jpg",
+        "file": "minomushi.jpg",
+        "h": 760,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Eumeta_variegata_on_the_window_of_convenience_store.jpg",
+        "w": 570
+      }
     },
     {
       "id": "murasakishachihoko",
@@ -1480,7 +1858,16 @@
         "https://en.wikipedia.org/wiki/Uropyia_meticulodina",
         "https://ja.wikipedia.org/wiki/擬態"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Hsu Hong Lin",
+        "caption": "ムラサキシャチホコの しゃしん",
+        "commonsFile": "File:Uropyia_meticulodina.jpg",
+        "file": "murasakishachihoko.jpg",
+        "h": 600,
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Uropyia_meticulodina.jpg",
+        "w": 900
+      }
     },
     {
       "id": "nanafushi",
@@ -1508,7 +1895,16 @@
         "https://ja.wikipedia.org/wiki/ナナフシ",
         "https://en.wikipedia.org/wiki/Phasmatodea"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Frank Hennemann",
+        "caption": "ナナフシの しゃしん",
+        "commonsFile": "File:Myronides_glaucus_Hennemann,_2021_female.jpg",
+        "file": "nanafushi.jpg",
+        "h": 676,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Myronides_glaucus_Hennemann%2C_2021_female.jpg",
+        "w": 900
+      }
     },
     {
       "id": "yotaka",
@@ -1536,7 +1932,16 @@
         "https://ja.wikipedia.org/wiki/ヨタカ",
         "https://en.wikipedia.org/wiki/Grey_nightjar"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Koshy Koshy",
+        "caption": "ヨタカの しゃしん",
+        "commonsFile": "File:Grey_Nightjar.jpg",
+        "file": "yotaka.jpg",
+        "h": 562,
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Grey_Nightjar.jpg",
+        "w": 900
+      }
     },
     {
       "id": "arijigoku",
@@ -1564,7 +1969,16 @@
         "https://ja.wikipedia.org/wiki/アリジゴク",
         "https://en.wikipedia.org/wiki/Antlion"
       ],
-      "photo": {}
+      "photo": {
+        "by": "dhobern",
+        "caption": "アリジゴクの しゃしん",
+        "commonsFile": "File:Myrmeleon acer.jpg",
+        "file": "arijigoku.jpg",
+        "h": 487,
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Myrmeleon_acer.jpg",
+        "w": 900
+      }
     },
     {
       "id": "azumahikigaeru",
@@ -1591,7 +2005,16 @@
       "sources": [
         "https://ja.wikipedia.org/wiki/アズマヒキガエル"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Yasunori Koide",
+        "caption": "アズマヒキガエルの しゃしん",
+        "commonsFile": "File:Bufo_japonicus_DSCN9873.jpg",
+        "file": "azumahikigaeru.jpg",
+        "h": 675,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Bufo_japonicus_DSCN9873.jpg",
+        "w": 900
+      }
     },
     {
       "id": "azumamogura",
@@ -1619,7 +2042,16 @@
         "https://ja.wikipedia.org/wiki/アズマモグラ",
         "https://en.wikipedia.org/wiki/Mole_(animal)"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Koolah ( talk )",
+        "caption": "アズマモグラの しゃしん",
+        "commonsFile": "File:Mogera_imaizumii.jpg",
+        "file": "azumamogura.jpg",
+        "h": 675,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Mogera_imaizumii.jpg",
+        "w": 900
+      }
     },
     {
       "id": "jigumo",
@@ -1648,7 +2080,16 @@
         "https://www.pref.okayama.jp/uploaded/attachment/387130.pdf",
         "https://www.jstage.jst.go.jp/article/asjaa1936/19/1/19_1_10/_article/-char/ja"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Daiju Azuma",
+        "caption": "ジグモの しゃしん",
+        "commonsFile": "File:Atypus_karschi.jpg",
+        "file": "jigumo.jpg",
+        "h": 760,
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Atypus_karschi.jpg",
+        "w": 759
+      }
     },
     {
       "id": "mitsuzunokonohagaeru",
@@ -1678,7 +2119,16 @@
         "https://singapore.biodiversity.online/taxo4254/mainSpace/Megophrys%20nasuta.html",
         "https://www.mybis.gov.my/art/100"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Olei",
+        "caption": "ミツヅノコノハガエルの しゃしん",
+        "commonsFile": "File:Megophrys.nasuta.7034.jpg",
+        "file": "mitsuzunokonohagaeru.jpg",
+        "h": 585,
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Megophrys.nasuta.7034.jpg",
+        "w": 900
+      }
     },
     {
       "id": "nihontokage",
@@ -1706,7 +2156,16 @@
         "https://www.pref.kyoto.jp/kankyo/rdb/bio/db/craw0005.html",
         "https://www.qsr.mlit.go.jp/osumi/river/ikimono/hacyurui.htm"
       ],
-      "photo": {}
+      "photo": {
+        "by": "ふうけ",
+        "caption": "ニホントカゲの しゃしん",
+        "commonsFile": "File:Nihontokage060920-1.jpg",
+        "file": "nihontokage.jpg",
+        "h": 675,
+        "license": "GFDL",
+        "source": "https://commons.wikimedia.org/wiki/File:Nihontokage060920-1.jpg",
+        "w": 900
+      }
     },
     {
       "id": "okadangomushi",
@@ -1734,7 +2193,16 @@
         "https://ja.wikipedia.org/wiki/オカダンゴムシ",
         "https://en.wikipedia.org/wiki/Armadillidium_vulgare"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Glenn",
+        "caption": "オカダンゴムシの しゃしん",
+        "commonsFile": "File:ArmadillidiumVulgare.jpg",
+        "file": "okadangomushi.jpg",
+        "h": 760,
+        "license": "GFDL",
+        "source": "https://commons.wikimedia.org/wiki/File:ArmadillidiumVulgare.jpg",
+        "w": 868
+      }
     },
     {
       "id": "yamashigi",
@@ -1764,7 +2232,16 @@
         "https://www.env.go.jp/nature/choju/docs/docs5/docs5-yamashigi.pdf",
         "https://gwct.org.uk/wildlife/species-of-the-month/2011/march/"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Stephan Sprinz",
+        "caption": "ヤマシギの しゃしん",
+        "commonsFile": "File:Waldschnepfe (scolopax rusticola) - Spiekeroog, Nationalpark Niedersächsisches Wattenmeer.jpg",
+        "file": "yamashigi.jpg",
+        "h": 600,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Waldschnepfe_%28scolopax_rusticola%29_-_Spiekeroog%2C_Nationalpark_Nieders%C3%A4chsisches_Wattenmeer.jpg",
+        "w": 900
+      }
     },
     {
       "id": "gomafuazarashi",
@@ -1792,7 +2269,16 @@
         "https://www.jaza.jp/storage/enkan-news/V29lpHiZRw0IXwiFcWFzlnru0lE0J58i8SAUE1DE.pdf",
         "https://kotobank.jp/word/%E3%82%B4%E3%83%9E%E3%83%95%E3%82%A2%E3%82%B6%E3%83%A9%E3%82%B7-3152574"
       ],
-      "photo": {}
+      "photo": {
+        "by": "コムケ",
+        "caption": "ゴマフアザラシの しゃしん",
+        "commonsFile": "File:Spotted_Seal_mombestu2.jpg",
+        "file": "gomafuazarashi.jpg",
+        "h": 675,
+        "license": "CC BY-SA 1.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Spotted_Seal_mombestu2.jpg",
+        "w": 900
+      }
     },
     {
       "id": "hokkyokugitsune",
@@ -1821,7 +2307,16 @@
         "https://kotobank.jp/word/%E3%81%BB%E3%81%A4%E3%81%8D%E3%82%88%E3%81%8F%E3%81%8E%E3%81%A4%E3%81%AD-3169957",
         "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/2200/p008801_d/fil/dayori207.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "欅 (Keyaki)",
+        "caption": "ホッキョクギツネの しゃしん",
+        "commonsFile": "File:Alopex_lagopus,_Asahikawa_Asahiyama_Zoological_Park.jpg",
+        "file": "hokkyokugitsune.jpg",
+        "h": 674,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Alopex_lagopus%2C_Asahikawa_Asahiyama_Zoological_Park.jpg",
+        "w": 900
+      }
     },
     {
       "id": "hokkyokuguma",
@@ -1850,7 +2345,16 @@
         "https://www.city.sapporo.jp/zoo/103-l.html",
         "https://www.nipr.ac.jp/science-museum/archive/aiueo/201601.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Alan D. Wilson",
+        "caption": "ホッキョクグマの しゃしん",
+        "commonsFile": "File:Polar_Bear_ANWR_1.jpg",
+        "file": "hokkyokuguma.jpg",
+        "h": 600,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Polar_Bear_ANWR_1.jpg",
+        "w": 900
+      }
     },
     {
       "id": "okojo",
@@ -1877,7 +2381,16 @@
       "sources": [
         "https://kotobank.jp/word/%E3%82%AA%E3%82%B3%E3%82%B8%E3%83%A7"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Steve Hillebrand, USFWS",
+        "caption": "オコジョの しゃしん",
+        "commonsFile": "File:Mustela_erminea_upright.jpg",
+        "file": "okojo.jpg",
+        "h": 760,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Mustela_erminea_upright.jpg",
+        "w": 556
+      }
     },
     {
       "id": "raichou",
@@ -1907,7 +2420,16 @@
         "https://www.suntory.co.jp/eco/birds/encyclopedia/detail/1350.html",
         "https://www.pref.nagano.lg.jp/koho/kids/menu01/symbol03.html"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Jan Frode Haugseth",
+        "caption": "ライチョウの しゃしん",
+        "commonsFile": "File:Rock_Ptarmigan_(Lagopus_Muta).jpg",
+        "file": "raichou.jpg",
+        "h": 600,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rock_Ptarmigan_%28Lagopus_Muta%29.jpg",
+        "w": 900
+      }
     },
     {
       "id": "shirofukurou",
@@ -1936,7 +2458,16 @@
         "https://audubon.org/field-guide/bird/Snowy-owl",
         "https://www.pref.ishikawa.lg.jp/kisya/h28/documents/0420furekou.pdf"
       ],
-      "photo": {}
+      "photo": {
+        "by": "",
+        "caption": "シロフクロウの しゃしん",
+        "commonsFile": "File:Snowy.owl.overall.arp.750pix.jpg",
+        "file": "shirofukurou.jpg",
+        "h": 760,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Snowy.owl.overall.arp.750pix.jpg",
+        "w": 678
+      }
     },
     {
       "id": "yukihyou",
@@ -1966,7 +2497,16 @@
         "https://www.nationalgeographic.com/animals/mammals/facts/snow-leopard",
         "https://snowleopard.org/what-do-snow-leopards-eat/"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Aaron Logan",
+        "caption": "ユキヒョウの しゃしん",
+        "commonsFile": "File:Lightmatter_snowleopard.jpg",
+        "file": "yukihyou.jpg",
+        "h": 600,
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Lightmatter_snowleopard.jpg",
+        "w": 900
+      }
     },
     {
       "id": "yukiusagi",
@@ -1994,7 +2534,16 @@
         "https://www.city.sapporo.jp/zoo/045-f.html",
         "https://kotobank.jp/word/%E3%83%A6%E3%82%AD%E3%82%A6%E3%82%B5%E3%82%AE-3173946"
       ],
-      "photo": {}
+      "photo": {
+        "by": "H. Zell",
+        "caption": "ユキウサギの しゃしん",
+        "commonsFile": "File:Lepus_timidus_01.JPG",
+        "file": "yukiusagi.jpg",
+        "h": 675,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Lepus_timidus_01.JPG",
+        "w": 900
+      }
     },
     {
       "id": "chakuwara",
@@ -2023,7 +2572,16 @@
         "https://www.californiaherps.com/lizards/pages/s.ater.html",
         "https://www.nps.gov/jotr/learn/nature/lizards.htm"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Kaldari",
+        "caption": "チャクワラの しゃしん",
+        "commonsFile": "File:Sauromalus_ater_Phoenix.jpg",
+        "file": "chakuwara.jpg",
+        "h": 760,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Sauromalus_ater_Phoenix.jpg",
+        "w": 507
+      }
     },
     {
       "id": "kawarabatta",
@@ -2051,7 +2609,16 @@
         "https://ja.wikipedia.org/wiki/カワラバッタ",
         "https://www.insects.jp/kon-battakawara.htm"
       ],
-      "photo": {}
+      "photo": {
+        "by": "WATANABE Hitoshi 渡辺仁 (tbc_watanabe)",
+        "caption": "カワラバッタの しゃしん",
+        "commonsFile": "File:Eusphingonotus_japonicus_from_iNaturalist_photo_146087354.jpg",
+        "file": "kawarabatta.jpg",
+        "h": 600,
+        "license": "CC BY 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Eusphingonotus_japonicus_from_iNaturalist_photo_146087354.jpg",
+        "w": 900
+      }
     },
     {
       "id": "kochidori",
@@ -2081,7 +2648,16 @@
         "https://en.wikipedia.org/wiki/Little_ringed_plover",
         "https://www.wildlifetrusts.org/wildlife-explorer/birds/wading-birds/little-ringed-plover"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Alpsdake",
+        "caption": "コチドリの しゃしん",
+        "commonsFile": "File:Charadrius_dubius_curonicus_s8.JPG",
+        "file": "kochidori.jpg",
+        "h": 630,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Charadrius_dubius_curonicus_s8.JPG",
+        "w": 900
+      }
     },
     {
       "id": "mizukakiyamori",
@@ -2109,7 +2685,16 @@
         "https://en.wikipedia.org/wiki/Pachydactylus_rangei",
         "https://animaldiversity.org/accounts/Pachydactylus_rangei/"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Stefan.Kuemmel ( )",
+        "caption": "ミズカキヤモリの しゃしん",
+        "commonsFile": "File:Pachydactylus-rangei.jpg",
+        "file": "mizukakiyamori.jpg",
+        "h": 609,
+        "license": "GFDL",
+        "source": "https://commons.wikimedia.org/wiki/File:Pachydactylus-rangei.jpg",
+        "w": 900
+      }
     },
     {
       "id": "sabakutsunotokage",
@@ -2137,7 +2722,16 @@
         "https://en.wikipedia.org/wiki/Desert_horned_lizard",
         "https://www.californiaherps.com/lizards/pages/p.p.calidiarum.html"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Churnice",
+        "caption": "サバクツノトカゲの しゃしん",
+        "commonsFile": "File:Desert_Horned_Lizard.jpg",
+        "file": "sabakutsunotokage.jpg",
+        "h": 600,
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Desert_Horned_Lizard.jpg",
+        "w": 900
+      }
     },
     {
       "id": "sandfish",
@@ -2166,7 +2760,16 @@
         "https://animaldiversity.org/accounts/Scincus_scincus/",
         "https://reptile-database.reptarium.cz/species?genus=Scincus&species=scincus"
       ],
-      "photo": {}
+      "photo": {
+        "by": "Wilfried Berns",
+        "caption": "サンドフィッシュの しゃしん",
+        "commonsFile": "File:Apothekerskink01.jpg",
+        "file": "sandfish.jpg",
+        "h": 623,
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Apothekerskink01.jpg",
+        "w": 900
+      }
     },
     {
       "id": "sunaneko",
@@ -2194,7 +2797,16 @@
         "https://ja.wikipedia.org/wiki/スナネコ",
         "https://en.wikipedia.org/wiki/Sand_cat"
       ],
-      "photo": {}
+      "photo": {
+        "by": "DocTaxon",
+        "caption": "スナネコの しゃしん",
+        "commonsFile": "File:Felis_margarita.jpg",
+        "file": "sunaneko.jpg",
+        "h": 663,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Felis_margarita.jpg",
+        "w": 900
+      }
     }
   ];
 
