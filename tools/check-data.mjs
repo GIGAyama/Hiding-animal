@@ -73,8 +73,9 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
   for (const a of DATA.animals) {
     const id = a.id || '(id なし)';
 
-    for (const f of ['id', 'name', 'place', 'kind', 'placeS', 'bodyS', 'howS',
-                     'naze', 'sumika', 'size', 'tabemono', 'itsu', 'nakama', 'photo']) {
+    for (const f of ['id', 'name', 'yomi', 'place', 'kind', 'placeS', 'bodyS', 'howS',
+                     'naze', 'sumika', 'size', 'tabemono', 'itsu', 'nakama', 'karada',
+                     'motto', 'photo']) {
       if (a[f] === undefined || a[f] === null || a[f] === '') add(id, `${f} がありません`);
     }
     if (!a.id) continue;
@@ -98,8 +99,30 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
       }
       if (s.length > 110) add(id, `${rule.name} が ながすぎます（${s.length}字）`);
     }
-    if (a.placeS && a.name && !a.placeS.startsWith(a.name)) add(id, `①は「${a.name}が、…」で 始めて ください`);
-    if (a.bodyS && a.name && !a.bodyS.startsWith(a.name)) add(id, `②は「${a.name}は、…」で 始めて ください`);
+    if (a.placeS && a.name && !a.placeS.startsWith(`${a.name}が、`)) add(id, `①は「${a.name}が、…」で 始めて ください`);
+    if (a.bodyS && a.name && !a.bodyS.startsWith(`${a.name}は、`)) add(id, `②は「${a.name}は、…」で 始めて ください`);
+
+    /* ③は「〜て、かくれます。」。おわり方だけでなく、その 前の て形まで 見る。
+       ⚠️ 「その 中に かくれます。」でも おわり方の 判定は 通って しまう。
+          子どもは この 形を そのまま まねして 書くので、1 ひきでも
+          ちがう 形が まざると、それを えらんだ 子だけ 手が 止まる。
+          2026-11-08、ジグモ 1 ひきが この 形から 外れて いた。 */
+    if (a.howS && !/(て|で)、かくれます。$/.test(a.howS)) {
+      add(id, `③は「〜て、かくれます。」の 形に して ください → 「${a.howS.slice(-14)}」`);
+    }
+
+    /* 名前を ひらがなで さがせるか。1年生は ひらがなで 打つ。
+       ⚠️ yomi が 名まえと ずれて いると、その 1 ひきだけ 見つからない。 */
+    if (a.yomi && !/^[ぁ-んー]+$/.test(a.yomi)) add(id, `yomi は ひらがなだけに して ください → 「${a.yomi}」`);
+    if (a.yomi && a.name) {
+      const hira = [...a.name].map((c) => {
+        const n = c.codePointAt(0);
+        return (n >= 0x30a1 && n <= 0x30f6) ? String.fromCodePoint(n - 0x60) : c;
+      }).join('').replace(/\s/g, '');
+      if (hira !== a.yomi) add(id, `yomi が 名まえと ずれて います（「${hira}」に なるはず）`);
+    }
+
+    if (Array.isArray(a.motto) && a.motto.length < 2) add(id, 'motto（もっと しりたい）が 2つ ありません');
 
     /* 3. 学年の 漢字 */
     const ng = [...new Set([...all].filter((c) => /[一-鿿]/.test(c) && !OK_KANJI.has(c)))];

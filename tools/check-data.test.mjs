@@ -158,3 +158,41 @@ test('いる はずの 項目が 欠けると 落ちる', () => {
     assert.ok(bad.some((m) => m.includes(`${f} がありません`)), `${f} が 見のがされた`);
   }
 });
+
+/* ── 教材文の 形を もっと きつく 見る ────────────────── */
+
+test('③が 「〜て、かくれます。」で ないと 落ちる', () => {
+  // ⚠️ 「その 中に かくれます。」は おわり方だけなら 通って しまう。
+  //    2026-11-08、ジグモ 1 ひきが この 形から 外れて いた。
+  const bad = run(four(ok({ howS: 'あなの 中に かくれます。' })));
+  assert.ok(bad.some((m) => m.includes('〜て、かくれます。')));
+});
+
+test('「〜で、かくれます。」も 通る', () => {
+  assert.deepEqual(run(four(ok({ howS: 'すなを かぶって、からだ ぜんぶを すなで、かくれます。' }))), []);
+});
+
+test('①②は 名まえ＋「が、」「は、」まで 見る', () => {
+  // 名まえで 始まって いても、助詞が ちがえば 教材文の 形では ない。
+  assert.ok(run(four(ok({ placeS: 'テストガニは、すなの 中に かくれて います。' })))
+    .some((m) => m.includes('①は')));
+  assert.ok(run(four(ok({ bodyS: 'テストガニが、ほる 足を もって います。' })))
+    .some((m) => m.includes('②は')));
+});
+
+test('yomi が ひらがなで ないと 落ちる', () => {
+  assert.ok(run(four(ok({ yomi: 'テストガニ' }))).some((m) => m.includes('ひらがな')));
+});
+
+test('yomi が 名まえと ずれると 落ちる', () => {
+  // 1年生は ひらがなで 打つ。ずれると その 1 ひきだけ 見つからない。
+  assert.ok(run(four(ok({ yomi: 'ちがうなまえ' }))).some((m) => m.includes('ずれて')));
+});
+
+test('yomi が 名まえと あって いれば 通る', () => {
+  assert.deepEqual(run(four(ok({ name: 'テストガニ', yomi: 'てすとがに' }))), []);
+});
+
+test('motto が 2つ ないと 落ちる', () => {
+  assert.ok(run(four(ok({ motto: ['ひとつだけ。'] }))).some((m) => m.includes('motto')));
+});
