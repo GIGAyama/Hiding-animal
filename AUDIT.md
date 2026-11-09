@@ -49,10 +49,14 @@
 
 **ここに書いてあることは、誰も確かめていません。**
 
-- **公開していない。** GitHub Pages も独自ドメインも設定していないので、
-  `giga-school.com` のどこにも出ていません。ポータルの `data/apps.json` にも
-  載せていません（行き先の無いカードを出さないため）。手順は
+- **まだ開けない。** `CNAME` とポータルのカード（PR）は用意しましたが、
+  GitHub Pages の有効化と DNS の CNAME レコードはまだです。
+  `https://hiding-animal.giga-school.com/` は NXDOMAIN のまま
+  （2026-11-09 に確かめた）。手順と状態は
   [`MANUAL.md`](./MANUAL.md) の「公開するとき」にあります。
+  **本番の アドレスで 実ブラウザを 回した ことは まだ 一度も ありません**
+  （CSP・SW の scope・giga-app-links.js の slug 判定は、手元の
+  `http://localhost` でしか 見て いない）。
 - **本物の教室で使っていない。** 35 台が一斉にひらく場面も、
   1年生が実際に文を書く場面も、まだ測っていません。
 - **出どころ URL の生存を見る検査が無い。** `tools/check-links.mjs` は

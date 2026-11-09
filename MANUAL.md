@@ -100,16 +100,29 @@ node ../GIGAyama.github.io/standards/check-drift.mjs \
 node tools/build-sw.mjs               # ⚠️ いちばん最後
 ```
 
-### 公開するとき（まだ済んでいません）
+### 公開するとき
 
-このリポジトリは**まだ giga-school.com に出ていません**。出すには:
+アドレスは **`https://hiding-animal.giga-school.com/`** です。
 
-1. GitHub Pages を有効にする（このリポジトリの Settings → Pages）
-2. `CNAME` を置き、DNS に CNAME レコードを足す
-3. ポータル（`GIGAyama.github.io`）の `data/apps.json` に 1 行足す
-   （`hosts` は `[]`。出どころの `<a href>` は読み込みではないので入れない）
-4. ポータルのトップに `data-slug` 付きのカードを足し、
-   `node tools/check-cards.mjs` を通す
+| | すること | 状態 |
+| --- | --- | --- |
+| 1 | `CNAME`（`hiding-animal.giga-school.com` の 1 行）を置く | ✅ 済み |
+| 2 | ポータルの `data/apps.json` に 1 行足す（`hosts` は `[]`。出どころの `<a href>` は読み込みではないので入れない） | ✅ ポータルの PR |
+| 3 | ポータルのトップにカードを足し、件数をそろえて `node tools/check-cards.mjs` を通す | ✅ ポータルの PR |
+| 4 | **GitHub Pages を有効にする**（このリポジトリの Settings → Pages → Source: *Deploy from a branch*、Branch: 既定ブランチ／`/ (root)`） | ⏳ 手で |
+| 5 | **DNS に CNAME レコードを足す**（`hiding-animal` → `gigayama.github.io`） | ⏳ 手で |
+| 6 | Pages の画面で Custom domain が `hiding-animal.giga-school.com` になり、**Enforce HTTPS** に チェックが入るのを待つ | ⏳ 手で |
 
-**2 が済むまで 3・4 をしないでください。** 行き先の無いカードが
-giga-school.com に出ます。
+⚠️ **giga-school.com の DNS にワイルドカードはありません**（2026-11-09 に
+`zz-no-such-app-xyz.giga-school.com` が NXDOMAIN になることで確かめた）。
+アプリごとに CNAME レコードが 1 本ずつ要ります。
+
+⚠️ **4〜6 が済むまで、ポータルの PR はマージしないでください。** 先にマージすると、
+giga-school.com のトップに「開く」を押しても開かないカードが出ます。
+
+たしかめ方（4〜6 のあと）:
+
+```bash
+curl -sS -o /dev/null -w '%{http_code}\n' https://hiding-animal.giga-school.com/   # 200
+curl -sS https://hiding-animal.giga-school.com/sw.js | grep APP_VERSION            # 手元と同じ版
+```
