@@ -12,7 +12,7 @@
    ===================================================================== */
 
 // ⚠️ この行は手で直さない。tools/build-sw.mjs が PRECACHE_URLS の中身から書き換える。
-const APP_VERSION = 'v9bba3669'; /* __APP_VERSION__ */
+const APP_VERSION = 'v8e9d2f72'; /* __APP_VERSION__ */
 const SHELL = `kakurenbo-shell-${APP_VERSION}`;
 const PHOTOS = `kakurenbo-photos-${APP_VERSION}`;
 const PHOTO_LIMIT = 160;   // ためこむ写真の上限
