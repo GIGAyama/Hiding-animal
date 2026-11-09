@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '20'
       - name: 道具そのものの単体テスト
@@ -52,7 +52,7 @@ jobs:
         with:
           repository: GIGAyama/GIGAyama.github.io
           path: .standards-src
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '20'
       - name: 正本とのずれ検知
