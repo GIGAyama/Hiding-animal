@@ -2,6 +2,14 @@
   "//": "正本（GIGAyama.github.io/standards/）との対応表。ここに載せたものは直接編集しない。",
   "files": [
     {
+      "canonical": "lib/giga-v5-checks.mjs",
+      "local": "scripts/lib/giga-v5-checks.mjs"
+    },
+    {
+      "canonical": "lib/run-giga-checks.mjs",
+      "local": "scripts/check-standard.mjs"
+    },
+    {
       "canonical": "sw/build-sw-static.mjs",
       "local": "tools/build-sw.mjs"
     },

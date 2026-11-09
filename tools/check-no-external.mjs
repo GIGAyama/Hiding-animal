@@ -58,7 +58,13 @@ const OWN = 'giga-school.com';
 
 /* 見に行かない場所。配信されないものを混ぜると、検査が通らない理由が
    「公開ページの事故」なのか「道具の中の文字列」なのか分からなくなる。 */
-const SKIP = ['tools/', 'docs/', '.github/', '.claude/', '.agents/'];
+/* ブラウザへ 配らない もの。
+   ⚠️ 'scripts/' は 艦隊 共通の ゲートの 写し（正本: GIGAyama.github.io/
+      standards/lib/）。手を 入れられない うえに、説明の 中に
+      `url(https://…)` と 書いて あって ここに 当たる。
+      ⚠️ でも、ここに 足せる のは「ブラウザが 1 度も 読まない もの」だけ。
+         配る ものを 足すと、その 道は 二度と 見られなく なる。 */
+const SKIP = ['tools/', 'scripts/', 'docs/', '.github/', '.claude/', '.agents/'];
 
 /* <link> のうち、読み込みではないもの。ここは「読み込む rel」を並べるのではなく
    「読み込まない rel」を並べる。前者だと、知らない rel が増えたときに
@@ -72,16 +78,23 @@ const NOT_A_LOAD = new Set(['canonical', 'alternate', 'author', 'license', 'me',
  * @returns {{url: string, how: string}[]}
  */
 export function loadsIn(text) {
+  /* ⚠️ JSON の 中では 引用符が `\"` に なる。`["']` だけで 当てると
+     直前の `\` を 越えられず **1 件も 当たらない**。
+     2026-11-09 に 実測: content/places.json の glyph は
+     `"<path d=\"…\" fill=\"none\"/>"` の 形で 入って いて、
+     ここに 外の ホストを 1 行 足しても この 検査は 黙って 通した。
+     エスケープを 外した ものも いっしょに 見る。 */
+  const text2 = text.indexOf('\\"') >= 0 ? text + '\n' + text.replace(/\\(["'])/g, '$1') : text;
   const out = [];
   const push = (url, how) => { if (url) out.push({ url: url.trim(), how }); };
 
-  for (const m of text.matchAll(/\bsrc\s*=\s*["']([^"']+)["']/gi)) push(m[1], 'src');
+  for (const m of text2.matchAll(/\bsrc\s*=\s*["']([^"']+)["']/gi)) push(m[1], 'src');
 
   /* srcset は「URL 幅, URL 幅」と並ぶので、1 つずつに割る */
-  for (const m of text.matchAll(/\bsrcset\s*=\s*["']([^"']+)["']/gi))
+  for (const m of text2.matchAll(/\bsrcset\s*=\s*["']([^"']+)["']/gi))
     for (const one of m[1].split(',')) push(one.trim().split(/\s+/)[0], 'srcset');
 
-  for (const m of text.matchAll(/<link\b([^>]*)>/gi)) {
+  for (const m of text2.matchAll(/<link\b([^>]*)>/gi)) {
     const rel = (m[1].match(/\brel\s*=\s*["']([^"']+)["']/i)?.[1] ?? '').toLowerCase();
     if (rel.split(/\s+/).some((r) => NOT_A_LOAD.has(r))) continue;
     push(m[1].match(/\bhref\s*=\s*["']([^"']+)["']/i)?.[1], `link rel=${rel || '(なし)'}`);
@@ -96,20 +109,27 @@ export function loadsIn(text) {
         当たらず、この 検査を 素通りして いた。
         （places.json の glyph が innerHTML で 画面に 入って いた ので、
           そこへ 1 行 足すだけで 外の ホストを 取りに 行けた。） */
-  for (const m of text.matchAll(/<\s*(image|use|feImage)\b([^>]*)>/gi)) {
+  for (const m of text2.matchAll(/<\s*(image|use|feImage)\b([^>]*)>/gi)) {
     /* (?<![-:\w]) は xlink:href を ここで 二重に 数えない ため。 */
     push(m[2].match(/(?<![-:\w])href\s*=\s*["']([^"']+)["']/i)?.[1], `<${m[1].toLowerCase()} href>`);
   }
-  for (const m of text.matchAll(/\bxlink:href\s*=\s*["']([^"']+)["']/gi)) push(m[1], 'xlink:href');
+  for (const m of text2.matchAll(/\bxlink:href\s*=\s*["']([^"']+)["']/gi)) push(m[1], 'xlink:href');
 
-  for (const m of text.matchAll(/url\(\s*["']?([^"')]+)/gi)) push(m[1], 'url()');
+  for (const m of text2.matchAll(/url\(\s*["']?([^"')]+)/gi)) push(m[1], 'url()');
   /* url() 付きの @import は、すぐ上の url() が拾っている。
      ここで両方に掛けると、同じ 1 件が 2 行になって報告が読みにくい。
      ここが見るのは `@import "..."` の形だけ。 */
-  for (const m of text.matchAll(/@import\s+["']([^"']+)["']/gi)) push(m[1], '@import');
-  for (const m of text.matchAll(/importScripts\(\s*["']([^"']+)["']/gi)) push(m[1], 'importScripts');
+  for (const m of text2.matchAll(/@import\s+["']([^"']+)["']/gi)) push(m[1], '@import');
+  for (const m of text2.matchAll(/importScripts\(\s*["']([^"']+)["']/gi)) push(m[1], 'importScripts');
 
-  return out;
+  /* 同じ 1 件が エスケープ有り／無しで 2 回 出るので まとめる。 */
+  const seen = new Set();
+  return out.filter((x) => {
+    const k = x.how + '\0' + x.url;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
 }
 
 /**
@@ -134,7 +154,10 @@ export function isOwn(url) {
 export function servedFiles(root = new URL('..', import.meta.url)) {
   return execFileSync('git', ['ls-files'], { cwd: root, encoding: 'utf8' })
     .split('\n')
-    .filter((f) => /\.(html|css|js|mjs|webmanifest|json)$/.test(f) && !SKIP.some((s) => f.startsWith(s)));
+    /* ⚠️ .svg を 外さない こと。<image href> / <use href> / xlink:href の
+       見はりを 足したのに、その タグが いちばん 入りやすい ファイルを
+       読んで いなければ 意味が ない。assets/favicon.svg は 配信物。 */
+    .filter((f) => /\.(html|css|js|mjs|svg|webmanifest|json)$/.test(f) && !SKIP.some((s) => f.startsWith(s)));
 }
 
 function main() {

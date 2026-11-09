@@ -8,7 +8,7 @@
  * ===================================================================== */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { problemsIn } from './check-data.mjs';
+import { problemsIn, OK_KANJI } from './check-data.mjs';
 
 const PLACES = [{ key: 'umi', label: 'うみの 中', glyph: '<circle cx="12" cy="12" r="8"/>' }];
 const KINDS = [{ key: 'moguru', label: 'もぐる' }];
@@ -17,6 +17,7 @@ const KINDS = [{ key: 'moguru', label: 'もぐる' }];
 function ok(over = {}) {
   return {
     id: 'a', name: 'テストガニ', yomi: 'てすとがに', place: 'umi', kind: 'moguru',
+    inJapan: true,
     placeS: 'テストガニが、すなの 中に かくれて います。',
     bodyS: 'テストガニは、ほる 足を もって います。',
     howS: 'すなを ほって、かくれます。',
@@ -306,4 +307,28 @@ test('yomi が 名まえと あって いれば 通る', () => {
 
 test('motto が 2つ ないと 落ちる', () => {
   assert.ok(run(four(ok({ motto: ['ひとつだけ。'] }))).some((m) => m.includes('motto')));
+});
+
+/* ── つかって よい 漢字の ならび ───────────────────── */
+
+test('つかって よい 漢字は、1年生 9月までの 41 字ちょうど', () => {
+  /* ⚠️ ここが この 図鑑で いちばん こわれやすい ところ。
+     OK_KANJI に 1 字 足すだけで、その 字が 子どもの 画面に 出せる
+     ように なる。検査（check-data / check-text）は どちらも この
+     ならびを 見て いるので、ならびを ゆるめると 両方が 同時に ゆるむ。
+     2026-11-09 に ためしたら、「魚虫鳥」を 足して 子ども向けの 欄に
+     出しても 検査 8 本と 単体テストは ぜんぶ 緑の ままだった。
+     だから ここに 字そのものを 書き写して おく。
+     学年を 上げて 字を 足す ときは、ここも いっしょに 直す。 */
+  const WANT = '大小上下中手足木花水土石目口白赤青見日月人火気生出入子女男山川田左右先名早車空林森';
+  assert.equal(WANT.length, 41);
+  assert.deepEqual([...OK_KANJI].sort(), [...WANT].sort());
+});
+
+test('ならびに 無い 漢字は 落ちる', () => {
+  for (const ch of ['魚', '虫', '鳥', '海', '体', '方', '何']) {
+    assert.equal(OK_KANJI.has(ch), false, ch + ' が 通って います');
+    const bad = run(four(ok({ karada: `${ch}が います。` })));
+    assert.ok(bad.some((m) => m.includes('むずかしい 漢字')), ch + ' で 落ちません');
+  }
 });

@@ -32,14 +32,20 @@ import { OK_KANJI } from './check-data.mjs';
 const ROOT = new URL('..', import.meta.url);
 
 /* 子どもが 読む ところ。ここを 増やす ときは、本当に 子どもが 読むかを
-   考える こと。おとなの ページを 入れると 検査が 鳴りつづけて 無視される。 */
-export const WATCHED = ['index.html', 'app.js'];
+   考える こと。おとなの ページを 入れると 検査が 鳴りつづけて 無視される。
+   ⚠️ index.html が 読みこむ もので、画面に 字を 出す ものは ぜんぶ 入れる。
+      install-hook.js は document.body へ 直に バーを さしこむのに
+      2026-11-09 まで ここに 無く、「ホーム画面」「共有」「追加」が
+      そのまま 子どもの 画面に 出て いた。 */
+export const WATCHED = ['index.html', 'app.js', 'install-hook.js', 'offline.html'];
 
 /* 画面に 出る ことが ある 属性。alt は 読み上げ、placeholder と
    aria-label と title は 目にも 耳にも のる。 */
 const TEXT_ATTRS = ['alt', 'aria-label', 'placeholder', 'title'];
 
 const CJK = /[぀-ヿ㐀-䶿一-鿿豈-﫿]/;
+/* この ことばの あとの `/` は 割り算では なく 正規表現。 */
+const KEYWORD_BEFORE_RE = /(?:^|[^\w$])(?:return|typeof|instanceof|in|of|new|delete|void|throw|case|do|else|yield|await)$/;
 const KANJI = /[㐀-䶿一-鿿豈-﫿]/;
 
 const unescapeHtml = (s) => String(s)
@@ -96,7 +102,8 @@ export function jsStringsIn(js) {
   const out = [];
   const n = js.length;
   let i = 0;
-  let prev = '';   // 直前の、すきまと コメントを のぞいた 1 字
+  let prev = '';       // 直前の、すきまと コメントを のぞいた 1 字
+  let prevWord = '';   // 直前の ことば（return / typeof など）
   while (i < n) {
     const c = js[i];
     // 行コメント
@@ -111,8 +118,14 @@ export function jsStringsIn(js) {
       i += 2;
       continue;
     }
-    // 正規表現リテラル。直前が 値を とる ところなら 割り算では ない。
-    if (c === '/' && (prev === '' || '=(,:[!&|?{};+~*%<>^'.includes(prev))) {
+    /* 正規表現リテラル。直前が 値を とる ところなら 割り算では ない。
+       ⚠️ 記号だけで 見ては いけない。`return /["']/` の ように
+          ことばの あとに くる 正規表現は 割り算と 読まれ、その 中の
+          引用符から 先が ぜんぶ 文字れつに 見えて、本当の 字を 取りこぼす。
+          2026-11-09 に 実測: `return /["']/.test(x)` の あとの
+          `var a = "みつかるはず"` が 1 件も 返らなかった。 */
+    if (c === '/' && (prev === '' || '=(,:[!&|?{};+~*%<>^'.includes(prev)
+        || KEYWORD_BEFORE_RE.test(prevWord))) {
       i += 1;
       let cls = false;
       while (i < n) {
@@ -126,6 +139,7 @@ export function jsStringsIn(js) {
       i += 1;
       while (i < n && /[a-z]/.test(js[i])) i += 1;   // dgimsuy
       prev = '/';
+      prevWord = '';
       continue;
     }
     // 文字れつ
@@ -147,9 +161,13 @@ export function jsStringsIn(js) {
       i += 1;
       out.push(buf);
       prev = quote;
+      prevWord = '';
       continue;
     }
-    if (!/\s/.test(c)) prev = c;
+    if (!/\s/.test(c)) {
+      prev = c;
+      prevWord = /[A-Za-z_$0-9]/.test(c) ? prevWord + c : '';
+    }
     i += 1;
   }
   return out.filter((s) => CJK.test(s));

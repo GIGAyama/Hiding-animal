@@ -31,7 +31,7 @@
     var box = document.createElement('div');
     box.className = 'install-bar';
     box.setAttribute('role', 'region');
-    box.setAttribute('aria-label', 'ホーム画面に いれる');
+    box.setAttribute('aria-label', 'ホームに いれる');
 
     var p = document.createElement('p');
     p.textContent = text;
@@ -70,7 +70,7 @@
     e.preventDefault();
     if (remembered() || standalone()) return;
     deferred = e;
-    bar('この ずかんを ホーム画面に いれると、つぎから すぐ ひらけます。',
+    bar('この ずかんを ホームに いれると、つぎから すぐ ひらけます。',
         'いれる', function () {
           if (!deferred) return;
           deferred.prompt();
@@ -85,7 +85,9 @@
     var ios = /iPad|iPhone|iPod/.test(ua) ||
               (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
     if (!ios) return;
-    bar('下の 「共有」ボタン →「ホーム画面に 追加」で、つぎから すぐ ひらけます。',
+    /* ⚠️ ここは 子どもの 画面に 出る。iOS の ボタンの 字は 漢字だが、
+       1年生が 読める ように しるしと 場しょで 言う（tools/check-text.mjs が 見て いる）。 */
+    bar('下の ↑ の しるしを おして、「ホームに ついか」を えらぶと、つぎから すぐ ひらけます。',
         null, null);
   });
 })();

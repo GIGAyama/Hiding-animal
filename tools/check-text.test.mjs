@@ -1,5 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { visibleTextIn, jsStringsIn, problemsInTexts, problemsIn, WATCHED } from './check-text.mjs';
 
 /* ── HTML から 画面に 出る 字を とり出す ───────────────────── */
@@ -106,7 +107,21 @@ test('半角の すきまは 通す', () => {
 
 test('見るのは 子どもの 画面だけ。先生の ページは 見ない', () => {
   // ⚠️ for-teachers.html などを 入れると、おとなの 字で 鳴りつづける。
-  assert.deepEqual(WATCHED, ['index.html', 'app.js']);
+  assert.deepEqual(WATCHED, ['index.html', 'app.js', 'install-hook.js', 'offline.html']);
+});
+
+test('index.html が 読みこむ、画面に 字を 出す ものは ぜんぶ 入って いる', () => {
+  /* ⚠️ install-hook.js は document.body へ 直に バーを さしこむのに、
+     2026-11-09 まで WATCHED に 無く、「ホーム画面」「共有」「追加」が
+     そのまま 子どもの 画面に 出て いた。
+     index.html の <script src> を 読んで、画面に 字を 出す ものが
+     もれて いないかを ここで 見る。 */
+  const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+  const srcs = [...html.matchAll(/<script[^>]*\bsrc\s*=\s*"\.\/([^"]+)"/g)].map((m) => m[1]);
+  const own = srcs.filter((s) => !s.startsWith('data/') && !s.startsWith('giga-'));
+  for (const f of own) {
+    assert.ok(WATCHED.includes(f), f + ' が WATCHED に ありません');
+  }
 });
 
 test('ファイルの 中みを もらって 判断する（本物を 読まない）', () => {
@@ -115,7 +130,8 @@ test('ファイルの 中みを もらって 判断する（本物を 読まな�
       ? '<html><body><p>おわり方</p></body></html>'
       : "var a = '件）';"),
   });
-  assert.equal(bad.length, 2);
+  assert.equal(bad.length, WATCHED.length);
   assert.ok(bad.some((b) => b.startsWith('index.html:')));
   assert.ok(bad.some((b) => b.startsWith('app.js:')));
+  assert.ok(bad.some((b) => b.startsWith('install-hook.js:')));
 });

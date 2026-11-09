@@ -57,8 +57,39 @@ export function creditRows(DATA) {
   return { rows, bad };
 }
 
+/** カードから 外へ 出て いく リンクの 行き先を、ホストごとに かぞえる。
+ *
+ * ⚠️ これは「アプリが 読みこむ もの」では ない。アプリ自身は 外から
+ *    1 つも 読まない（Zero-CDN）。ここに 出るのは、子どもや 先生が
+ *    「出どころ」を おした ときに ひらく 先。
+ *    だから ポータルの data/apps.json の hosts には 入れない
+ *    （あちらは 読みこみだけを ならべる 台帳）。
+ * ⚠️ けれども 校内の フィルタリングから 見れば、ふさがれて いれば
+ *    やはり ひらかない。先生が 情報担当に 出せる 形で ならべて おく。
+ *    手で 書くと 出どころを 1 本 足した 日に ずれるので、機械で 作る。 */
+export function linkHosts(DATA) {
+  const count = new Map();
+  const add = (u) => {
+    let h;
+    try { h = new URL(String(u)).hostname; } catch (e) { return; }
+    count.set(h, (count.get(h) || 0) + 1);
+  };
+  for (const a of DATA.animals || []) {
+    for (const u of a.sources || []) add(u);
+    const p = a.photo || {};
+    for (const u of [p.source, p.licenseUrl]) if (u) add(u);
+  }
+  return [...count.entries()]
+    .sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))
+    .map(([host, n]) => ({ host, n }));
+}
+
 export function render(DATA) {
   const { rows, bad } = creditRows(DATA);
+  const hosts = linkHosts(DATA);
+  const links = hosts.reduce((a, h) => a + h.n, 0);
+  const hostRows = hosts.map((h) =>
+    `<tr><td class="nm">${esc(h.host)}</td><td>${h.n}</td></tr>`).join('\n');
   if (bad.length) {
     const e = new Error('写真の 出どころが 足りません:\n  ' + bad.join('\n  '));
     e.problems = bad;
@@ -124,6 +155,25 @@ ${body}
 </ul>
 <p>上の 一覧の ライセンスの 名まえは、その ライセンスの 本文へ つながって います。
 <strong>条件の 中身は、かならず その 本文で たしかめて ください。</strong></p>
+
+<h2 id="filtering">出どころの リンクの 行き先（校内の フィルタリング用）</h2>
+<p>このアプリ自身は、<strong>外の サーバーから 何も 読みこみません</strong>
+（写真も 書体も この サイトの 中に あります）。
+ふさがれて いても 画面は くずれません。</p>
+<p>ただし、生きものの ページの いちばん 下に ある
+<strong>「しらべた もと」</strong>と、写真の <strong>「もとの ページ」</strong>を
+おすと、よその サイトが ひらきます。その 行き先は
+<strong>${hosts.length} ホスト・${links} 本</strong>です。
+子どもに 出どころを たどらせる 活動を する ときは、
+下の 一覧を 情報担当に わたして ください。</p>
+<table class="credits">
+<thead><tr><th>ホスト</th><th>リンクの 数</th></tr></thead>
+<tbody>
+${hostRows}
+</tbody>
+</table>
+<p>この 表は <code>data/animals.js</code> から 機械で 作って います。
+出どころを 足したり 減らしたり すると、ここも いっしょに かわります。</p>
 
 <a class="back" href="./">← ずかんに もどる</a>
 </main>

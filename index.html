@@ -4,6 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
+<!-- ⚠️ 外から 1 つも 読まない ことを、ブラウザにも 言わせる。
+     静的検査（tools/check-no-external.mjs）は「書いて ある URL」しか 見ないので、
+     実行中に 組み立てた URL は すりぬける。ここで 塞ぐと、すりぬけた ものも
+     ブラウザが 止める（GIGA Standard v5 の B_CSP）。
+     ⚠️ style-src に 'unsafe-inline' が 要る。giga-sw-updater.js の
+        おしらせは Shadow DOM の 中に <style> を 書くので、外すと
+        「新しい ばんが あります」の 見た目が こわれる。
+        script-src の ほうには ぜったいに 足さない。
+     ⚠️ frame-ancestors は <meta> では 無視される。ここに 書かない。
+     ⚠️ 出どころ（Wikimedia など）への <a href> は「読み込み」では なく
+        「ページの 行き先」なので、これに 止められない。 -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data:;
+  font-src 'self';
+  connect-src 'self';
+  manifest-src 'self';
+  worker-src 'self';
+  base-uri 'self';
+  form-action 'none';
+  object-src 'none';
+">
 <title>しぜんの かくれんぼ ずかん｜うみ・くさむら・もり・ゆきの かくれんぼ名人</title>
 <meta name="description" content="小学1年生の国語「うみのかくれんぼ」で、自分の生きものの かくれ方を 書くための ずかんです。うみ・うみべ・みずべ・くさむら・もり・つち・ゆき・さばく の生きものを、写真と、教材文と同じ「ばしょ → からだ → かくれ方」の文で しらべられます。">
 <meta name="robots" content="index, follow">
@@ -15,6 +39,12 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <meta name="theme-color" content="#1f7a5a">
 <link rel="stylesheet" href="./style.css">
+<!-- ⚠️ install-hook.js だけは <head> で 読む。
+     Chrome は 条件が そろうと すぐに beforeinstallprompt を 出すので、
+     本体（app.js）の あとだと 合図を 取りこぼし、通信の 遅い 端末で
+     「ホームに いれる」が 出なく なる（GIGA Standard v5 の E_INSTALL_HOOK）。
+     defer なので 画面を 止めない。 -->
+<script src="./install-hook.js" defer></script>
 </head>
 <body>
 
@@ -56,6 +86,13 @@
 
 <p class="count-line" id="count" role="status" aria-live="polite"></p>
 
+<!-- ⚠️ カードを ひらかないで いんさつすると、紙が まっ白に なる。
+     @media print は 見出しも 一らんも 消すので、紙に 出る ものが
+     1 つも のこらない（2026-11-09 に 実測）。その ときの ための 1 行。
+     画面には 出ない。カードを ひらいて いる あいだは 紙にも 出ない。 -->
+<p class="print-hint">「しぜんの かくれんぼ ずかん」<br>
+生きものの カードを ひらいてから いんさつすると、「かくれんぼカード」が 出ます。</p>
+
 <main>
   <div class="grid" id="grid"></div>
   <p class="empty" id="empty" hidden>この くみあわせの 生きものは いません。さがす ことばを けすか、①か ②を「ぜんぶ」に もどして みて ください。</p>
@@ -77,8 +114,24 @@
     <p>しぜんの かくれんぼ ずかん — 1ねんせいの こくご「うみのかくれんぼ」で、ぶんを かく ために つくりました。</p>
     <p>ぶんは すべて かきおろしです。きょうかしょの ぶんは のせて いません。</p>
     <p>しゃしんは Wikimedia Commons の、だれでも つかえる ライセンスの ものだけを つかって います。とった 人と ライセンスは、それぞれの 生きものの ページに かいて あります。</p>
+    <!-- ⚠️ 1 だいの たんまつを 2 人で つかう ときの ため。
+         かいた ぶんは この たんまつに のこるので、つぎの 人が
+         おなじ カードを ひらくと 前の 人の ぶんが 出て くる。
+         カードの 中の「ぜんぶ けす」は、その 1 ひきぶんだけ。
+         ここは たんまつに のこって いる ぶんを ぜんぶ けす。 -->
+    <p class="wipe-row">1 だいを じゅんばんに つかう とき、つぎの 人に わたす まえに おして ください。
+      <button class="btn" type="button" id="wipe-drafts">かいた ぶんを ぜんぶ けす</button>
+    </p>
     <p><a href="./for-teachers.html">先生へ（たんげんの どこで つかうか）</a></p>
-    <p id="local-links"><a href="./terms.html">りようきやく</a> ・ <a href="./privacy.html">こじんじょうほうの あつかい</a> ・ <a href="./credits.html">しゃしんの 出どころ</a></p>
+    <!-- ⚠️ 「しゃしんの 出どころ」を #local-links の 中に 入れない こと。
+         giga-school.com では app.js の tidyFooterLinks() が #local-links を
+         まるごと かくし、giga-app-links.js が りようきやく・こじんじょうほうを
+         出しなおす。ところが あちらは 出どころの ページを 持って いないので、
+         いっしょに 入れて おくと **出どころへ 行ける 道が 1 本も なく なる**。
+         CC BY / CC BY-SA は 作者と ライセンスを 出すのが 条件なので、
+         ここが 消えると ライセンスの 条件を 満たさなく なる。 -->
+    <p id="local-links"><a href="./terms.html">りようきやく</a> ・ <a href="./privacy.html">こじんじょうほうの あつかい</a></p>
+    <p><a href="./credits.html">しゃしんの 出どころ</a>（76 まいの しゃしんの とった 人・ライセンス・もとの ページ）</p>
     <span data-giga-links data-links="terms,privacy"></span>
   </div>
 </footer>
@@ -87,6 +140,5 @@
 <script src="./app.js"></script>
 <script src="./giga-app-links.js" defer></script>
 <script src="./giga-sw-updater.js" defer></script>
-<script src="./install-hook.js" defer></script>
 </body>
 </html>

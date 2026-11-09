@@ -1,0 +1,17 @@
+{
+  "//": "GIGA Standard v5（正本: GIGAyama.github.io/standards/lib/giga-v5-checks.mjs）の、このアプリぶんの値。",
+  "standard": {
+    "repoName": "Hiding-animal",
+    "//sw": "配信物をそのままコミットする形（sw-build.config.json と同じ）。",
+    "sw": "static",
+    "swSource": "sw.js",
+    "swVersionConst": "APP_VERSION",
+    "//dirs": "このアプリは app.js と style.css をリポジトリ直下に置く。既定の js/ css/ のままだと、どちらも 1 本も読まれないまま緑になる。",
+    "jsDirs": ["."],
+    "cssDirs": ["."],
+    "htmlFiles": ["index.html", "offline.html", "for-teachers.html", "credits.html", "terms.html", "privacy.html"],
+    "imageDirs": ["assets"],
+    "fluidTypeMin": 3,
+    "skips": []
+  }
+}

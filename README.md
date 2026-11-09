@@ -14,7 +14,7 @@
 もっとしりたい まで持っています。
 
 8 つのばしょ（うみ／うみべ・いそ／かわ・みずべ／くさむら／もり・はやし／
-つち・おちば／ゆき・こおり／さばく・かわら）から、生きもの **75 ひき**。
+つち・おちば／ゆき・こおり／さばく・かわら）から、生きもの **76 ひき**。
 
 ## 教材文の型
 
@@ -46,6 +46,7 @@
 ```bash
 node tools/build-animals.mjs     # content/ → data/animals.js
 node tools/build-credits.mjs     # data/animals.js → credits.html
+node tools/check-photos.mjs      # photos/ の中身 → sw.js の PHOTOS_VERSION
 node tools/build-sw.mjs          # 配信物の中身 → sw.js の版（いちばん最後）
 ```
 
@@ -55,7 +56,9 @@ node tools/build-sw.mjs          # 配信物の中身 → sw.js の版（いち�
 node --test tools/*.test.mjs        # 検査そのものの単体テスト
 node tools/build-animals.mjs --check
 node tools/check-data.mjs           # 文の型・学年の漢字・写真のライセンス
-node tools/check-text.mjs           # 子どもの画面に出る字（index.html と app.js）
+node tools/check-photos.mjs --check # 写真そのもの（JPEGか・実寸・使われていない写真）と写真の版
+node tools/check-text.mjs           # 子どもの画面に出る字（index.html / app.js / install-hook.js）
+node tools/check-docs.mjs           # 先生へのページとREADMEの数が データと合っているか
 node tools/check-no-external.mjs    # 外から読み込んでいないか（Zero-CDN）
 node tools/check-links.mjs          # ページの中のリンクが切れていないか
 node tools/build-credits.mjs --check

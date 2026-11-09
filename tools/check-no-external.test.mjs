@@ -9,7 +9,7 @@
  * ===================================================================== */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { loadsIn, isOwn } from './check-no-external.mjs';
+import { loadsIn, isOwn, servedFiles } from './check-no-external.mjs';
 
 const urls = (t) => loadsIn(t).map((x) => x.url);
 
@@ -101,4 +101,53 @@ test('<a href> は 読み込みでは ない', () => {
 
 test('link rel=license は 読み込みでは ない', () => {
   assert.deepEqual(loadsIn('<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">'), []);
+});
+
+/* ── JSON の 中（引用符が \" に なって いる）──────────── */
+
+test('JSON の 中の \\" を こえて 外からの 読み込みを 見つける', () => {
+  /* ⚠️ 2026-11-09 に 実測。content/places.json の glyph は
+     "<path d=\"…\"/>" の 形で 入って いて、そこへ 外の ホストを
+     1 行 足しても この 検査は 黙って 通した（0 件）。
+     glyph は app.js が 画面へ 入れる ので、ほんとうに 取りに 行く。 */
+  const json = '{"glyph": "<image href=\\"https://evil.example.com/t.png\\"/>"}';
+  assert.ok(loadsIn(json).some((x) => x.url === 'https://evil.example.com/t.png'),
+    'JSON の 中の <image href> が 見つからない');
+});
+
+test('エスケープの 無い 字は、二重に 数えない', () => {
+  assert.deepEqual(loadsIn('<image href="https://evil.example.com/t.png"/>').length, 1);
+});
+
+test('JSON を ほどいても、自分の 側は 自分の 側の まま', () => {
+  const json = '{"glyph": "<path d=\\"M0 0\\" fill=\\"none\\"/>"}';
+  assert.deepEqual(loadsIn(json).filter((x) => !isOwn(x.url)), []);
+});
+
+/* ── どの ファイルを 見るか ───────────────────────── */
+
+test('.svg も 配信物と して 見る', () => {
+  /* ⚠️ <image href> / <use href> / xlink:href の 見はりを 足したのに、
+     その タグが いちばん 入りやすい .svg を 1 本も 開いて いなかった。
+     assets/favicon.svg は git に 追跡されて 配信される。 */
+  const files = servedFiles();
+  assert.ok(files.some((f) => f.endsWith('.svg')), '.svg が 1 本も 入って いません');
+});
+
+test('見る ファイルは、git が 追跡して いる 配信物だけ', () => {
+  const files = servedFiles();
+  assert.ok(files.includes('index.html'));
+  assert.ok(files.includes('app.js'));
+  assert.ok(files.includes('content/places.json'));
+  assert.ok(!files.some((f) => f.endsWith('.jpg')), '写真は 字を 持たない ので 見ない');
+});
+
+test('ブラウザへ 配らない ものは 見ない（道具と 共通ゲートの 写し）', () => {
+  /* ⚠️ ここに 足して よいのは「ブラウザが 1 度も 読まない もの」だけ。
+     配る ものを 足すと、その 道は 二度と 見られなく なる。 */
+  const files = servedFiles();
+  assert.equal(files.filter((f) => f.startsWith('tools/')).length, 0);
+  assert.equal(files.filter((f) => f.startsWith('scripts/')).length, 0);
+  assert.ok(files.includes('index.html'), '配る ものは 見る');
+  assert.ok(files.includes('offline.html'), '圏外の ページも 配る もの');
 });

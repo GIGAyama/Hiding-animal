@@ -21,16 +21,28 @@ jobs:
         run: node tools/build-animals.mjs --check
       - name: SW の版が中身と一致しているか
         run: node tools/build-sw.mjs --check
+      # ⚠️ 写真は「名まえが同じなら中身も同じ」と見なして控えから出すので、
+      #    中身だけ入れかえると端末に届かない（2026-11-09 に実際に起きた）。
+      - name: 写真の中身と、写真の版
+        run: node tools/check-photos.mjs --check
       - name: データの形と文の型・写真のライセンス
         run: node tools/check-data.mjs
       - name: 子どもの画面に出る字（1年生の漢字）
         run: node tools/check-text.mjs
+      # ⚠️ 先生へのページとREADMEの数は、生きものを1ひき足すだけでずれる。
+      #    先生はあちらを読んで授業を組むので、ずれると教室で数が合わない。
+      - name: 先生へのページとREADMEが データと合っているか
+        run: node tools/check-docs.mjs
       - name: 外から読み込んでいないか（Zero-CDN）
         run: node tools/check-no-external.mjs
       - name: ページの中のリンクが切れていないか
         run: node tools/check-links.mjs
       - name: 写真の出どころページが データと合っているか
         run: node tools/build-credits.mjs --check
+      # ⚠️ 艦隊共通のゲート（正本: GIGAyama.github.io/standards/lib/）。
+      #    2026-11-09 まで このリポジトリは一度も通していなかった（17 件落ちた）。
+      - name: GIGA Standard v5（艦隊共通の検査 38 本）
+        run: node scripts/check-standard.mjs
 
   drift:
     runs-on: ubuntu-latest

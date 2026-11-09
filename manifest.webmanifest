@@ -1,4 +1,5 @@
 {
+  "id": "./",
   "name": "しぜんの かくれんぼ ずかん",
   "short_name": "かくれんぼずかん",
   "description": "うみ・うみべ・みずべ・くさむら・もり・つち・ゆき・さばく の 生きものの かくれ方を、写真と 1年生の 文で しらべる ずかん。",
@@ -10,7 +11,10 @@
   "theme_color": "#1f7a5a",
   "icons": [
     { "src": "./assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "./assets/icon-180.png", "sizes": "180x180", "type": "image/png", "purpose": "any" },
-    { "src": "./assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "./assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "./assets/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "./assets/icon-180.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
   ]
 }

@@ -1,3 +1,8 @@
 node_modules/
 .DS_Store
 .standards-src/
+
+# ⚠️ 秘密は 1 つも持たないアプリだが、置き場だけは先に塞いでおく。
+#    うっかり置いた日に git が拾わないようにする（GIGA Standard v5 A_GITIGNORE）。
+.env
+.env.*

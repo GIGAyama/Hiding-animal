@@ -12,19 +12,31 @@
    ===================================================================== */
 
 // ⚠️ この行は手で直さない。tools/build-sw.mjs が PRECACHE_URLS の中身から書き換える。
-const APP_VERSION = 'v7ec5dca6'; /* __APP_VERSION__ */
+const APP_VERSION = 'v156bf39e'; /* __APP_VERSION__ */
 const SHELL = `kakurenbo-shell-${APP_VERSION}`;
-/* ⚠️ 写真の 控えは 版を 付けない。APP_VERSION は data/animals.js の 中身まで
-   ふくめて 作るので、文を 1 字 直すと 名前が かわり、activate が 写真の 控えを
-   まるごと 消す。71 まいで 6.5MB、35台なら 230MB を 取りなおす ことに なる。
-   同じ 名前の 写真は 中身も かわらない（下の fetch も そう 書いて いる）ので、
-   差しかえる ときは content/photos.json の ファイル名を かえる。 */
-const PHOTOS = 'kakurenbo-photos-v1';
+/* 写真の 控えの 版。
+   ⚠️ この 行は 手で 直さない。tools/check-photos.mjs が
+      photos/ の 中みそのものから 書きかえる。
+
+   ⚠️ APP_VERSION（骨組みの 版）に まぜない こと。あちらは
+      data/animals.js を ふくむので、文を 1 字 直すだけで かわり、
+      写真 6.5MB を 毎回 取りなおす ことに なる（35 台の 教室で 1 時間が 終わる）。
+
+   ⚠️ ぎゃくに、版を まったく 付けない のも だめ。2026-11-09 に
+      写真 14 まいを「名まえは そのままで 中みだけ」入れかえた とき、
+      一度でも ひらいた 端末は 古い 写真（はく製の ユキウサギ）を
+      出しつづける 形に なって いた。下の fetch は 控えに 当たったら
+      二度と 取りなおさない から。 */
+const PHOTOS_VERSION = 'pac171477'; /* __PHOTOS_VERSION__ */
+const PHOTOS = `kakurenbo-photos-${PHOTOS_VERSION}`;
 const PHOTO_LIMIT = 160;   // ためこむ写真の上限
 
 const PRECACHE_URLS = [
   './',
   './index.html',
+  /* ⚠️ 圏外の ときに 出す ページ。先読みに 入れて おかないと、
+     いちばん 出したい その ときに 出せない。 */
+  './offline.html',
   './style.css',
   './app.js',
   './data/animals.js',
@@ -85,7 +97,8 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;   // よその ドメインには 触らない
 
-  /* 写真：まず控え。同じ名前なら中身も変わらないので、取り直さない。 */
+  /* 写真：まず控え。控えの 名まえに 写真の 版が 入って いるので、
+     中みを 入れかえれば 名まえが かわり、新しい ほうを 取りに 行く。 */
   if (url.pathname.indexOf('/photos/') >= 0) {
     event.respondWith((async () => {
       const cache = await caches.open(PHOTOS);
@@ -122,6 +135,10 @@ self.addEventListener('fetch', (event) => {
     if (req.mode === 'navigate') {
       const shell = await cache.match('./index.html');
       if (shell) return shell;
+      /* 骨組みも まだ 入って いない（はじめての ひらきかたが 圏外）。
+         字だけの 503 では 何が 起きたか わからないので、offline.html を 出す。 */
+      const off = await cache.match('./offline.html');
+      if (off) return off;
     }
     return new Response('オフラインです', {
       status: 503,

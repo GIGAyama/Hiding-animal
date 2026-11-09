@@ -277,7 +277,7 @@
       "karada": "からだの よこと おなかに、ひかる つぶが ならんで います。目が 大きく、くらい 水の 中でも よく 見えます。うろこが とれやすく、あみで とると はだかの ように なるので この 名まえです。",
       "motto": [
         "ひるまは ふかい ところ、よるは あさい ところへ、日に 1かい 上がったり 下がったり します。",
-        "うみで いちばん かずの おおい さかなの なかまと いわれ、マグロや クジラ、ペンギンの たべものに なって います。",
+        "ふかい うみの さかなの 中では とくに かずが おおく、マグロや クジラ、ペンギンの たべものに なって います。",
         "ひかる つぶの ならびかたは しゅるいごとに ちがって いて、なかまを 見つける ときにも つかうと いわれて います。"
       ],
       "sources": [
@@ -286,7 +286,7 @@
       ],
       "photo": {
         "by": "NOAA/OER",
-        "caption": "おなかに ひかる つぶが ならんで いる ハダカイワシの なかま",
+        "caption": "とった あとの ハダカイワシの なかま。おなかに ひかる つぶが ならんで います",
         "commonsFile": "File:Lanternfish by NOAA.jpg",
         "file": "hadakaiwashi.jpg",
         "h": 707,
@@ -596,11 +596,12 @@
       ],
       "photo": {
         "by": "Rickard Zerpe",
-        "caption": "うみの そこの すなの 上で、すなと おなじ いろに なって いる コウイカ",
+        "caption": "うみの そこの すなの 上に いる コウイカ。この ときは いろを かえて いません",
         "commonsFile": "File:Golden Cuttlefish (Sepia esculenta) (49152874797).jpg",
         "file": "kouika.jpg",
         "h": 675,
         "license": "CC BY 2.0",
+        "notHiding": true,
         "source": "https://commons.wikimedia.org/wiki/File%3AGolden_Cuttlefish_%28Sepia_esculenta%29_%2849152874797%29.jpg",
         "w": 900,
         "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
@@ -713,7 +714,7 @@
       ],
       "photo": {
         "by": "SEFSC Pascagoula Laboratory",
-        "caption": "ムネエソの なかまの トガリムネエソ。おなかに ひかる つぶが ならんで います",
+        "caption": "とった あとの ムネエソの なかま。おなかに ひかる つぶが ならんで います",
         "commonsFile": "File:ArgyropelecusAculeatus.jpg",
         "file": "muneeso.jpg",
         "h": 604,
@@ -1205,12 +1206,12 @@
       "inJapan": true,
       "placeS": "シラウオが、川と うみの まじる 水の 中に かくれて います。",
       "bodyS": "シラウオは、すきとおった ほそながい からだを もって います。",
-      "howS": "水の 中で すきとおって、うしろの ものが すけて 見える ように なって、かくれます。",
+      "howS": "しおの まじる 水の 中を むれで およぎ、すきとおった からだで まわりに とけこんで、かくれます。",
       "naze": "大きな さかなや とりに 見つからない ように する ためです。",
       "sumika": "にほんの 川の 口の あたりや、しおの まじる みずうみ。ほっかいどうから きゅうしゅうまで 見られます。",
       "size": "おとなの ゆびぐらいの 小さな さかなです。",
       "tabemono": "水の 中を ただよう 小さな えびや、小さな さかなを たべます。",
-      "itsu": "はるの はじめに、たまごを うみに 川の 口へ あつまります。",
+      "itsu": "はるの はじめに、川の 口の あたりで たまごを うみます。",
       "nakama": "さかなの なかま（シラウオの なかま）",
       "karada": "生きて いる あいだは すきとおって いて、せぼねや おなかの 中まで すけて 見えます。しんで しまうと 白く にごります。目は 小さく、口は 大きいです。うろこは ほとんど ありません。",
       "motto": [
@@ -1225,7 +1226,7 @@
       ],
       "photo": {
         "by": "OpenCage",
-        "caption": "すきとおった からだの シラウオ。うしろの ものが すけて 見えます",
+        "caption": "おさらに のせた シラウオ。からだが すきとおって、おさらの もようが すけて 見えます",
         "commonsFile": "File:Salangichthys microdon.jpg",
         "file": "shirauo.jpg",
         "h": 320,
@@ -1234,6 +1235,45 @@
         "source": "https://commons.wikimedia.org/wiki/File%3ASalangichthys_microdon.jpg",
         "w": 1098,
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "id": "shirouo",
+      "name": "シロウオ",
+      "yomi": "しろうお",
+      "place": "mizube",
+      "kind": "sukitoru",
+      "inJapan": true,
+      "placeS": "シロウオが、川の しもの ほうの 石の 下に かくれて います。",
+      "bodyS": "シロウオは、中が すけて 見える ほど すきとおった からだを もって います。",
+      "howS": "はるに 川を のぼって 石の 下に 入り、すきとおった からだで 石と 見わけが つかないように なって、かくれます。",
+      "naze": "大きな さかなや とりに 見つからない ように する ためです。たまごを まもる ためでも あります。",
+      "sumika": "にほんの あさい うみと、はるに のぼる 川の しもの ほう。ほっかいどうの みなみから きゅうしゅうの みなみまで。",
+      "size": "おとなで 5cm ぐらいの 小さな さかなです。",
+      "tabemono": "うみに いる あいだは、水の 中を ただよう 小さな 生きものを たべます。",
+      "itsu": "はるの はじめ、たまごを うみに 川を のぼって きます。",
+      "nakama": "さかなの なかま（ハゼの なかま）",
+      "karada": "くろい てんが すこし ある ほかは ほとんど すきとおって いて、目や うきぶくろ、せぼねまで すけて 見えます。しんで しまうと 白く にごって、中が 見えなく なります。うろこが ありません。",
+      "motto": [
+        "オスは 石の 下に もぐって たまごの へやを つくり、たまごが かえるまで 2しゅうかん、なにも たべないで まもります。",
+        "シラウオと 名まえが にて いますが、まったく べつの さかなです。シロウオは ハゼの なかまです。",
+        "たまごを うんだ あと 1ねんで いっしょうを おえます。"
+      ],
+      "sources": [
+        "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%AD%E3%82%A6%E3%82%AA",
+        "https://en.wikipedia.org/wiki/Ice_goby"
+      ],
+      "photo": {
+        "by": "Johnleung2000s",
+        "caption": "水の 中の シロウオ。中が すけて 見えます",
+        "commonsFile": "File:Leucopsarion petersii.jpg",
+        "file": "shirouo.jpg",
+        "h": 596,
+        "license": "Public domain",
+        "notHiding": true,
+        "source": "https://commons.wikimedia.org/wiki/File:Leucopsarion_petersii.jpg",
+        "w": 900,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -1303,11 +1343,12 @@
       ],
       "photo": {
         "by": "coniferconifer",
-        "caption": "どろの あさい 水から、はなの 先だけ 出して いる スッポン",
+        "caption": "水から かおを 出して いる スッポン。ながい くびが わかります",
         "commonsFile": "File:スッポン (14143042030).jpg",
         "file": "suppon.jpg",
         "h": 506,
         "license": "CC BY 2.0",
+        "notHiding": true,
         "source": "https://commons.wikimedia.org/wiki/File%3A%E3%82%B9%E3%83%83%E3%83%9D%E3%83%B3_%2814143042030%29.jpg",
         "w": 900,
         "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
@@ -1653,7 +1694,7 @@
         "https://en.wikipedia.org/wiki/Locusta_migratoria"
       ],
       "photo": {
-        "by": "Nino Verde",
+        "by": "Anton Zelenov",
         "caption": "かれくさの 中で、くさと おなじ いろに なって いる トノサマバッタ",
         "commonsFile": "File:Locusta-migratoria-in-burnt-grass.jpg",
         "file": "tonosamabatta.jpg",
@@ -2138,11 +2179,11 @@
       "tabemono": "あなに おちて きた アリや、小さな こんちゅうを たべます。",
       "itsu": "はるから あきに よく 見られます。ふゆは すなの ふかい ところで じっと して いて、あなは 見えなく なります。",
       "nakama": "ウスバカゲロウの 子ども（こんちゅうの なかま）",
-      "karada": "からだは すなと おなじ いろで、すなに うまると 見えません。足の つきかたの せいで、うしろむきにしか あるけません。",
+      "karada": "からだは すなと おなじ いろで、すなに うまると 見えません。足の つきかたの せいで、うしろむきにしか あるけません。大きな あごが あり、かまれると いたい ことが あるので、手で つかまないで 目で 見ます。",
       "motto": [
         "おとなに なると、トンボに にた ウスバカゲロウと いう すがたに なります。",
         "おとなに なるまで、からだの 中に いらない ものを ずっと ためて います。",
-        "すなを そっと ほると、まるい からだが 出て きます。大きな あごで かまれると いたいので、手で つかまないで、目で 見ます。"
+        "すなを そっと ほると、まるい からだが 出て きます。見たら すなを もとに もどして あげましょう。"
       ],
       "sources": [
         "https://ja.wikipedia.org/wiki/アリジゴク",
@@ -2255,13 +2296,12 @@
       "nakama": "クモの なかま",
       "karada": "あごが 大きく、ふくろの 中から えものを はさみます。ふくろの そとがわに 土が ついて いるので、かべと 見わけが つきません。",
       "motto": [
-        "ふくろを そっと ひっぱると、土の 中から ながい ふくろが 出て きます。",
+        "ふくろを ひっぱると、土の 中の すみかが こわれて、もとに もどりません。ひっぱらないで、かべの そばに 出て いる ふくろを そのまま 見ます。",
         "ふくろの 中から、そとを とおる こんちゅうの ゆれを かんじて つかまえます。",
         "子どもは、たまごから 出た あと つぎの はるまで、おやの ふくろの 中で すごします。"
       ],
       "sources": [
         "https://kotobank.jp/word/%E3%81%98%E3%81%90%E3%82%82-3155349",
-        "https://www.pref.okayama.jp/uploaded/attachment/387130.pdf",
         "https://www.jstage.jst.go.jp/article/asjaa1936/19/1/19_1_10/_article/-char/ja"
       ],
       "photo": {
@@ -2600,13 +2640,13 @@
       "naze": "キツネや とりから みを まもる ためです。",
       "sumika": "にほんでは、とても たかい 山の 上。木が はえない、いわと くさの ところに すんで います。",
       "size": "37cm ぐらい。ニワトリより 小さいぐらいです。",
-      "tabemono": "くさの めや は、み、花を たべます。",
+      "tabemono": "くさの めや はっぱ、み、花を たべます。",
       "itsu": "いちねんじゅう 山に います。ふゆは、すこし 下の 木が はえる あたりまで おりて きます。",
       "nakama": "とりの なかま（キジの なかま）",
       "karada": "ふゆは 足の うらまで はねが はえて、ゆきの 上を しずまないで あるけます。オスは 目の 上が あかく なります。",
       "motto": [
         "ふゆは まっ白、なつは ちゃいろと くろの まだら。はねは 1ねんに 3かいも かわります。",
-        "人を あまり こわがらないので、すぐ そばで 見られる ことが あります。",
+        "ライチョウは、くにの きまりで とくべつに まもられて いる 生きものです。見つけても そばへ よらないで、はなれた ところから 見ます。",
         "にほんの ライチョウは、せかいで いちばん みなみに すむ ライチョウです。"
       ],
       "sources": [
@@ -2655,15 +2695,15 @@
         "https://www.pref.ishikawa.lg.jp/kisya/h28/documents/0420furekou.pdf"
       ],
       "photo": {
-        "by": "Jongsun Lee",
+        "by": "Kimberly Emerson / U.S. Fish and Wildlife Service",
         "caption": "ゆきの 上に じっと して いる シロフクロウ",
-        "commonsFile": "File:Snowy Owl (240866707).jpeg",
+        "commonsFile": "File:Snowy owl (53625561759).jpg",
         "file": "shirofukurou.jpg",
-        "h": 549,
-        "license": "CC BY 3.0",
-        "source": "https://commons.wikimedia.org/wiki/File%3ASnowy_Owl_%28240866707%29.jpeg",
+        "h": 675,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Snowy_owl_(53625561759).jpg",
         "w": 900,
-        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -2734,11 +2774,12 @@
       ],
       "photo": {
         "by": "NadezhdaKhaustova",
-        "caption": "ゆきの のこる 石の ところに いる、ふゆげの ユキウサギ",
+        "caption": "ふゆげの まっ白な ユキウサギ。ゆきの とけた ところでは 目だちます",
         "commonsFile": "File:Заяц-беляк.jpg",
         "file": "yukiusagi.jpg",
         "h": 600,
         "license": "CC BY-SA 4.0",
+        "notHiding": true,
         "source": "https://commons.wikimedia.org/wiki/File%3A%D0%97%D0%B0%D1%8F%D1%86-%D0%B1%D0%B5%D0%BB%D1%8F%D0%BA.jpg",
         "w": 900,
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"

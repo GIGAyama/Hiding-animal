@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ネットが つながって いません｜しぜんの かくれんぼ ずかん</title>
+<!-- ⚠️ この ページは、本体が まだ 控えに 入って いない ときに 出る もの。
+     だから JavaScript も、外から 読む ものも、1 つも つかわない。
+     ⚠️ ここも 子どもが 読む。つかう 漢字は カードと 同じ 41 字。 -->
+<style>
+  :root { color-scheme: light; }
+  body {
+    margin: 0;
+    padding: calc(40px + env(safe-area-inset-top)) calc(20px + env(safe-area-inset-right))
+             calc(40px + env(safe-area-inset-bottom)) calc(20px + env(safe-area-inset-left));
+    background: #eef4f2; color: #1d2b2f; line-height: 1.9;
+    font-family: "Hiragino Maru Gothic ProN", "BIZ UDPGothic", "Yu Gothic", system-ui, sans-serif;
+    font-size: clamp(1rem, 0.9rem + 0.6vw, 1.25rem);
+  }
+  .box {
+    max-width: 34rem; margin: 0 auto; background: #fff; border: 3px solid #cfdcd8;
+    border-radius: 18px; padding: 24px 20px;
+  }
+  h1 { font-size: clamp(1.25rem, 1.1rem + 1vw, 1.75rem); margin: 0 0 10px; color: #17654a; }
+  p { margin: 10px 0; }
+  a {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 48px; min-width: 48px; padding: 6px 20px; margin-top: 14px;
+    border: 3px solid #1f7a5a; border-radius: 12px;
+    background: #1f7a5a; color: #fff; font-weight: 800; text-decoration: none;
+  }
+  @media (forced-colors: active) { a { border: 3px solid ButtonText; } }
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>ネットが つながって いません</h1>
+  <p>「しぜんの かくれんぼ ずかん」を まだ いちども ひらいて いない ときは、
+  ネットに つないでから ひらいて ください。</p>
+  <p>いちど ひらいた あとなら、つぎからは ネットが なくても ひらきます。</p>
+  <a href="./">もういちど ひらく</a>
+</div>
+</body>
+</html>

@@ -188,12 +188,17 @@
     placeBox.textContent = '';
     kindBox.textContent = '';
 
+    /* ⚠️ 「ぜんぶ」は 0 ひきでも おせなく しない。
+       2026-11-09 に 実機で ためしたら、ばしょを えらんでから どの 生きものにも
+       当たらない 字を 打つと、おしらせ文が 指す その「ぜんぶ」まで おせなく なり、
+       ツールバー 17 個の うち おせるのは いま えらんで いる 2 個だけ、
+       という 行き止まりに なった。 */
     [{ key: 'all', label: 'ぜんぶ' }].concat(DATA.places).forEach(function (p) {
       var n = countFor('place', p.key);
       placeBox.appendChild(el('button', {
         class: 'tab' + (n === 0 ? ' is-empty' : ''),
         type: 'button',
-        disabled: n === 0 && state.place !== p.key ? '' : null,
+        disabled: n === 0 && p.key !== 'all' && state.place !== p.key ? '' : null,
         'aria-pressed': state.place === p.key ? 'true' : 'false',
         onclick: function () { state.place = p.key; render(); },
       }, [
@@ -208,7 +213,7 @@
       kindBox.appendChild(el('button', {
         class: 'tab' + (n === 0 ? ' is-empty' : ''),
         type: 'button',
-        disabled: n === 0 && state.kind !== k.key ? '' : null,
+        disabled: n === 0 && k.key !== 'all' && state.kind !== k.key ? '' : null,
         'aria-pressed': state.kind === k.key ? 'true' : 'false',
         onclick: function () { state.kind = k.key; render(); },
       }, [
@@ -225,10 +230,29 @@
     if (photo.file) {
       shot.appendChild(el('img', {
         src: './photos/' + photo.file,
-        alt: animal.name + 'の しゃしん',
+        /* ⚠️ 「なまえを かくす」の あいだは alt に 名まえを 入れない。
+           ① 読み上げを つかう 子は、alt から 名まえを そのまま 聞いて
+              しまう（見た目だけ かくしても 答えが 耳に 入る）。
+           ② 写真が まだ 控えに 入って いない ところを オフラインで
+              ひらくと、こわれた 画像の かわりに alt の 字が 画面に 出る。
+              その 字が 答えそのものに なって いた（2026-11-09 に 実測）。 */
+        alt: state.quiz ? 'かくれて いる 生きものの しゃしん' : animal.name + 'の しゃしん',
         loading: 'lazy', decoding: 'async',
         width: String(photo.w || 800), height: String(photo.h || 600),
       }));
+      /* ⚠️ かくれて いない しゃしんの しるしは、一らんにも 出す こと。
+         くわしい ページの 中だけに 出して いた あいだ、for-teachers.html は
+         「この 行が 出て いない カードを えらんで ください」と 書いて
+         いたのに、先生が 見る 一らんには その 行が どこにも 無かった。
+         76 まいの うち 17 まいが これに あたるので、1 まいずつ ひらいて
+         たしかめる ことに なって いた。
+         ⚠️ 「なまえを かくす」の あいだも かくさない。名まえは 出さないが、
+            「これは かくれて いない しゃしんだ」と わかる ことは、
+            しゃしんだけを 見て 話しあう 活動の じゃまに ならない。
+            むしろ かくれて いない ものを さがさせないで すむ。 */
+      if (photo.notHiding) {
+        shot.appendChild(el('span', { class: 'nothide', text: 'かくれて いない' }));
+      }
     }
     return el('button', {
       class: 'card', type: 'button',
@@ -236,7 +260,11 @@
     }, [
       shot,
       el('span', { class: 'cap' }, [
-        el('span', { class: 'nm', text: animal.name }),
+        /* ⚠️ 名まえは CSS で ぬりつぶすだけでは かくれない。
+           読み上げは 字を そのまま 読むので、画面では かくれて いるのに
+           耳には 名まえが 入る。字そのものを 「？」に 入れかえる。
+           （だから 「なまえを かくす」を おしたら 描きなおしが 要る。） */
+        el('span', { class: 'nm', text: state.quiz ? '？' : animal.name }),
         el('span', { class: 'sub', text: labelOf(DATA.places, animal.place) + '／' + labelOf(DATA.kinds, animal.kind) }),
       ]),
     ]);
@@ -410,21 +438,51 @@
 
     if (typeof sheet.showModal === 'function') sheet.showModal();
     else sheet.setAttribute('open', '');
+    /* ⚠️ 紙の ための しるし。カードを ひらかないで いんさつした ときだけ
+       .print-hint を 出す（style.css）。 */
+    document.body.classList.add('is-sheet-open');
     sheet.scrollTop = 0;
     openId = a.id;
-    var kept = restore();
-    /* ⚠️ 「名まえが 空なら 入れる」だけでは だめ。見る だけで
-       refreshPreview() が 名まえを localStorage へ 書くので、2 ひき目からは
-       空に ならず、ヒラメの カードを 見た あと モクズショイを ひらくと
-       「ヒラメが、…に かくれて います。」の まま 紙に 出る。
-       下書きが べつの ひきの ものだったら、名まえだけ 入れかえる。 */
-    if (!kept || kept.id !== a.id || !fields.name.value.trim()) fields.name.value = a.name;
+    /* ⚠️ もどすのは **この 生きものの** 下書きだけ。
+       ほかの ひきの ①②③ を 持ちこむと、1 字も 打って いない 子の 画面に
+       できあがった 文が 出て、そのまま 紙に 出る。 */
+    var kept = restore(a.id);
+    /* 名まえは、この ひきの 下書きが 無い ときだけ 入れる。
+       下書きが あれば、子どもが 自分で しらべた 生きものの 名まえを
+       書いて いる ことが あるので 上書きしない。 */
+    if (!kept) fields.name.value = a.name;
     refreshPreview();
   }
 
   /* ── 文を かく（ページの 中に ある）──────────────────── */
 
-  var STORE = 'kakurenbo-bun-v1';
+  /* 下書きは **生きものごと**に 持つ。
+     ⚠️ 1 本の 下書きを みんなで つかいまわしては いけない。
+        2026-11-09 に 実機で ためしたら、A さんが ヒラメで 文を 書いて
+        「とじる」を おしただけで、B さんが モクズショイの カードを ひらくと
+        1 字も 打って いないのに ①②③ が そろって 出て、そのまま
+        いんさつ できて しまった（A さんの 下書きも 消えて いた）。
+        おなじ しくみで、おてほんの「おわりの ことば」も 2 ひき目から
+        そろわなく なって いた（②の らんが 空に ならないため）。
+     ⚠️ v1 の かたちとは 中みが ちがうので 鍵を v2 に した。
+        v1 は 読まない（読むと 前の 子の 文が よみがえる）。 */
+  var STORE = 'kakurenbo-bun-v2';
+  var STORE_MAX = 24;   // ためて おく 生きものの 数
+
+  function loadAll() {
+    try {
+      var v = JSON.parse(window.localStorage.getItem(STORE) || 'null');
+      if (v && v.items && typeof v.items === 'object') {
+        return { items: v.items, order: Array.isArray(v.order) ? v.order : [] };
+      }
+    } catch (e) { /* 壊れて いたら 空から */ }
+    return { items: {}, order: [] };
+  }
+
+  function saveAll(all) {
+    try { window.localStorage.setItem(STORE, JSON.stringify({ v: 2, items: all.items, order: all.order })); }
+    catch (e) { /* シークレットウィンドウなど。保存できなくても書く手は止めない */ }
+  }
 
   function field(step, id, label, howto, multiline, placeholder) {
     var input = multiline
@@ -497,7 +555,15 @@
     clear.addEventListener('click', function () {
       if (!window.confirm('かいた ぶんを ぜんぶ けしますか？')) return;
       Object.keys(fields).forEach(function (k) { fields[k].value = ''; });
+      setBodyEnd('motsu');
+      /* この ひきの 下書きも 消す。欄を 空に しただけだと、
+         とじて ひらきなおした ときに もどって くる。 */
+      var all = loadAll();
+      delete all.items[openId];
+      all.order = all.order.filter(function (k) { return k !== openId; });
+      saveAll(all);
       refreshPreview();
+      fields.name.value = a.name;
       fields.name.focus();
     });
     tools.appendChild(clear);
@@ -571,7 +637,6 @@
       body: fields.body.value.trim(),
       how: fields.how.value.trim(),
       end: bodyEnd,
-      id: openId,
     };
   }
 
@@ -599,23 +664,30 @@
     composed().split('\n').forEach(function (line, i) {
       box.appendChild(el('p', { class: 'preview-line', 'data-n': String(i + 1), text: line }));
     });
-    try { window.localStorage.setItem(STORE, JSON.stringify(fieldValues())); }
-    catch (e) { /* シークレットウィンドウなど。保存できなくても書く手は止めない */ }
+    commitDraft();
   }
 
-  /** 下書きを もどす。もどした ものを 返す（どの ひきの ものかを 見るため）。 */
-  function restore() {
-    try {
-      var raw = window.localStorage.getItem(STORE);
-      if (!raw) return null;
-      var v = JSON.parse(raw);
-      ['name', 'place', 'body', 'how'].forEach(function (k) {
-        if (typeof v[k] === 'string' && fields[k]) fields[k].value = v[k];
-      });
-      if (v.end === 'motsu' || v.end === 'dekiru') setBodyEnd(v.end);
-      return v;
-    } catch (e) { /* 壊れていたら、だまって空から始める */ }
-    return null;
+  /** いま ひらいて いる 生きものの 下書きを たしかに のこす。 */
+  function commitDraft() {
+    if (!openId || !fields.name) return;
+    var all = loadAll();
+    all.items[openId] = fieldValues();
+    all.order = all.order.filter(function (k) { return k !== openId; });
+    all.order.push(openId);
+    while (all.order.length > STORE_MAX) delete all.items[all.order.shift()];
+    saveAll(all);
+  }
+
+  /** その 生きものの 下書きを もどす。無ければ 空の ままに する。
+      ⚠️ ほかの 生きものの 下書きを 入れない こと。 */
+  function restore(id) {
+    var v = loadAll().items[id];
+    if (!v) { setBodyEnd('motsu'); return null; }
+    ['name', 'place', 'body', 'how'].forEach(function (k) {
+      if (typeof v[k] === 'string' && fields[k]) fields[k].value = v[k];
+    });
+    setBodyEnd(v.end === 'dekiru' ? 'dekiru' : 'motsu');
+    return v;
   }
 
   function copyText(text, button) {
@@ -642,7 +714,7 @@
     ta.value = text;
     ta.setAttribute('readonly', '');
     ta.setAttribute('aria-hidden', 'true');
-    ta.style.cssText = 'position:fixed;top:-1000px;left:0;opacity:0';
+    ta.className = 'copy-helper';   /* ⚠️ style 属性は CSP の style-src で 止まる */
     host.appendChild(ta);
     ta.select();
     ta.setSelectionRange(0, text.length);
@@ -653,16 +725,31 @@
     flash(button, ok ? 'コピーしました' : 'コピーできません。ゆびで なぞって うつして ください');
   }
 
+  /* ⚠️ 前の timeout を 止め、もどす 字は ボタンごとに 覚える こと。
+     止めないと、1400ms の うちに 2 回 おしたとき 2 回目が 覚える 字が
+     1 回目の おしらせ文に なり、ボタンの 字が もとに もどらない。
+     ボタンごとに しないと、べつの ボタンの 字に なる。 */
   function flash(button, message) {
     if (!button) return;
-    var back = button.textContent;
+    if (button._flashTimer) clearTimeout(button._flashTimer);
+    else button._flashBase = button.textContent;
     button.textContent = message;
-    window.setTimeout(function () { button.textContent = back; }, 1400);
+    button._flashTimer = setTimeout(function () {
+      button.textContent = button._flashBase;
+      button._flashTimer = null;
+    }, 1400);
   }
 
   /* ── フッターのリンク ─────────────────────────────────
      giga-app-links.js は <slug>.giga-school.com でだけ出る。そうでない
      置き場では りようきやくへ たどりつけなくなるので、相対リンクを残す。 */
+  /* giga-school.com では、りようきやく・こじんじょうほうは
+     giga-app-links.js が 艦隊 共通の ものを 出しなおす。
+     ⚠️ かくすのは #local-links（りようきやくと こじんじょうほう）だけ。
+        「しゃしんの 出どころ」を ここに 入れない こと。あちらは
+        manual / terms / privacy の 3 つしか 持って いないので、
+        いっしょに かくすと 出どころへ 行ける 道が 1 本も なく なる。
+        CC BY / CC BY-SA は 作者と ライセンスを 出すのが 条件。 */
   function tidyFooterLinks() {
     if (/\.giga-school\.com$/.test(window.location.hostname)) {
       var own = document.getElementById('local-links');
@@ -680,7 +767,7 @@
       render();
     });
 
-    /* にほんに いない 生きものは 75 ひきの うち 14 ひき。
+    /* にほんに いない 生きものは 76 ひきの うち 14 ひき。
        ⚠️ 実物を さがす 活動と あわせる とき、5 ひきに 1 ひきは
           日本では 見つからない。先生が えらぶ ときの ための ボタン。 */
     var jp = document.getElementById('jp-toggle');
@@ -697,7 +784,24 @@
       document.body.classList.toggle('is-quiz', state.quiz);
       quiz.setAttribute('aria-pressed', state.quiz ? 'true' : 'false');
       quiz.textContent = state.quiz ? 'なまえを 出す' : 'なまえを かくす';
+      /* ⚠️ 描きなおしが 要る。名まえと alt の 字そのものを 入れかえる ので、
+         クラスを つけかえる だけでは 読み上げに 名まえが のこる。 */
+      render();
     });
+
+    /* 1 だいを じゅんばんに つかう ときの「ぜんぶ けす」。
+       ⚠️ カードの 中の「ぜんぶ けす」は その 1 ひきぶんだけ。
+          2 人目の 子が おなじ カードを ひらくと 1 人目の 文が 出る ので、
+          たんまつに のこって いる ぶんを まとめて 消す 道が 要る。 */
+    var wipe = document.getElementById('wipe-drafts');
+    if (wipe) {
+      wipe.addEventListener('click', function () {
+        if (!window.confirm('この たんまつに かいた ぶんを ぜんぶ けしますか？\nけすと もどせません。')) return;
+        try { window.localStorage.removeItem(STORE); } catch (e) { /* つかえない 端末 */ }
+        if (sheet.open && state.current) openSheet(state.current);   // いま ひらいて いる らんも 空に
+        flash(wipe, 'けしました');
+      });
+    }
 
     document.getElementById('sheet-close').addEventListener('click', function () {
       if (typeof sheet.close === 'function') sheet.close(); else sheet.removeAttribute('open');
@@ -706,6 +810,7 @@
        いんさつした つもりで さっきの カードが 紙に 出る。 */
     sheet.addEventListener('close', function () {
       speech.stop();
+      document.body.classList.remove('is-sheet-open');
       var body = document.getElementById('sheet-body');
       if (body) body.textContent = '';
       document.getElementById('sheet-title').textContent = '';
@@ -714,10 +819,27 @@
 
     tidyFooterLinks();
 
+    /* ⚠️ Chromebook は メモリが たりなく なると、ひらいて いる タブを
+       だまって すてる。そのとき 'unload' は 来ない ことが あるので、
+       'pagehide' で 下書きを たしかめて おく。
+       入力の たびにも のこして いるが、ここは その 最後の とりで。
+       （GIGA Standard v5 の C_PAGEHIDE） */
+    window.addEventListener('pagehide', function () { commitDraft(); });
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') commitDraft();
+    });
+
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
+      var reg = function () {
         navigator.serviceWorker.register('./sw.js').catch(function () { /* 入らなくても画面は動く */ });
-      });
+      };
+      /* ⚠️ load が もう 済んで いる ときの 道を 書く。app.js は defer では
+         ないが、SW の 控えから 出た ときなど、ここに 来た ときには すでに
+         'load' が 終わって いる ことが ある。その ときに addEventListener
+         だけだと、二度と 呼ばれず **だまって 登録されない**。
+         （GIGA Standard v5 の E_SW_REGISTER_READYSTATE） */
+      if (document.readyState === 'complete') reg();
+      else window.addEventListener('load', reg);
     }
   }
 

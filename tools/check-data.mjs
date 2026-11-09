@@ -70,6 +70,12 @@ export const LICENSES = JSON.parse(
       2026-11-09 に 「Stefan.Kuemmel ( )」「Koolah ( talk )」「:ja:user:Dieno」
       の 3 件が 画面に 出て いた。作者を 出すのが 条件の 写真で、その
       名まえが こわれて いる のは 条件を みたして いない のと 同じ。 */
+/* 写真に 書いて よい 項目。ここに 無い 鍵は つづりちがいと して 落とす。 */
+const PHOTO_FIELDS = new Set([
+  'file', 'w', 'h', 'by', 'license', 'licenseUrl', 'source', 'commonsFile',
+  'caption', 'notHiding',
+]);
+
 const BY_JUNK = [
   { re: /\(\s*\)/, why: '中みの ない かっこ' },
   { re: /\(\s*talk\s*\)/i, why: 'しょめいテンプレートの のこり（talk）' },
@@ -79,7 +85,15 @@ const BY_JUNK = [
   { re: /^\s*(self|own work|assumed)\s*$/i, why: '人の 名まえでは ない' },
 ];
 
-/* 1年生の 9 月までに 出会う 漢字だけ。それ以外は ひらがなで 書く。 */
+/* 1年生の 9 月までに 出会う 漢字だけ。それ以外は ひらがなで 書く。
+   ⚠️ **この 41 字を 増やさない こと。** ここに 1 字 足すだけで、
+      子どもの 画面に その 字が 出せるように なる（check-data.mjs も
+      check-text.mjs も ここを 見て いる）。2026-11-09 に ためしたら、
+      「魚虫鳥」を 足して 子ども向けの 欄に 出しても、検査 8 本と
+      単体テストは ぜんぶ 緑の ままだった。
+      いまは tools/check-data.test.mjs が この 41 字を そのまま
+      持って いて、ずれたら 落ちる。学年が 上がって 字を 足したい
+      ときは、あちらも いっしょに 直す（＝1 人では 直せなく する）。 */
 export const OK_KANJI = new Set([...'大小上下中手足木花水土石目口白赤青見日月人火気生出入子女男山川田左右先名早車空林森']);
 
 export function problemsIn(DATA, { photoExists = () => true } = {}) {
@@ -185,7 +199,9 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
     else if (!L) {
       add(id, `つかえない ライセンスです: ${p.license}（content/licenses.json に 無い）`);
     } else {
-      if (L.attribution && !p.by) {
+      /* ⚠️ `!p.by` だけで 見ない こと。すきま 1 つ（半角・全角・NBSP）は
+         真なので 通って しまい、作者の らんが 空白の まま 出る。 */
+      if (L.attribution && !String(p.by || '').replace(/[\s\u00a0\u3000]/g, '')) {
         add(id, `${p.license} は 作者を 出すのが きまりです（photo.by がありません）`);
       }
       if (!p.licenseUrl) add(id, `${p.license} の 本文の URL が ありません（licenses.json から 入ります）`);
@@ -200,6 +216,12 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
     if (p.notHiding !== undefined && typeof p.notHiding !== 'boolean') {
       add(id, 'photo.notHiding は true か false だけに して ください');
     }
+    /* ⚠️ 知らない 鍵を 黙って 通さない こと。`notHidding` と 1 字 まちがえても
+       build-animals は そのまま 配信物へ 写すので、画面には 何も 出ないのに
+       検査は 緑の まま 通る（2026-11-09 に 実測）。 */
+    for (const k of Object.keys(p)) {
+      if (!PHOTO_FIELDS.has(k)) add(id, `写真に 知らない 項目が あります: ${k}（つづりちがいでは？）`);
+    }
     if (!p.source || !/^https:\/\/(commons\.wikimedia\.org|upload\.wikimedia\.org)/.test(p.source)) {
       add(id, '写真の 出どころ（Wikimedia Commons の ページ）が ありません');
     }
@@ -210,11 +232,31 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
         ⚠️ かくれかたにも 同じ 下限を かける。ばしょだけに かけて いた あいだ、
            「ひかりを つかう」と「すきとおる」が 2 ひきずつ しか なかった。
            1クラス 30 人が そこを えらぶと、2 ひきを とりあう ことに なる。 */
-  for (const [what, list, key] of [['ばしょ', DATA.places, 'place'],
-                                   ['かくれかた', DATA.kinds, 'kind']]) {
+  /* ⚠️ 「にほんの 生きものだけ」を おした ときの 数も 見る。
+     先生へページは 実物を さがす 活動の ときに その ボタンを おすように
+     すすめて いる。2026-11-09 まで 75 ひき ぜんぶで 数えて いたので、
+     おすと さばく 7 → 2、すきとおる 4 → 3 に 落ちるのに 緑の まま 通って いた。
+
+     下限を 分けて いるのは、ゆるめる ためでは なく、ばしょと かくれかたで
+     意味が ちがう から:
+       ・かくれかた は 子どもが **書く 題材を えらぶ** ための タブ。
+         にほんの 生きものだけに しても 4 ひき えらべる 必要が ある。
+       ・ばしょ の「さばく」は、にほんに 無い 場しょ。そこを 4 ひきに するには
+         いない 生きものを にほんに いる ことに するしか ない。
+         タブが からっぽに ならない 下限（2 ひき）で 見る。 */
+  for (const [what, list, key, jpFloor] of [['ばしょ', DATA.places, 'place', 2],
+                                            ['かくれかた', DATA.kinds, 'kind', 4]]) {
     for (const p of list || []) {
-      const n = DATA.animals.filter((a) => a[key] === p.key).length;
-      if (n < 4) bad.push(`${what}「${p.label}」が ${n} ひきしか ありません（4 ひき以上に して ください）`);
+      const all = DATA.animals.filter((a) => a[key] === p.key);
+      if (all.length < 4) {
+        bad.push(`${what}「${p.label}」が ${all.length} ひきしか ありません（4 ひき以上に して ください）`);
+        continue;
+      }
+      const jp = all.filter((a) => a.inJapan).length;
+      if (jp < jpFloor) {
+        bad.push(`${what}「${p.label}」が、にほんの 生きものだけに すると ${jp} ひきしか`
+          + ` のこりません（${jpFloor} ひき以上に して ください。いまは ぜんぶで ${all.length} ひき）`);
+      }
     }
   }
 
