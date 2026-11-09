@@ -138,6 +138,11 @@ main { max-width: 1180px; margin: 0 auto; padding: 8px 12px 48px; }
 
 /* なまえを かくす（クイズに する） */
 body.is-quiz .card .nm { background: var(--ink-soft); color: transparent; border-radius: 6px; user-select: none; }
+/* ⚠️ .sub（ばしょ／かくれかた）も いっしょに かくす。
+      for-teachers.html が すすめる はじめの 活動は「しゃしんだけを 見て
+      『どこに かくれて いるか』『なぜ 見つかりにくいか』を 話しあう」もの。
+      名まえの すぐ 下に その 2 つの 答えが 出て いたら 話しあいに ならない。 */
+body.is-quiz .card .sub { visibility: hidden; }
 body.is-quiz .card .nm::after { content: "？"; color: #fff; }
 
 .empty { padding: 40px 16px; text-align: center; color: var(--ink-soft); font-size: 17px; }
@@ -155,7 +160,7 @@ dialog.sheet::backdrop { background: rgba(14, 30, 26, .55); }
   position: sticky; top: 0; z-index: 2; background: var(--s-name); color: #fff;
   padding: 10px 14px; display: flex; align-items: center; gap: 10px;
 }
-.sheet-head h2 { margin: 0; font-size: 20px; letter-spacing: .04em; }
+.sheet-head h2 { margin: 0; font-size: 20px; letter-spacing: .04em; min-height: 28px; }
 .sheet-head .close {
   margin-left: auto; flex: none; min-height: var(--tap); min-width: var(--tap);
   padding: 6px 16px; border-radius: 12px; border: 2px solid #fff; background: #fff;
@@ -187,6 +192,11 @@ dialog.sheet::backdrop { background: rgba(14, 30, 26, .55); }
   display: inline-flex; align-items: center;
   min-height: var(--tap); padding: 0 4px;
 }
+/* ライセンスの つなぎと Commons の つなぎの あいだの あき。
+   ⚠️ ここを 全角スペース（U+3000）で 空けない。分かち書きの
+      すきまは ぜんぶ 半角で そろえて ある（tools/check-data.mjs が
+      data/ 側を 見張って いる）。 */
+.credit a + a { margin-left: 10px; }
 
 h3.sec { font-size: 15px; margin: 18px 0 6px; color: var(--accent); letter-spacing: .06em; }
 
@@ -307,11 +317,14 @@ footer.site { border-top: 2px solid var(--line); background: #fff; padding: 18px
         もとの きまりで margin:auto を 持って いて、いんさつの ときも
         のこる。2026-11-08 に はかったら 上に 208px（およそ 55mm）の
         あきが できて、カードが 紙の 5 分の 1 ほど 下から 始まって いた。 */
-  dialog.sheet {
+  /* ⚠️ [open] を 付ける ことを 忘れない。作者の CSS は ブラウザの
+        もとの きまり（dialog:not([open]) { display:none }）より つよいので、
+        付けないと とじた あとの カードまで 紙に 出る。 */
+  dialog.sheet[open] {
     position: static; display: block; box-shadow: none;
     max-height: none; width: auto; margin: 0 !important; border: 0;
   }
-  dialog.sheet::backdrop { display: none; }
+  dialog.sheet[open]::backdrop { display: none; }
   .sheet-body { padding: 0; }
   .writer { border-top: 0; margin-top: 0; padding-top: 0; }
   body { background: #fff; }
@@ -326,6 +339,19 @@ footer.site { border-top: 2px solid var(--line); background: #fff; padding: 18px
      およそ 150mm のこる。小さいと 絵が かきにくい。 */
   .draw-box { display: block; margin-top: 6mm; border: 2px solid #000; border-radius: 8px; height: 150mm; position: relative; }
   .draw-box span { position: absolute; top: 3mm; left: 4mm; font-size: 11pt; font-weight: 800; }
+
+  /* 読みもの の ページ（先生へ・きやく・こじんじょうほう・写真の 出どころ）。
+     ⚠️ 題は header.site の 中に ある。上の きまりで header.site を
+        消して いるので、ここで もどさないと 題の ない 紙が 出る。
+        「← ずかんに もどる」は おせない ボタンなので 紙には 出さない。 */
+  body.doc-page header.site {
+    display: block !important;
+    background: none; color: #000; padding: 0 0 4mm;
+    border-bottom: 2px solid #000;
+  }
+  body.doc-page header.site h1 { font-size: 16pt; }
+  body.doc-page .back { display: none !important; }
+  body.doc-page .doc { max-width: none; padding: 0; }
 
   @page { margin: 12mm; }
 }

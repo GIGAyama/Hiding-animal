@@ -39,24 +39,48 @@ export function loadWindowFile(relPath, root = ROOT) {
   return win;
 }
 
+/* ⚠️ わくの かたちを ここで しめて おく。
+      app.js の samplePieces() は、おてほんを 見せる ときに
+      この わく（あたまの「〇〇が、」「〇〇は、」と、おわりの ことば）を
+      ちょうど この 字で はずして、中みだけを らんの 下に 出す。
+      1 ひきでも わくから 外れると、その ひきだけ おてほんが
+      文 まるごとに なり、うつした 子の ぶんが 二重に なる。
+      ゆるい 判定（'います。' だけ 見る など）に 戻さない こと。 */
 const RULES = [
-  { key: 'placeS', name: '①どこに', ends: ['かくれて います。', 'かくれて いるのです。'] },
-  { key: 'bodyS',  name: '②からだの とくちょう', ends: ['います。', 'できます。', 'あります。'] },
-  { key: 'howS',   name: '③どのように かくれるか', ends: ['かくれます。', 'かくれるのです。'] },
+  { key: 'placeS', name: '①どこに', ends: ['に かくれて います。'] },
+  { key: 'bodyS',  name: '②からだの とくちょう', ends: ['を もって います。', 'ことが できます。'] },
+  { key: 'howS',   name: '③どのように かくれるか', ends: ['かくれます。'] },
 ];
 
-/* 再利用して よい ライセンス。ここに 無い ものは 使わない。
-   ⚠️ 「ならべて はじく」書き方に しないこと。知らない ライセンスが
-      増えたとき、黙って 通る側へ 倒れる。 */
-const OK_LICENSE = [
-  'cc0', 'cc by', 'cc by-sa', 'public domain', 'pd', 'gfdl', 'attribution',
-];
+/* 再利用して よい ライセンスの 正本は content/licenses.json。
+   名まえ ぴったりで 見る（ばんごうまで ふくめて）。
+   ⚠️ あたまの もじ あわせ（startsWith）に 戻さない こと。
+      "CC BY-SA 2.0 de" は CC BY-SA 2.0 とは べつの ライセンスなのに、
+      あたま あわせだと 同じ ものとして 通る。2026-11-09 まで そう なって
+      いて、ドイツ版の 条件を 本家の 条件として 出して いた。
+   ⚠️ GFDL は ここに 入れない。GFDL は「ライセンスの 全文を いっしょに
+      くばる」のが 条件で、この repo に 全文は 入って いない。
+      入れたい ときは まず 全文を 置く。 */
+export const LICENSES = JSON.parse(
+  readFileSync(new URL('content/licenses.json', ROOT), 'utf8'),
+);
 
-/* 作者を 書かなくて よい もの（権利を はなした もの）。それ以外は 必須。 */
-const NO_ATTRIBUTION_NEEDED = ['cc0', 'public domain', 'pd'];
+/* 作者の 欄に まざって いたら 落とす もの。
+   ⚠️ どれも Commons の テンプレートの のこりかすで、人の 名まえでは ない。
+      2026-11-09 に 「Stefan.Kuemmel ( )」「Koolah ( talk )」「:ja:user:Dieno」
+      の 3 件が 画面に 出て いた。作者を 出すのが 条件の 写真で、その
+      名まえが こわれて いる のは 条件を みたして いない のと 同じ。 */
+const BY_JUNK = [
+  { re: /\(\s*\)/, why: '中みの ない かっこ' },
+  { re: /\(\s*talk\s*\)/i, why: 'しょめいテンプレートの のこり（talk）' },
+  { re: /\buser\s*:/i, why: 'ウィキの つなぎ（user:）' },
+  { re: /\[\[|\]\]/, why: 'ウィキの かっこ' },
+  { re: /[<>]/, why: 'HTML の のこり' },
+  { re: /^\s*(self|own work|assumed)\s*$/i, why: '人の 名まえでは ない' },
+];
 
 /* 1年生の 9 月までに 出会う 漢字だけ。それ以外は ひらがなで 書く。 */
-const OK_KANJI = new Set([...'大小上下中手足木花水土石目口白赤青見日月人火気生出入子女男山川田左右先名早車空林森']);
+export const OK_KANJI = new Set([...'大小上下中手足木花水土石目口白赤青見日月人火気生出入子女男山川田左右先名早車空林森']);
 
 export function problemsIn(DATA, { photoExists = () => true } = {}) {
   const bad = [];
@@ -75,7 +99,7 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
 
     for (const f of ['id', 'name', 'yomi', 'place', 'kind', 'placeS', 'bodyS', 'howS',
                      'naze', 'sumika', 'size', 'tabemono', 'itsu', 'nakama', 'karada',
-                     'motto', 'photo']) {
+                     'motto', 'sources', 'photo']) {
       if (a[f] === undefined || a[f] === null || a[f] === '') add(id, `${f} がありません`);
     }
     if (!a.id) continue;
@@ -86,8 +110,14 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
     if (!placeKeys.has(a.place)) add(id, `place "${a.place}" が places の一覧にありません`);
     if (!kindKeys.has(a.kind)) add(id, `kind "${a.kind}" が kinds の一覧にありません`);
 
-    const texts = [a.placeS, a.bodyS, a.howS, a.naze, a.sumika, a.tabemono,
-                   a.itsu, a.nakama, a.karada, ...(a.motto || [])].filter(Boolean);
+    /* ⚠️ 画面に 出る 欄を 1 つ でも 外さない。
+          size は くわしい ページの 表に かならず 出る 欄で、
+          photo.caption は 写真の alt（読み上げに のる）。
+          2026-11-09 まで この 2 つが 漢字検査の 外に あり、
+          「体長」「全長」と 書いても 黙って 通る 形に なって いた。 */
+    const texts = [a.placeS, a.bodyS, a.howS, a.naze, a.sumika, a.size, a.tabemono,
+                   a.itsu, a.nakama, a.karada, (a.photo || {}).caption,
+                   ...(a.motto || [])].filter(Boolean);
     const all = texts.join('');
 
     /* 2. こたえの 3 文 */
@@ -124,6 +154,19 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
 
     if (Array.isArray(a.motto) && a.motto.length < 2) add(id, 'motto（もっと しりたい）が 2つ ありません');
 
+    /* 出どころは 2 つ 以上。
+       ⚠️ README.md と for-teachers.html と terms.html の 3 か所が
+          「数は、2 つ以上の 出どころで そろった ものだけ」と 読む 人に
+          約束して いる。1 つしか 無い カードでは、その 約束が 果たせない。
+          2026-11-09 に 数えたら 5 ひきが 1 つだけ で、しかも 5 ひき とも
+          数を のせて いた。 */
+    if (!Array.isArray(a.sources) || a.sources.length < 2) {
+      add(id, `しらべた もとが ${(a.sources || []).length} つ しか ありません（2 つ 以上に して ください）`);
+    }
+    for (const u of a.sources || []) {
+      if (!/^https:\/\//.test(String(u))) add(id, `しらべた もとは https:// から 始めて ください → ${u}`);
+    }
+
     /* 3. 学年の 漢字 */
     const ng = [...new Set([...all].filter((c) => /[一-鿿]/.test(c) && !OK_KANJI.has(c)))];
     if (ng.length) add(id, `1年生に むずかしい 漢字が あります: ${ng.join(' ')}`);
@@ -137,12 +180,19 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
     const p = a.photo || {};
     if (!p.file) add(id, '写真の ファイル名が ありません');
     else if (!photoExists(p.file)) add(id, `写真 photos/${p.file} が 見つかりません`);
-    const lic = String(p.license || '').toLowerCase();
-    if (!lic) add(id, '写真の ライセンスが 書かれて いません');
-    else if (!OK_LICENSE.some((k) => lic.startsWith(k))) {
-      add(id, `つかえない ライセンスです: ${p.license}`);
-    } else if (!NO_ATTRIBUTION_NEEDED.some((k) => lic.startsWith(k)) && !p.by) {
-      add(id, `${p.license} は 作者を 出すのが きまりです（photo.by がありません）`);
+    const L = LICENSES[p.license];
+    if (!p.license) add(id, '写真の ライセンスが 書かれて いません');
+    else if (!L) {
+      add(id, `つかえない ライセンスです: ${p.license}（content/licenses.json に 無い）`);
+    } else {
+      if (L.attribution && !p.by) {
+        add(id, `${p.license} は 作者を 出すのが きまりです（photo.by がありません）`);
+      }
+      if (!p.licenseUrl) add(id, `${p.license} の 本文の URL が ありません（licenses.json から 入ります）`);
+      else if (p.licenseUrl !== L.url) add(id, `licenseUrl が licenses.json と ちがいます: ${p.licenseUrl}`);
+    }
+    for (const j of BY_JUNK) {
+      if (p.by && j.re.test(p.by)) add(id, `作者の 欄に ${j.why} が のこって います → 「${p.by}」`);
     }
     if (!p.source || !/^https:\/\/(commons\.wikimedia\.org|upload\.wikimedia\.org)/.test(p.source)) {
       add(id, '写真の 出どころ（Wikimedia Commons の ページ）が ありません');
@@ -154,6 +204,47 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
   for (const p of DATA.places || []) {
     const n = DATA.animals.filter((a) => a.place === p.key).length;
     if (n < 4) bad.push(`ばしょ「${p.label}」が ${n} ひきしか ありません（4 ひき以上に して ください）`);
+  }
+
+  /* 8. ばしょ・かくれ方の 名まえ。
+        ⚠️ ここは 子どもが 自分で おす ボタンの 字。2026-11-09 まで
+           漢字検査の 外に あり、「もぐる・かくれ家」（家 = 2年生）が
+           19 ひきぶんの ボタンと カードに 出て いた。
+           読めない 字の ボタンは 子どもが おさない。 */
+  /* 9. ばしょの 絵（glyph）。
+        ⚠️ app.js が 画面へ 入れる SVG の 中み。2026-11-09 まで
+           innerHTML で そのまま 入れて いて、どの 検査も glyph を
+           1 字も 見て いなかった。`<image href="https://…">` の 1 行で
+           一覧を ひらく たびに 外の ホストを 取りに 行く 形に なる。
+           app.js は いま ゆるす 形だけを 作りなおすが、
+           **データの 側でも 止める**（検査が 2 か所に あるのが 正しい）。 */
+  const GLYPH_TAGS = new Set(['path', 'circle', 'ellipse', 'rect', 'line', 'polyline', 'polygon', 'g']);
+  for (const p of DATA.places || []) {
+    const g = String(p.glyph || '');
+    if (!g) { bad.push(`ばしょ「${p.label}」に glyph が ありません`); continue; }
+    for (const m of g.matchAll(/<\s*\/?\s*([a-zA-Z][\w:-]*)/g)) {
+      if (!GLYPH_TAGS.has(m[1].toLowerCase())) {
+        bad.push(`ばしょ「${p.label}」の glyph に つかえない タグが あります: <${m[1]}>`);
+      }
+    }
+    if (/\b(href|xlink:href|src|srcset|style)\s*=/i.test(g)) {
+      bad.push(`ばしょ「${p.label}」の glyph に href / src / style は 書けません`);
+    }
+    if (/\bon[a-z]+\s*=/i.test(g)) {
+      bad.push(`ばしょ「${p.label}」の glyph に on… の しかけは 書けません`);
+    }
+    if (/https?:|\/\/|data:|javascript:/i.test(g)) {
+      bad.push(`ばしょ「${p.label}」の glyph に 外への つなぎが あります`);
+    }
+  }
+
+  for (const [label, list] of [['ばしょ', DATA.places], ['かくれ方', DATA.kinds]]) {
+    for (const k of list || []) {
+      const t = [k.label, k.teach].filter(Boolean).join('');
+      const ng = [...new Set([...t].filter((c) => /[一-鿿]/.test(c) && !OK_KANJI.has(c)))];
+      if (ng.length) bad.push(`${label}「${k.label}」に 1年生に むずかしい 漢字が あります: ${ng.join(' ')}`);
+      if (/　/.test(t)) bad.push(`${label}「${k.label}」に 全角の すきま（U+3000）が あります`);
+    }
   }
 
   return bad;

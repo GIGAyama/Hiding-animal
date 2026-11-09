@@ -48,6 +48,7 @@
     <div class="toolbar-row">
       <label class="skip-link" for="q">生きものを さがす</label>
       <input class="search" id="q" type="search" placeholder="生きものの 名まえで さがす" autocomplete="off">
+      <button class="btn" type="button" id="jp-toggle" aria-pressed="false">にほんの 生きものだけ</button>
       <button class="btn" type="button" id="quiz-toggle" aria-pressed="false">なまえを かくす</button>
     </div>
   </div>
@@ -57,12 +58,12 @@
 
 <main>
   <div class="grid" id="grid"></div>
-  <p class="empty" id="empty" hidden>この くみあわせの 生きものは いません。①か ②を「ぜんぶ」に もどして みて ください。</p>
+  <p class="empty" id="empty" hidden>この くみあわせの 生きものは いません。さがす ことばを けすか、①か ②を「ぜんぶ」に もどして みて ください。</p>
 </main>
 
 <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
   <div class="sheet-head">
-    <h2 id="sheet-title">　</h2>
+    <h2 id="sheet-title"></h2>
     <button class="close" type="button" id="sheet-close">とじる</button>
   </div>
   <div class="sheet-body" id="sheet-body"></div>
@@ -70,11 +71,14 @@
 
 <footer class="site">
   <div class="footer-inner">
-    <p>しぜんの かくれんぼ ずかん — 小学1年生 国語「うみのかくれんぼ」の 書く 学習のために つくりました。</p>
-    <p>文は すべて 書きおろしです。教科書の 本文は のせて いません。</p>
-    <p>写真は Wikimedia Commons の、だれでも つかえる ライセンスの ものだけを つかって います。作者と ライセンスは、それぞれの 生きものの ページに 書いて あります。</p>
-    <p><a href="./for-teachers.html">先生へ（単元の どこで つかうか）</a></p>
-    <p id="local-links"><a href="./terms.html">りようきやく</a> ・ <a href="./privacy.html">こじんじょうほうの あつかい</a> ・ <a href="./credits.html">写真の 出どころ</a></p>
+    <!-- ⚠️ ここも 1年生が 読む ところ。つかう 漢字は
+         上の カードと 同じ 41字（tools/check-text.mjs が 見張って いる）。
+         下まで ころがせば 子どもも 見るので、ここだけ 大人の 字に しない。 -->
+    <p>しぜんの かくれんぼ ずかん — 1ねんせいの こくご「うみのかくれんぼ」で、ぶんを かく ために つくりました。</p>
+    <p>ぶんは すべて かきおろしです。きょうかしょの ぶんは のせて いません。</p>
+    <p>しゃしんは Wikimedia Commons の、だれでも つかえる ライセンスの ものだけを つかって います。とった 人と ライセンスは、それぞれの 生きものの ページに かいて あります。</p>
+    <p><a href="./for-teachers.html">先生へ（たんげんの どこで つかうか）</a></p>
+    <p id="local-links"><a href="./terms.html">りようきやく</a> ・ <a href="./privacy.html">こじんじょうほうの あつかい</a> ・ <a href="./credits.html">しゃしんの 出どころ</a></p>
     <span data-giga-links data-links="terms,privacy"></span>
   </div>
 </footer>

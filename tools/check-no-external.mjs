@@ -87,6 +87,21 @@ export function loadsIn(text) {
     push(m[1].match(/\bhref\s*=\s*["']([^"']+)["']/i)?.[1], `link rel=${rel || '(なし)'}`);
   }
 
+  /* SVG の 中の 読み込み。
+     ⚠️ <a href> は 読み込みでは ない ので、素の href は 数えない。
+        数える のは SVG が 中へ 取りこむ タグ（image / use / feImage）の
+        href と、どこに あっても 取りこみに なる xlink:href だけ。
+        2026-11-09 に 実際に 試したら、`<image href="https://…">` は
+        src / srcset / link / url() / @import / importScripts の どれにも
+        当たらず、この 検査を 素通りして いた。
+        （places.json の glyph が innerHTML で 画面に 入って いた ので、
+          そこへ 1 行 足すだけで 外の ホストを 取りに 行けた。） */
+  for (const m of text.matchAll(/<\s*(image|use|feImage)\b([^>]*)>/gi)) {
+    /* (?<![-:\w]) は xlink:href を ここで 二重に 数えない ため。 */
+    push(m[2].match(/(?<![-:\w])href\s*=\s*["']([^"']+)["']/i)?.[1], `<${m[1].toLowerCase()} href>`);
+  }
+  for (const m of text.matchAll(/\bxlink:href\s*=\s*["']([^"']+)["']/gi)) push(m[1], 'xlink:href');
+
   for (const m of text.matchAll(/url\(\s*["']?([^"')]+)/gi)) push(m[1], 'url()');
   /* url() 付きの @import は、すぐ上の url() が拾っている。
      ここで両方に掛けると、同じ 1 件が 2 行になって報告が読みにくい。

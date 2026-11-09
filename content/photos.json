@@ -70,7 +70,7 @@
   "w": 900
  },
  "azumamogura": {
-  "by": "Koolah ( talk )",
+  "by": "Koolah",
   "caption": "アズマモグラの しゃしん",
   "commonsFile": "File:Mogera_imaizumii.jpg",
   "file": "azumamogura.jpg",
@@ -210,7 +210,7 @@
   "w": 900
  },
  "hotaruika": {
-  "by": ":ja:user:Dieno",
+  "by": "Dieno",
   "caption": "ホタルイカの しゃしん",
   "commonsFile": "File:Watasenia_scintillans.jpg",
   "file": "hotaruika.jpg",
@@ -305,7 +305,7 @@
   "commonsFile": "File:Micromysminutus1.jpg",
   "file": "kayanezumi.jpg",
   "h": 623,
-  "license": "GFDL",
+  "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Micromysminutus1.jpg",
   "w": 900
  },
@@ -315,7 +315,7 @@
   "commonsFile": "File:Mole_cricket03.jpg",
   "file": "kera.jpg",
   "h": 397,
-  "license": "GFDL",
+  "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Mole_cricket03.jpg",
   "w": 900
  },
@@ -340,7 +340,7 @@
   "w": 900
  },
  "konohachou": {
-  "by": "Opencage",
+  "by": "OpenCage",
   "caption": "コノハチョウの しゃしん",
   "commonsFile": "File:Kallima_inachus.jpg",
   "file": "konohachou.jpg",
@@ -390,7 +390,7 @@
   "w": 761
  },
  "matamata": {
-  "by": "",
+  "by": "Brunobarreto~commonswiki",
   "caption": "マタマタの しゃしん",
   "commonsFile": "File:Matamata_turtle_2048x1536.jpg",
   "file": "matamata.jpg",
@@ -420,12 +420,12 @@
   "w": 900
  },
  "mizukakiyamori": {
-  "by": "Stefan.Kuemmel ( )",
+  "by": "Stefan.Kuemmel",
   "caption": "ミズカキヤモリの しゃしん",
   "commonsFile": "File:Pachydactylus-rangei.jpg",
   "file": "mizukakiyamori.jpg",
   "h": 609,
-  "license": "GFDL",
+  "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Pachydactylus-rangei.jpg",
   "w": 900
  },
@@ -480,7 +480,7 @@
   "w": 900
  },
  "nihonamagaeru": {
-  "by": "池田正樹 ( talk )masaki ikeda",
+  "by": "池田正樹 (masaki ikeda)",
   "caption": "ニホンアマガエルの しゃしん",
   "commonsFile": "File:Tree_frog2.jpg",
   "file": "nihonamagaeru.jpg",
@@ -495,7 +495,7 @@
   "commonsFile": "File:Nihontokage060920-1.jpg",
   "file": "nihontokage.jpg",
   "h": 675,
-  "license": "GFDL",
+  "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Nihontokage060920-1.jpg",
   "w": 900
  },
@@ -505,7 +505,7 @@
   "commonsFile": "File:ArmadillidiumVulgare.jpg",
   "file": "okadangomushi.jpg",
   "h": 760,
-  "license": "GFDL",
+  "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:ArmadillidiumVulgare.jpg",
   "w": 868
  },
@@ -565,7 +565,7 @@
   "commonsFile": "File:Apothekerskink01.jpg",
   "file": "sandfish.jpg",
   "h": 623,
-  "license": "CC BY-SA 2.0",
+  "license": "CC BY-SA 2.0 de",
   "source": "https://commons.wikimedia.org/wiki/File:Apothekerskink01.jpg",
   "w": 900
  },
@@ -580,7 +580,7 @@
   "w": 900
  },
  "shirofukurou": {
-  "by": "",
+  "by": "Arpingstone",
   "caption": "シロフクロウの しゃしん",
   "commonsFile": "File:Snowy.owl.overall.arp.750pix.jpg",
   "file": "shirofukurou.jpg",
@@ -590,12 +590,12 @@
   "w": 678
  },
  "shouryoubatta": {
-  "by": "cory",
+  "by": "ISAKA Yoji (cory)",
   "caption": "ショウリョウバッタの しゃしん",
   "commonsFile": "File:Shoryobatta_06z1482sv.jpg",
   "file": "shouryoubatta.jpg",
   "h": 760,
-  "license": "GFDL",
+  "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Shoryobatta_06z1482sv.jpg",
   "w": 570
  },
@@ -615,7 +615,7 @@
   "commonsFile": "File:Sunagani060612.jpg",
   "file": "sunagani.jpg",
   "h": 675,
-  "license": "GFDL",
+  "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Sunagani060612.jpg",
   "w": 900
  },
@@ -635,7 +635,7 @@
   "commonsFile": "File:Pelodiscus.jpg",
   "file": "suppon.jpg",
   "h": 760,
-  "license": "GFDL",
+  "license": "CC BY-SA 3.0",
   "source": "https://commons.wikimedia.org/wiki/File:Pelodiscus.jpg",
   "w": 570
  },

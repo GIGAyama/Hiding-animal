@@ -23,6 +23,7 @@
     place: 'all',
     kind: 'all',
     q: '',
+    jp: false,       // にほんで 見られる ものだけに する
     quiz: false,
     current: null,   // いま ひらいて いる 生きもの
   };
@@ -96,37 +97,88 @@
 
   /* ── 一覧 ─────────────────────────────────────────────── */
 
+  /* しぼりこみの 判定は この 1 本だけ。
+     ⚠️ visible() と countFor() で 別に 書いては いけない。
+        片方だけに さがす ことばを かけ忘れると、タブに 12 と 出て いるのに
+        おすと 0 まい、という ことが 起きる。 */
+  function matches(a, place, kind, q) {
+    if (place !== 'all' && a.place !== place) return false;
+    if (kind !== 'all' && a.kind !== kind) return false;
+    if (state.jp && !a.inJapan) return false;
+    if (q && a.name.indexOf(q) < 0 && (a.yomi || '').indexOf(q) < 0) return false;
+    return true;
+  }
+
   function visible() {
     var q = state.q.trim();
     return DATA.animals.filter(function (a) {
-      if (state.place !== 'all' && a.place !== state.place) return false;
-      if (state.kind !== 'all' && a.kind !== state.kind) return false;
-      if (q && a.name.indexOf(q) < 0 && (a.yomi || '').indexOf(q) < 0) return false;
-      return true;
+      return matches(a, state.place, state.kind, q);
     });
   }
 
   /* タブの かっこの 中の 数。
      ⚠️ ぜんたいの 数を 出しては いけない。「うみの 中」を えらんでから
         「ひかりを つかう (3)」を おすと、3 と 書いて あるのに 2 まいしか
-        出ない、という ことが 起きる。1年生には 画面が こわれたように 見える。 */
+        出ない、という ことが 起きる。1年生には 画面が こわれたように 見える。
+     ⚠️ さがす ことば（state.q）も かける。おなじ 事故が 検索欄でも 起きる。 */
   function countFor(which, value) {
+    var q = state.q.trim();
+    var place = which === 'place' ? value : state.place;
+    var kind = which === 'kind' ? value : state.kind;
     return DATA.animals.filter(function (a) {
-      if (which === 'place') {
-        if (state.kind !== 'all' && a.kind !== state.kind) return false;
-        return value === 'all' ? true : a.place === value;
-      }
-      if (state.place !== 'all' && a.place !== state.place) return false;
-      return value === 'all' ? true : a.kind === value;
+      return matches(a, place, kind, q);
     }).length;
   }
 
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  /* glyph に 入れて よい 図形と 属性。
+     ⚠️ innerHTML に 戻さない こと。places.json の glyph を そのまま
+        innerHTML で 入れて いた あいだ、外の ホストを 指す <image> の
+        1 行を 足すだけで、一覧を ひらく たびに 外へ 取りに 行く
+        穴が 開いて いた。
+        tools/check-no-external.mjs も check-links.mjs も check-data.mjs も
+        glyph を 1 字も 見て いなかったので、どの 検査も 素通りした。
+        いまは tools/check-data.mjs が 形を 見る。 */
+  var GLYPH_TAGS = {
+    path: ['d', 'fill', 'stroke', 'stroke-width', 'stroke-linecap', 'stroke-linejoin', 'fill-rule', 'opacity'],
+    circle: ['cx', 'cy', 'r', 'fill', 'stroke', 'stroke-width', 'opacity'],
+    ellipse: ['cx', 'cy', 'rx', 'ry', 'fill', 'stroke', 'stroke-width', 'opacity'],
+    rect: ['x', 'y', 'width', 'height', 'rx', 'ry', 'fill', 'stroke', 'stroke-width', 'opacity'],
+    line: ['x1', 'y1', 'x2', 'y2', 'stroke', 'stroke-width', 'stroke-linecap', 'opacity'],
+    polyline: ['points', 'fill', 'stroke', 'stroke-width', 'stroke-linecap', 'stroke-linejoin', 'opacity'],
+    polygon: ['points', 'fill', 'stroke', 'stroke-width', 'fill-rule', 'opacity'],
+    g: ['fill', 'stroke', 'stroke-width', 'opacity'],
+  };
+
   function svgGlyph(inner) {
-    var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    var s = document.createElementNS(SVG_NS, 'svg');
     s.setAttribute('class', 'glyph');
     s.setAttribute('viewBox', '0 0 24 24');
     s.setAttribute('aria-hidden', 'true');
-    s.innerHTML = inner;
+
+    /* 字の ならびを 組み立てるのでは なく、読んで から ゆるす 形だけを 作る。 */
+    var doc = new DOMParser().parseFromString(
+      '<svg xmlns="' + SVG_NS + '">' + String(inner || '') + '</svg>', 'image/svg+xml');
+    if (doc.getElementsByTagName('parsererror').length) return s;
+
+    (function copy(from, to) {
+      Array.prototype.forEach.call(from.childNodes, function (node) {
+        if (node.nodeType !== 1) return;
+        var tag = String(node.localName || '').toLowerCase();
+        var allow = GLYPH_TAGS[tag];
+        if (!allow) return;
+        var out = document.createElementNS(SVG_NS, tag);
+        Array.prototype.forEach.call(node.attributes, function (at) {
+          var nm = String(at.name).toLowerCase();
+          if (allow.indexOf(nm) < 0) return;
+          if (/^(https?:|\/\/|data:|javascript:)/i.test(at.value.trim())) return;
+          out.setAttribute(nm, at.value);
+        });
+        to.appendChild(out);
+        if (tag === 'g') copy(node, out);
+      });
+    })(doc.documentElement, s);
+
     return s;
   }
 
@@ -201,8 +253,13 @@
     var place = state.place === 'all' ? 'ぜんぶの ばしょ' : labelOf(DATA.places, state.place);
     var kind = state.kind === 'all' ? '' : '／かくれかた：' + labelOf(DATA.kinds, state.kind);
     var q = state.q.trim() ? '／「' + state.q.trim() + '」で さがして います' : '';
+    if (state.jp) place = 'にほんで 見られる もの／' + place;
+    /* ⚠️ 助詞の 前に すきまを 置かない。1年生は 分かち書きの すきまを
+       「ここで ことばが 切れる」と 読むので、「ばしょ の」と 離すと
+       「の」が 次の ことばに ついて いるように 読める。この 行は
+       aria-live で 読み上げにも のる。 */
     document.getElementById('count').textContent =
-      place + kind + q + ' の かくれんぼ名人が ' + list.length + 'ひき。カードを おすと くわしい ページが ひらきます。';
+      place + kind + q + '：かくれんぼ名人が ' + list.length + 'ひき。カードを おすと くわしい ページが ひらきます。';
   }
 
   /* ── 生きものの ページ ───────────────────────────────── */
@@ -210,14 +267,29 @@
   var sheet = document.getElementById('sheet');
   var fields = {};
   var bodyEnd = 'motsu';
+  var openId = '';   // いま ひらいて いる 生きものの id（下書きが どの ひきの ものかを 見る）
 
+  /* 写真の 出どころの 行。
+     ⚠️ ライセンスの 名まえを 字で 出すだけでは 足りない。
+        CC BY 2.0/3.0 の 4(a) と CC BY 4.0 の 3(a)(1)(C) は、ライセンスの
+        うつし、または その URI を いっしょに 出すように いって いる。
+        licenseUrl は tools/build-animals.mjs が content/licenses.json から
+        入れて いて、無ければ tools/build-credits.mjs が 落とす。
+     ⚠️ すきまは 半角で そろえる。全角（U+3000）を まぜない。
+        あいだの あきは style.css の .credit a に margin-left で つける。 */
   function creditLine(photo) {
     var frag = el('p', { class: 'credit' });
     frag.appendChild(document.createTextNode('しゃしん：'));
     if (photo.by) frag.appendChild(document.createTextNode(photo.by + '／'));
-    frag.appendChild(document.createTextNode(photo.license || ''));
+    if (photo.licenseUrl) {
+      frag.appendChild(el('a', {
+        href: photo.licenseUrl, target: '_blank', rel: 'noopener license',
+        text: photo.license || '',
+      }));
+    } else {
+      frag.appendChild(document.createTextNode(photo.license || ''));
+    }
     if (photo.source) {
-      frag.appendChild(document.createTextNode('　'));
       frag.appendChild(el('a', { href: photo.source, target: '_blank', rel: 'noopener', text: 'Wikimedia Commons' }));
     }
     return frag;
@@ -306,7 +378,7 @@
           に その 回帰試験が ある）。 */
     if (a.sources && a.sources.length) {
       var det = el('details', { class: 'sources' });
-      det.appendChild(el('summary', { text: 'しらべた もと（' + a.sources.length + '件）' }));
+      det.appendChild(el('summary', { text: 'しらべた もと（' + a.sources.length + 'つ）' }));
       var sl = el('ul');
       a.sources.forEach(function (u) {
         var host = String(u).replace(/^https?:\/\//, '').split('/')[0];
@@ -331,8 +403,14 @@
     if (typeof sheet.showModal === 'function') sheet.showModal();
     else sheet.setAttribute('open', '');
     sheet.scrollTop = 0;
-    restore();
-    if (!fields.name.value.trim()) fields.name.value = a.name;
+    openId = a.id;
+    var kept = restore();
+    /* ⚠️ 「名まえが 空なら 入れる」だけでは だめ。見る だけで
+       refreshPreview() が 名まえを localStorage へ 書くので、2 ひき目からは
+       空に ならず、ヒラメの カードを 見た あと モクズショイを ひらくと
+       「ヒラメが、…に かくれて います。」の まま 紙に 出る。
+       下書きが べつの ひきの ものだったら、名まえだけ 入れかえる。 */
+    if (!kept || kept.id !== a.id || !fields.name.value.trim()) fields.name.value = a.name;
     refreshPreview();
   }
 
@@ -365,8 +443,8 @@
       '「〜に かくれて います。」で おわるように かきます。', false, 'れい：うみの そこの いわば'));
 
     var bodyField = field('body', 'w-body', '② からだの とくちょうは なんですか',
-      '「もって いる もの」か「できる こと」を かきます。おわり方は 下で えらべます。', false, 'れい：先の まがった かたい け');
-    var choices = el('div', { class: 'choices', role: 'radiogroup', 'aria-label': '②の おわり方' });
+      '「もって いる もの」か「できる こと」を かきます。おわりの ことばは 下で えらべます。', false, 'れい：先の まがった かたい け');
+    var choices = el('div', { class: 'choices', role: 'radiogroup', 'aria-label': '②の おわりの ことば' });
     [['motsu', '〜を もって います。'], ['dekiru', '〜ことが できます。']].forEach(function (c) {
       var b = el('button', {
         class: 'choice', type: 'button', 'data-end': c[0],
@@ -385,6 +463,7 @@
     box.appendChild(el('div', { class: 'field' }, [
       el('label', { text: 'できあがった ぶん' }),
       el('div', { class: 'preview', id: 'preview', tabindex: '0' }),
+      el('p', { class: 'sample', id: 's-full', hidden: '' }),
       el('div', { class: 'draw-box', 'aria-hidden': 'true' }, [el('span', { text: 'えを かこう' })]),
     ]));
 
@@ -428,16 +507,52 @@
     });
   }
 
+  /* おてほんは、らんに 入れる 中身だけを 見せる。
+     ⚠️ 文 まるごとを 見せては いけない。らんの すぐ 下に 出るので、
+        1年生は そのまま うつす。うつすと わくが 二重に なって
+        「モクズショイが、モクズショイが、…に かくれて います。に かくれて います。」
+        に なる。この アプリで いちばん 大事な「じぶんの ぶんを かく」が、
+        おてほんを 見た 子だけ 壊れる。
+     わくの かたちは tools/check-data.mjs が 守って いる
+     （①は「〜に かくれて います。」、②は「〜を もって います。」か
+      「〜ことが できます。」、③は「〜て、かくれます。」）。 */
+  function samplePieces(a) {
+    var place = a.placeS;
+    if (place.indexOf(a.name + 'が、') === 0) place = place.slice(a.name.length + 2);
+    place = place.replace(/に かくれて います。$/, '');
+
+    var body = a.bodyS;
+    if (body.indexOf(a.name + 'は、') === 0) body = body.slice(a.name.length + 2);
+    var end = /ことが できます。$/.test(body) ? 'dekiru' : 'motsu';
+    body = body.replace(/を もって います。$/, '').replace(/\s*ことが できます。$/, '');
+
+    var how = a.howS.replace(/、かくれます。$/, '');
+    return { name: a.name, place: place, body: body, how: how, end: end };
+  }
+
   function toggleSample(a, button) {
-    var pairs = [['place', a.placeS], ['body', a.bodyS], ['how', a.howS]];
+    var piece = samplePieces(a);
     var first = document.getElementById('s-place');
     var shown = first && first.hidden === false;
+    var pairs = [['name', piece.name], ['place', piece.place], ['body', piece.body], ['how', piece.how]];
     pairs.forEach(function (p) {
       var node = document.getElementById('s-' + p[0]);
       if (!node) return;
-      node.textContent = 'おてほん（' + a.name + '）：' + p[1];
+      node.textContent = 'おてほん：' + p[1];
       node.hidden = shown;
     });
+    /* できあがりの 形は preview の そばで 見せる（らんの 下では ない）。 */
+    var full = document.getElementById('s-full');
+    if (full) {
+      full.textContent = 'おてほんの ぶん：' + a.placeS + a.bodyS + a.howS;
+      full.hidden = shown;
+    }
+    /* まだ 何も 書いて いない ときだけ、おわりの ことばも おてほんに そろえる。
+       書きはじめて いる 子の えらんだ ものは 変えない。 */
+    if (!shown && fields.body && !fields.body.value.trim()) {
+      setBodyEnd(piece.end);
+      refreshPreview();
+    }
     button.textContent = shown ? 'おてほんを 見る' : 'おてほんを かくす';
   }
 
@@ -448,6 +563,7 @@
       body: fields.body.value.trim(),
       how: fields.how.value.trim(),
       end: bodyEnd,
+      id: openId,
     };
   }
 
@@ -479,16 +595,19 @@
     catch (e) { /* シークレットウィンドウなど。保存できなくても書く手は止めない */ }
   }
 
+  /** 下書きを もどす。もどした ものを 返す（どの ひきの ものかを 見るため）。 */
   function restore() {
     try {
       var raw = window.localStorage.getItem(STORE);
-      if (!raw) return;
+      if (!raw) return null;
       var v = JSON.parse(raw);
       ['name', 'place', 'body', 'how'].forEach(function (k) {
         if (typeof v[k] === 'string' && fields[k]) fields[k].value = v[k];
       });
       if (v.end === 'motsu' || v.end === 'dekiru') setBodyEnd(v.end);
+      return v;
     } catch (e) { /* 壊れていたら、だまって空から始める */ }
+    return null;
   }
 
   function copyText(text, button) {
@@ -500,16 +619,30 @@
     }
   }
 
+  /* クリップボードが つかえない ときの 道。
+     ⚠️ つくった <textarea> を document.body へ 付けては いけない。
+        この 画面は showModal() で ひらいて いるので、ダイアログの 外は
+        inert に なって focus を とれない。body に 付けると ta.select() が
+        写す もとに ならず、何も 写らない。ダイアログの 中へ 付ける。
+     ⚠️ execCommand は 写せなかった とき throw では なく false を
+        返す。返り値を 見ないと、写って いないのに「コピーしました」と
+        出る。1年生は「出たのに はいらない」を 言葉に できないので、
+        黙って 手が 止まる。 */
   function fallbackCopy(text, button) {
+    var host = sheet && sheet.hasAttribute('open') ? sheet : document.body;
     var ta = document.createElement('textarea');
     ta.value = text;
     ta.setAttribute('readonly', '');
-    ta.style.cssText = 'position:fixed;top:-1000px';
-    document.body.appendChild(ta);
+    ta.setAttribute('aria-hidden', 'true');
+    ta.style.cssText = 'position:fixed;top:-1000px;left:0;opacity:0';
+    host.appendChild(ta);
     ta.select();
-    try { document.execCommand('copy'); flash(button, 'コピーしました'); }
-    catch (e) { flash(button, 'コピーできません'); }
-    document.body.removeChild(ta);
+    ta.setSelectionRange(0, text.length);
+    var ok = false;
+    try { ok = document.execCommand('copy') === true; }
+    catch (e) { ok = false; }
+    host.removeChild(ta);
+    flash(button, ok ? 'コピーしました' : 'コピーできません。ゆびで なぞって うつして ください');
   }
 
   function flash(button, message) {
@@ -539,6 +672,17 @@
       render();
     });
 
+    /* にほんに いない 生きものは 71 ひきの うち 14 ひき。
+       ⚠️ 実物を さがす 活動と あわせる とき、5 ひきに 1 ひきは
+          日本では 見つからない。先生が えらぶ ときの ための ボタン。 */
+    var jp = document.getElementById('jp-toggle');
+    jp.addEventListener('click', function () {
+      state.jp = !state.jp;
+      jp.setAttribute('aria-pressed', state.jp ? 'true' : 'false');
+      jp.textContent = state.jp ? 'せかいの 生きものも 見る' : 'にほんの 生きものだけ';
+      render();
+    });
+
     var quiz = document.getElementById('quiz-toggle');
     quiz.addEventListener('click', function () {
       state.quiz = !state.quiz;
@@ -550,7 +694,15 @@
     document.getElementById('sheet-close').addEventListener('click', function () {
       if (typeof sheet.close === 'function') sheet.close(); else sheet.removeAttribute('open');
     });
-    sheet.addEventListener('close', function () { speech.stop(); });
+    /* ⚠️ とじたら 中身を 空に する。のこして おくと、べつの ものを
+       いんさつした つもりで さっきの カードが 紙に 出る。 */
+    sheet.addEventListener('close', function () {
+      speech.stop();
+      var body = document.getElementById('sheet-body');
+      if (body) body.textContent = '';
+      document.getElementById('sheet-title').textContent = '';
+      openId = '';
+    });
 
     tidyFooterLinks();
 

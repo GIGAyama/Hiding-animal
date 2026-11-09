@@ -68,7 +68,7 @@
   var kinds = [
     {
       "key": "moguru",
-      "label": "もぐる・かくれ家",
+      "label": "もぐる・かくれが",
       "teach": "はまぐりの なかま"
     },
     {
@@ -135,7 +135,8 @@
         "h": 662,
         "license": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Camposcia_retusa_Réunion.JPG",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -174,7 +175,8 @@
         "h": 675,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Meretrix_lusoria.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -213,7 +215,8 @@
         "h": 760,
         "license": "CC BY-SA 2.5",
         "source": "https://commons.wikimedia.org/wiki/File:Octopus_sinensis.jpg",
-        "w": 761
+        "w": 761,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
       }
     },
     {
@@ -228,7 +231,7 @@
       "howS": "しっぽから すなに もぐって あなを つくり、あぶなく なると すっと ひっこんで、かくれます。",
       "naze": "てきから みを まもる ためです。",
       "sumika": "あたたかい うみの、ながれの ある すなの そこ。にほんでは みなみの しまの あたりに おおく、しずおかや こうちの うみでも 見つかって います。",
-      "size": "30cm ぐらい。でも すなから 出て いるのは、からだの まえの ほうだけです。",
+      "size": "30cm から 35cm ぐらい。でも すなから 出て いるのは、からだの まえの ほうだけです。",
       "tabemono": "ながれて くる プランクトンを たべます。",
       "itsu": "いちねんじゅう。すいぞくかんで よく 見られます。",
       "nakama": "さかなの なかま（アナゴの なかま）",
@@ -239,7 +242,8 @@
         "すいぞくかんでは、11月11日を 「チンアナゴの日」に して います。すなから 出た すがたが 1に にて いるからです。"
       ],
       "sources": [
-        "https://marine-world.jp/wp-content/uploads/2022/11/f6ca0f8452a09a8bbb58b3bc7a1b81bf.pdf"
+        "https://marine-world.jp/wp-content/uploads/2022/11/f6ca0f8452a09a8bbb58b3bc7a1b81bf.pdf",
+        "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%B3%E3%82%A2%E3%83%8A%E3%82%B4"
       ],
       "photo": {
         "by": "Wisnia6522",
@@ -249,7 +253,8 @@
         "h": 760,
         "license": "Public domain",
         "source": "https://commons.wikimedia.org/wiki/File:W%C4%99gorz_ogrodowy.jpg",
-        "w": 647
+        "w": 647,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -286,7 +291,8 @@
         "h": 617,
         "license": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Histrio_histrio_Shimoda.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -324,7 +330,8 @@
         "h": 760,
         "license": "CC BY-SA 2.5",
         "source": "https://commons.wikimedia.org/wiki/File:Paralichthys_olivaceus.jpg",
-        "w": 760
+        "w": 760,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
       }
     },
     {
@@ -335,7 +342,7 @@
       "kind": "hikari",
       "inJapan": true,
       "placeS": "ホタルイカが、ふかい うみの 中に かくれて います。",
-      "bodyS": "ホタルイカは、おなかに ひかる 小さな つぶを たくさん もって います。",
+      "bodyS": "ホタルイカは、おなかに たくさん ならんだ ひかる つぶを もって います。",
       "howS": "おなかを ひからせて、上から さして くる ひかりと おなじ あかるさに なって、かくれます。",
       "naze": "下に いる てきから みを まもる ためです。",
       "sumika": "にほんかいの ふかい うみ。はるに なると、とやまわんの あさい ところへ 上がって きます。",
@@ -354,14 +361,15 @@
         "https://en.wikipedia.org/wiki/Watasenia_scintillans"
       ],
       "photo": {
-        "by": ":ja:user:Dieno",
+        "by": "Dieno",
         "caption": "ホタルイカの しゃしん",
         "commonsFile": "File:Watasenia_scintillans.jpg",
         "file": "hotaruika.jpg",
         "h": 1100,
         "license": "Public domain",
         "source": "https://commons.wikimedia.org/wiki/File:Watasenia_scintillans.jpg",
-        "w": 550
+        "w": 550,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -398,7 +406,8 @@
         "h": 600,
         "license": "CC BY 2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Antennarius_striatus_%2814911110794%29.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
@@ -435,7 +444,8 @@
         "h": 675,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Ocellaris_clownfish.JPG",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -474,7 +484,8 @@
         "h": 607,
         "license": "CC BY 2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Solenostomus_cyanopterus.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
@@ -511,7 +522,8 @@
         "h": 760,
         "license": "CC BY-SA 2.5",
         "source": "https://commons.wikimedia.org/wiki/File:Sebastiscus_marmoratus_by_OpenCage.jpg",
-        "w": 759
+        "w": 759,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
       }
     },
     {
@@ -523,7 +535,7 @@
       "inJapan": true,
       "placeS": "コウイカが、うみの そこの すなの ところに かくれて います。",
       "bodyS": "コウイカは、はだの いろと もようを かえる ことが できます。",
-      "howS": "すなや いわと おなじ いろに なって、かくれます。",
+      "howS": "すなや いわの いろに あわせて はだの いろを かえて、かくれます。",
       "naze": "てきから みを まもる ためです。えびや かにに きづかれないで ちかづく ためでも あります。",
       "sumika": "にほんの あさい うみ。すなや どろの そこに すんで います。",
       "size": "どうの ながさは 15cm から 18cm ぐらい。",
@@ -549,7 +561,8 @@
         "h": 598,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Sepia_esculenta_Osaka.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -560,7 +573,7 @@
       "kind": "katachi",
       "inJapan": false,
       "placeS": "リーフィーシードラゴンが、うみの 中の かいそうの あいだに かくれて います。",
-      "bodyS": "リーフィーシードラゴンは、かいそうの はの ような ひらひらを からだに もって います。",
+      "bodyS": "リーフィーシードラゴンは、からだじゅうに かいそうの はの ような ひらひらを もって います。",
       "howS": "かいそうに まぎれこんで、ゆれに あわせて ゆらゆら うごいて、かくれます。",
       "naze": "てきから みを まもる ためです。小さな えびに きづかれないで ちかづく ためでも あります。",
       "sumika": "オーストラリアの みなみの うみ。かいそうの はえた いわばや すなの ところに います。",
@@ -588,7 +601,8 @@
         "h": 599,
         "license": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Leafy_Seadragon_on_Kangaroo_Island.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -598,23 +612,24 @@
       "place": "umi",
       "kind": "sukitoru",
       "inJapan": true,
-      "placeS": "ミズクラゲが、うみの 中を ただよいながら かくれて います。",
+      "placeS": "ミズクラゲが、うみの 中に かくれて います。",
       "bodyS": "ミズクラゲは、水の ように すきとおった からだを もって います。",
-      "howS": "からだの ほとんどが 水なので、まわりの 水に とけこむように 見えて、かくれます。",
+      "howS": "ひかりの とおる ところを ゆらゆら ただよって、まわりの 水に とけこむように 見えて、かくれます。",
       "naze": "てきに 見つからない ように する ためです。",
       "sumika": "にほんの うみの、あさくて しずかな ところ。みなとや いりえに たくさん あつまります。",
       "size": "かさの 大きさは、おさら ぐらいです。もっと 大きく なる ものも います。",
       "tabemono": "水の 中の 小さな プランクトンを、しょくしゅで つかまえて たべます。",
       "itsu": "いちねんじゅう いますが、なつに とくに たくさん 見られます。",
       "nakama": "クラゲの なかま",
-      "karada": "からだの ほとんどが 水で できて います。かさの まん中に、まるい かたちが 4つ すけて 見えます。よつばの はの ように ならんで います。",
+      "karada": "からだの ほとんどが 水で できて います。かさの まん中に、まるい かたちが 4つ すけて 見えます。よつばの はの ように ならんで います。かさの ふちの しょくしゅには、えものを とらえる はりが あります。人には ほとんど きかないと いわれて いますが、さわったら 手を あらいます。",
       "motto": [
         "すけて 見える 4つの まるい ところは、たべものを とかす おなかです。その まわりを かこんで いる ところで、たまごや せいしを つくります。",
         "からだの ほとんどが 水なので、うちあげられると とけた ように なく なって しまいます。",
         "すきとおって いても、ウミガメや マンボウには 見つかって たべられます。"
       ],
       "sources": [
-        "https://ja.wikipedia.org/wiki/ミズクラゲ"
+        "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%82%BA%E3%82%AF%E3%83%A9%E3%82%B2",
+        "https://en.wikipedia.org/wiki/Aurelia_aurita"
       ],
       "photo": {
         "by": "Yosemite",
@@ -624,7 +639,8 @@
         "h": 675,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Aurelia_aurita_001.JPG",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -635,7 +651,7 @@
       "kind": "tsukeru",
       "inJapan": true,
       "placeS": "ソメンヤドカリが、うみの そこの すなの ところに かくれて います。",
-      "bodyS": "ソメンヤドカリは、イソギンチャクを つけた かいの からを もって います。",
+      "bodyS": "ソメンヤドカリは、やわらかい おなかを つつむ かいの からを もって います。",
       "howS": "かいの からに イソギンチャクを つけて、イソギンチャクの かたまりに 見えるように なって、かくれます。",
       "naze": "てきから みを まもる ためです。イソギンチャクの 手には さす ものが あるので、タコなども ちかづけません。",
       "sumika": "あたたかい うみの、すなの そこや かいそうの 中。にほんでは みなみの うみで 見られます。",
@@ -662,7 +678,8 @@
         "h": 675,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Dardanus_pedunculatus_(Hermit_crab).jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -701,7 +718,8 @@
         "h": 455,
         "license": "CC0",
         "source": "https://commons.wikimedia.org/wiki/File:Chaenogobius_annularis.JPG",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
@@ -739,7 +757,8 @@
         "h": 600,
         "license": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Capitulum_mitella_koh.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -776,7 +795,8 @@
         "h": 655,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Charadrius_alexandrinus_0711.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -811,9 +831,10 @@
         "commonsFile": "File:Sunagani060612.jpg",
         "file": "sunagani.jpg",
         "h": 675,
-        "license": "GFDL",
+        "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Sunagani060612.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -850,7 +871,8 @@
         "h": 760,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Vargula_hilgendorfii.jpg",
-        "w": 706
+        "w": 706,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -888,7 +910,8 @@
         "h": 613,
         "license": "Public domain",
         "source": "https://commons.wikimedia.org/wiki/File:Misgurnus_anguillicaudatus.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -926,7 +949,8 @@
         "h": 598,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Cottus_reinii%28Hamamatsu%2CShizuoka%2CJapan%29.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -958,14 +982,15 @@
         "https://ppbio.inpa.gov.br/en/node/1136"
       ],
       "photo": {
-        "by": "",
+        "by": "Brunobarreto~commonswiki",
         "caption": "マタマタの しゃしん",
         "commonsFile": "File:Matamata_turtle_2048x1536.jpg",
         "file": "matamata.jpg",
         "h": 675,
         "license": "Public domain",
         "source": "https://commons.wikimedia.org/wiki/File:Matamata_turtle_2048x1536.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -984,7 +1009,7 @@
       "tabemono": "おたまじゃくしや 小さな さかな、水の 中の 生きものを たべます。",
       "itsu": "はるから あきに よく 見られます。ふゆは 水の 中で じっと して すごします。",
       "nakama": "こんちゅうの なかま（カメムシの なかま）",
-      "karada": "おしりに ながい くだが あって、水の 上に 出して いきを します。まえあしは かまの ように まがって いて、えものを はさみます。",
+      "karada": "おしりに ながい くだが あって、水の 上に 出して いきを します。まえあしは かまの ように まがって いて、えものを はさみます。口の さきは、えものに さしこむ はりの ように なって います。さされると いたい ことが あるので、手で つかまずに、入れものに 水ごと すくいます。",
       "motto": [
         "名まえは、まえあしが カマキリに にて いる ことから。でも カマキリの なかまでは ありません。",
         "はねが あるので、とんで ほかの いけへ うつります。",
@@ -992,8 +1017,8 @@
       ],
       "sources": [
         "https://www.honda.co.jp/outdoor/knowledge/adventure/picture-book/mizukamakiri/",
-        "https://mdc.mo.gov/discover-nature/field-guide/water-scorpions",
-        "https://www.kentwildlifetrust.org.uk/wildlife-explorer/invertebrates/bugs/water-stick-insect",
+        "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%82%BA%E3%82%AB%E3%83%9E%E3%82%AD%E3%83%AA",
+        "https://ja.wikipedia.org/wiki/%E6%B0%B4%E7%94%9F%E3%82%AB%E3%83%A1%E3%83%A0%E3%82%B7%E9%A1%9E",
         "https://kotobank.jp/word/%E3%81%BF%E3%81%9A%E3%81%8B%E3%81%BE%E3%81%8D%E3%82%8A-3172114"
       ],
       "photo": {
@@ -1004,7 +1029,8 @@
         "h": 760,
         "license": "CC BY-SA 2.5",
         "source": "https://commons.wikimedia.org/wiki/File:Ranatra_chinensis.jpg",
-        "w": 760
+        "w": 760,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
       }
     },
     {
@@ -1036,14 +1062,15 @@
         "https://www.nagoya-u.ac.jp/about-nu/public-relations/researchinfo/upload_images/20180628_engg_1.pdf"
       ],
       "photo": {
-        "by": "池田正樹 ( talk )masaki ikeda",
+        "by": "池田正樹 (masaki ikeda)",
         "caption": "ニホンアマガエルの しゃしん",
         "commonsFile": "File:Tree_frog2.jpg",
         "file": "nihonamagaeru.jpg",
         "h": 760,
         "license": "Public domain",
         "source": "https://commons.wikimedia.org/wiki/File:Tree_frog2.jpg",
-        "w": 466
+        "w": 466,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -1054,7 +1081,7 @@
       "kind": "moguru",
       "inJapan": true,
       "placeS": "オニヤンマの ヤゴが、川の そこの すなや おちばの 下に かくれて います。",
-      "bodyS": "オニヤンマの ヤゴは、さっと のびる 下あごを もって います。",
+      "bodyS": "オニヤンマの ヤゴは、すなや どろが つきやすい こまかい けの はえた からだを もって います。",
       "howS": "すなや おちばに もぐって 目だけ 出して、えものを まって、かくれます。",
       "naze": "ちかづいて きた えものを つかまえる ためです。じぶんも さかなに 見つかりません。",
       "sumika": "にほんの、きれいな 水が ながれる 小川や しみ水の ある ところ。そこの すなや おちばの 中に います。",
@@ -1064,12 +1091,13 @@
       "nakama": "トンボの 子ども（こんちゅうの なかま）",
       "karada": "下あごが さっと 手の ように のびて、さきの はさみで えものを つかみます。からだ ぜんたいに こまかい けが はえて いて、すなや どろが つきやすく なって います。つかむと、この 口で 手を かみます。とても いたいので、手で つかまずに、入れものに 水ごと すくいます。",
       "motto": [
-        "ヤゴの まま 5ねんぐらい 水の 中で すごし、その あいだに 10かいぐらい かわを ぬぎます。",
+        "ヤゴの まま 3ねんから 5ねん 水の 中で すごし、その あいだに 10かいぐらい かわを ぬぎます。",
         "ほかの トンボの ヤゴの ように、おしりから 水を 出して およぐ ことは できません。",
         "よく はれた なつの よる、どろを かぶったまま 水から 上がって おとなに なります。"
       ],
       "sources": [
-        "https://ja.wikipedia.org/wiki/オニヤンマ"
+        "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%8B%E3%83%A4%E3%83%B3%E3%83%9E",
+        "https://en.wikipedia.org/wiki/Anotogaster_sieboldii"
       ],
       "photo": {
         "by": "OpenCage",
@@ -1079,7 +1107,8 @@
         "h": 900,
         "license": "CC BY-SA 2.5",
         "source": "https://commons.wikimedia.org/wiki/File:Anotogaster_sieboldii_larva.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
       }
     },
     {
@@ -1114,9 +1143,10 @@
         "commonsFile": "File:Pelodiscus.jpg",
         "file": "suppon.jpg",
         "h": 760,
-        "license": "GFDL",
+        "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Pelodiscus.jpg",
-        "w": 570
+        "w": 570,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -1154,7 +1184,8 @@
         "h": 760,
         "license": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Laccotrephes_japonensis_Kyoto_aquarium.jpg",
-        "w": 558
+        "w": 558,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -1191,7 +1222,8 @@
         "h": 675,
         "license": "CC BY 2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Spittle_Bug_Nymph_-_Flickr_-_treegrow.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
@@ -1229,7 +1261,8 @@
         "h": 760,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:2013.06.04.-14-Viernheimer_Heide_Viernheim--Dreieck-Krabbenspinne-Weibchen.jpg",
-        "w": 899
+        "w": 899,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -1266,7 +1299,8 @@
         "h": 675,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Skylark_2%2C_Lake_District%2C_England_-_June_2009.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -1303,9 +1337,10 @@
         "commonsFile": "File:Micromysminutus1.jpg",
         "file": "kayanezumi.jpg",
         "h": 623,
-        "license": "GFDL",
+        "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Micromysminutus1.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -1340,9 +1375,10 @@
         "commonsFile": "File:Mole_cricket03.jpg",
         "file": "kera.jpg",
         "h": 397,
-        "license": "GFDL",
+        "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Mole_cricket03.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -1381,7 +1417,8 @@
         "h": 675,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Tenodera_aridifolia_DSCN9675.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -1412,14 +1449,15 @@
         "https://www.pref.aichi.jp/uploaded/attachment/506306.pdf"
       ],
       "photo": {
-        "by": "cory",
+        "by": "ISAKA Yoji (cory)",
         "caption": "ショウリョウバッタの しゃしん",
         "commonsFile": "File:Shoryobatta_06z1482sv.jpg",
         "file": "shouryoubatta.jpg",
         "h": 760,
-        "license": "GFDL",
+        "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Shoryobatta_06z1482sv.jpg",
-        "w": 570
+        "w": 570,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -1456,7 +1494,8 @@
         "h": 675,
         "license": "Public domain",
         "source": "https://commons.wikimedia.org/wiki/File:Locusta_migratoria.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -1494,7 +1533,8 @@
         "h": 760,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Large_Brown_Cicada_23aug12.jpg",
-        "w": 461
+        "w": 461,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -1531,7 +1571,8 @@
         "h": 600,
         "license": "CC0",
         "source": "https://commons.wikimedia.org/wiki/File:%E3%82%A2%E3%82%B1%E3%83%93%E3%82%B3%E3%83%8E%E3%83%8F_Eudocima_tyrannus_%E6%88%90%E8%99%AB%2C_%E9%AB%98%E7%9F%A5%E7%9C%8C.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
@@ -1568,7 +1609,8 @@
         "h": 675,
         "license": "CC0",
         "source": "https://commons.wikimedia.org/wiki/File:Myrmarachne_formicaria_76645969.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
@@ -1605,7 +1647,8 @@
         "h": 1100,
         "license": "CC BY 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Hyalinobatrachium_fleischmanni_246060834.jpg",
-        "w": 825
+        "w": 825,
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
       }
     },
     {
@@ -1642,7 +1685,8 @@
         "h": 675,
         "license": "CC BY 2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Giant_Leaf-tailed_Gecko%2C_Nosy_Mangabe%2C_Madagascar_%284023062244%29.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
@@ -1680,7 +1724,8 @@
         "h": 600,
         "license": "CC BY 2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Blenina_senex_(35533165746).jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
@@ -1710,14 +1755,15 @@
         "https://en.wikipedia.org/wiki/Kallima_inachus"
       ],
       "photo": {
-        "by": "Opencage",
+        "by": "OpenCage",
         "caption": "コノハチョウの しゃしん",
         "commonsFile": "File:Kallima_inachus.jpg",
         "file": "konohachou.jpg",
         "h": 760,
         "license": "CC BY-SA 2.5",
         "source": "https://commons.wikimedia.org/wiki/File:Kallima_inachus.jpg",
-        "w": 759
+        "w": 759,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
       }
     },
     {
@@ -1754,7 +1800,8 @@
         "h": 641,
         "license": "Public domain",
         "source": "https://commons.wikimedia.org/wiki/File:Phyllium_siccifolium_-_female_larva_L4.JPG",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -1791,7 +1838,8 @@
         "h": 760,
         "license": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Eumeta_variegata_on_the_window_of_convenience_store.jpg",
-        "w": 570
+        "w": 570,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -1828,7 +1876,8 @@
         "h": 600,
         "license": "CC BY-SA 2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Uropyia_meticulodina.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
       }
     },
     {
@@ -1865,7 +1914,8 @@
         "h": 676,
         "license": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Myronides_glaucus_Hennemann%2C_2021_female.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -1902,7 +1952,8 @@
         "h": 562,
         "license": "CC BY 2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Grey_Nightjar.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
@@ -1913,7 +1964,7 @@
       "kind": "moguru",
       "inJapan": true,
       "placeS": "アリジゴクが、かわいた すなの すりばちの 中に かくれて います。",
-      "bodyS": "アリジゴクは、えものを はさむ 大きな あごを もって います。",
+      "bodyS": "アリジゴクは、すなと おなじ いろの 小さな からだを もって います。",
       "howS": "すなを はねとばして すりばちの ような あなを つくり、その そこに うまって、かくれます。",
       "naze": "すべりおちて きた アリを つかまえる ためです。",
       "sumika": "にほんの、あめの かからない かわいた すな。おてらの のき下や、大きな 木の 下の すなに あります。",
@@ -1939,7 +1990,8 @@
         "h": 494,
         "license": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Ameisenlöwe.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -1965,7 +2017,8 @@
         "はやく にげられないので、かくれる ことで みを まもって います。"
       ],
       "sources": [
-        "https://ja.wikipedia.org/wiki/アズマヒキガエル"
+        "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%BA%E3%83%9E%E3%83%92%E3%82%AD%E3%82%AC%E3%82%A8%E3%83%AB",
+        "https://en.wikipedia.org/wiki/Japanese_common_toad"
       ],
       "photo": {
         "by": "Yasunori Koide",
@@ -1975,7 +2028,8 @@
         "h": 675,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Bufo_japonicus_DSCN9873.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2005,14 +2059,15 @@
         "https://en.wikipedia.org/wiki/Mole_(animal)"
       ],
       "photo": {
-        "by": "Koolah ( talk )",
+        "by": "Koolah",
         "caption": "アズマモグラの しゃしん",
         "commonsFile": "File:Mogera_imaizumii.jpg",
         "file": "azumamogura.jpg",
         "h": 675,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Mogera_imaizumii.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2050,7 +2105,8 @@
         "h": 760,
         "license": "CC BY-SA 2.5",
         "source": "https://commons.wikimedia.org/wiki/File:Atypus_karschi.jpg",
-        "w": 759
+        "w": 759,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
       }
     },
     {
@@ -2089,7 +2145,8 @@
         "h": 585,
         "license": "CC BY-SA 2.5",
         "source": "https://commons.wikimedia.org/wiki/File:Megophrys.nasuta.7034.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
       }
     },
     {
@@ -2124,9 +2181,10 @@
         "commonsFile": "File:Nihontokage060920-1.jpg",
         "file": "nihontokage.jpg",
         "h": 675,
-        "license": "GFDL",
+        "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Nihontokage060920-1.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2161,9 +2219,10 @@
         "commonsFile": "File:ArmadillidiumVulgare.jpg",
         "file": "okadangomushi.jpg",
         "h": 760,
-        "license": "GFDL",
+        "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:ArmadillidiumVulgare.jpg",
-        "w": 868
+        "w": 868,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2202,7 +2261,8 @@
         "h": 600,
         "license": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Waldschnepfe_%28scolopax_rusticola%29_-_Spiekeroog%2C_Nationalpark_Nieders%C3%A4chsisches_Wattenmeer.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -2214,7 +2274,7 @@
       "inJapan": true,
       "placeS": "ゴマフアザラシが、ゆきと こおりの 上に かくれて います。",
       "bodyS": "ゴマフアザラシは、生まれた ときは ゆきと おなじ まっ白な けを もって います。",
-      "howS": "生まれた ばかりの 子どもは、白い けで ゆきに まぎれて、かくれます。",
+      "howS": "こおりの 上に ふせて じっと して、ゆきと 見わけが つかないように なって、かくれます。",
       "naze": "白い けは ゆきや こおりの 上で 見つかりにくいので、子どもを まもる ためと いわれます。",
       "sumika": "きたの つめたい うみ。にほんでは ふゆに ほっかいどうの まわりで 見られます。",
       "size": "おとなは 1.6m ぐらい。生まれた ばかりの 子どもは 80cm ぐらいです。",
@@ -2239,7 +2299,8 @@
         "h": 675,
         "license": "CC BY-SA 1.0",
         "source": "https://commons.wikimedia.org/wiki/File:Spotted_Seal_mombestu2.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/1.0/"
       }
     },
     {
@@ -2277,7 +2338,8 @@
         "h": 674,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Alopex_lagopus%2C_Asahikawa_Asahiyama_Zoological_Park.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2315,7 +2377,8 @@
         "h": 600,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Polar_Bear_ANWR_1.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2353,7 +2416,8 @@
         "h": 645,
         "license": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Hermine_et_son_pelage_hivernal.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -2392,7 +2456,8 @@
         "h": 600,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Rock_Ptarmigan_%28Lagopus_Muta%29.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2423,14 +2488,15 @@
         "https://www.pref.ishikawa.lg.jp/kisya/h28/documents/0420furekou.pdf"
       ],
       "photo": {
-        "by": "",
+        "by": "Arpingstone",
         "caption": "シロフクロウの しゃしん",
         "commonsFile": "File:Snowy.owl.overall.arp.750pix.jpg",
         "file": "shirofukurou.jpg",
         "h": 760,
         "license": "Public domain",
         "source": "https://commons.wikimedia.org/wiki/File:Snowy.owl.overall.arp.750pix.jpg",
-        "w": 678
+        "w": 678,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -2469,7 +2535,8 @@
         "h": 600,
         "license": "CC BY 2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Lightmatter_snowleopard.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
@@ -2506,7 +2573,8 @@
         "h": 675,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Lepus_timidus_01.JPG",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2544,7 +2612,8 @@
         "h": 760,
         "license": "Public domain",
         "source": "https://commons.wikimedia.org/wiki/File:Sauromalus_ater_Phoenix.jpg",
-        "w": 507
+        "w": 507,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -2581,7 +2650,8 @@
         "h": 600,
         "license": "CC BY 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Eusphingonotus_japonicus_from_iNaturalist_photo_146087354.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
       }
     },
     {
@@ -2620,7 +2690,8 @@
         "h": 630,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Charadrius_dubius_curonicus_s8.JPG",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2650,14 +2721,15 @@
         "https://animaldiversity.org/accounts/Pachydactylus_rangei/"
       ],
       "photo": {
-        "by": "Stefan.Kuemmel ( )",
+        "by": "Stefan.Kuemmel",
         "caption": "ミズカキヤモリの しゃしん",
         "commonsFile": "File:Pachydactylus-rangei.jpg",
         "file": "mizukakiyamori.jpg",
         "h": 609,
-        "license": "GFDL",
+        "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Pachydactylus-rangei.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2694,7 +2766,8 @@
         "h": 600,
         "license": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Desert_Horned_Lizard.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
@@ -2730,9 +2803,10 @@
         "commonsFile": "File:Apothekerskink01.jpg",
         "file": "sandfish.jpg",
         "h": 623,
-        "license": "CC BY-SA 2.0",
+        "license": "CC BY-SA 2.0 de",
         "source": "https://commons.wikimedia.org/wiki/File:Apothekerskink01.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/de/"
       }
     },
     {
@@ -2769,7 +2843,8 @@
         "h": 663,
         "license": "Public domain",
         "source": "https://commons.wikimedia.org/wiki/File:Felis_margarita.jpg",
-        "w": 900
+        "w": 900,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     }
   ];

@@ -23,6 +23,8 @@ jobs:
         run: node tools/build-sw.mjs --check
       - name: データの形と文の型・写真のライセンス
         run: node tools/check-data.mjs
+      - name: 子どもの画面に出る字（1年生の漢字）
+        run: node tools/check-text.mjs
       - name: 外から読み込んでいないか（Zero-CDN）
         run: node tools/check-no-external.mjs
       - name: ページの中のリンクが切れていないか

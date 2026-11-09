@@ -55,7 +55,9 @@ node tools/build-sw.mjs          # 配信物の中身 → sw.js の版（いち�
 node --test tools/*.test.mjs        # 検査そのものの単体テスト
 node tools/build-animals.mjs --check
 node tools/check-data.mjs           # 文の型・学年の漢字・写真のライセンス
+node tools/check-text.mjs           # 子どもの画面に出る字（index.html と app.js）
 node tools/check-no-external.mjs    # 外から読み込んでいないか（Zero-CDN）
+node tools/check-links.mjs          # ページの中のリンクが切れていないか
 node tools/build-credits.mjs --check
 node tools/build-sw.mjs --check     # いちばん最後。直し終わってから
 

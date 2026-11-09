@@ -23,9 +23,11 @@ import { loadWindowFile } from './check-data.mjs';
 
 const ROOT = new URL('..', import.meta.url);
 
-/* 作者を 書かなくて よい もの（権利を はなした もの）。
-   それ以外は 作者が 必ず 要る。check-data.mjs と そろえる。 */
-const NO_ATTRIBUTION_NEEDED = ['cc0', 'public domain', 'pd'];
+/* ライセンスの 正本は content/licenses.json。
+   ⚠️ 名まえの あたまの もじ あわせ（startsWith）に 戻さない こと。
+      "CC BY-SA 2.0 de" は CC BY-SA 2.0 とは べつの ライセンスなのに、
+      あたま あわせだと 同じ ものとして 通って しまう。 */
+const LICENSES = JSON.parse(readFileSync(new URL('content/licenses.json', ROOT), 'utf8'));
 
 const esc = (s) => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -37,16 +39,18 @@ export function creditRows(DATA) {
   const bad = [];
   for (const a of DATA.animals || []) {
     const p = a.photo || {};
-    const lic = String(p.license || '').toLowerCase();
+    const L = LICENSES[p.license];
     if (!p.file) bad.push(`${a.id}: 写真が ありません`);
     if (!p.license) bad.push(`${a.id}: ライセンスが ありません`);
+    else if (!L) bad.push(`${a.id}: 知らない ライセンスです: ${p.license}`);
     if (!p.source) bad.push(`${a.id}: もとの ページが ありません`);
-    if (p.license && !NO_ATTRIBUTION_NEEDED.some((k) => lic.startsWith(k)) && !p.by) {
+    if (!p.licenseUrl) bad.push(`${a.id}: ライセンス本文の URL が ありません`);
+    if (L && L.attribution && !p.by) {
       bad.push(`${a.id}: ${p.license} は 作者が 必ず 要ります`);
     }
     rows.push({
       name: a.name, place: placeLabel.get(a.place) || a.place,
-      by: p.by || '', license: p.license || '',
+      by: p.by || '', license: p.license || '', licenseUrl: p.licenseUrl || '',
       source: p.source || '', commonsFile: p.commonsFile || '',
     });
   }
@@ -65,7 +69,7 @@ export function render(DATA) {
     `<td class="nm">${esc(r.name)}</td>`,
     `<td>${esc(r.place)}</td>`,
     `<td>${esc(r.by) || '—'}</td>`,
-    `<td>${esc(r.license)}</td>`,
+    `<td><a href="${esc(r.licenseUrl)}" target="_blank" rel="noopener">${esc(r.license)}</a></td>`,
     `<td><a href="${esc(r.source)}" target="_blank" rel="noopener">Commons</a></td>`,
     '</tr>',
   ].join('')).join('\n');
@@ -82,7 +86,7 @@ export function render(DATA) {
 <meta name="theme-color" content="#1f7a5a">
 <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body class="doc-page">
 <!-- ⚠️ このファイルは tools/build-credits.mjs が 作って います。
      手で 直さないで ください。写真を 直したら content/photos.json を
      直して、node tools/build-animals.mjs → node tools/build-credits.mjs。 -->
@@ -117,8 +121,9 @@ ${body}
 <li><strong>CC0 / Public domain</strong> — だれでも じゆうに つかえます。作者を 出さなくても よい ものです。</li>
 <li><strong>CC BY</strong> — つかって よいが、作者と ライセンスを 出すのが 条件。</li>
 <li><strong>CC BY-SA</strong> — 同じ。さらに、なおして くばる ときは 同じ ライセンスに する のが 条件。</li>
-<li><strong>GFDL</strong> — つかって よいが、作者と ライセンスを 出すのが 条件。</li>
 </ul>
+<p>上の 一覧の ライセンスの 名まえは、その ライセンスの 本文へ つながって います。
+<strong>条件の 中身は、かならず その 本文で たしかめて ください。</strong></p>
 
 <a class="back" href="./">← ずかんに もどる</a>
 </main>

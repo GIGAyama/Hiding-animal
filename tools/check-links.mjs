@@ -14,7 +14,6 @@
  *    なっていないかは tools/check-no-external.mjs の担当。
  * ===================================================================== */
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 const ROOT = new URL('..', import.meta.url);
@@ -56,7 +55,13 @@ export function servedPages(root = ROOT) {
 
 function main() {
   const dir = new URL('.', ROOT);
-  const abs = (p) => join(dir.pathname, p);
+  /* ⚠️ URL を 字の 道に 落とさない こと。pathname は 百分率で くるんで
+        あるので、すきまを ふくむ 道（「My Repo」など）では %20 の まま
+        のこり、existsSync が ぜんぶ false に なる。直す ところが 何も
+        無いのに 5 枚 ぜんぶ「ページが ありません」で 落ちた。
+        node:fs は URL を そのまま 受ける。
+        （tools/build-sw.mjs も 同じ 型の 事故の 注意書きを もって いる。） */
+  const abs = (p) => new URL(p, dir);
   const pages = servedPages(dir);
   const bad = problemsIn(pages, {
     exists: (p) => existsSync(abs(p)),

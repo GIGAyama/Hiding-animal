@@ -9,6 +9,7 @@
  * ===================================================================== */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readdirSync, readFileSync } from 'node:fs';
 import { buildAnimals, render } from './build-animals.mjs';
 import { loadWindowFile } from './check-data.mjs';
 
@@ -54,5 +55,19 @@ test('ばしょと かくれ方の キーは 一覧の 中に ある', () => {
   for (const a of animals) {
     assert.ok(pk.has(a.place), `${a.id}: ばしょ ${a.place} が 一覧に ない`);
     assert.ok(kk.has(a.kind), `${a.id}: かくれ方 ${a.kind} が 一覧に ない`);
+  }
+});
+
+test('ファイルの 名まえと place が ちがうと 落ちる', () => {
+  // ⚠️ 2026-11-09 まで アブラゼミ（place は mori）が tsuchi.json に
+  //    入って いて、mori.json を 開いた 人は 11 ひきしか 見つけられなかった。
+  //    ばしょ ごとに 見なおす 作業で 1 ひきだけ 静かに もれる。
+  const names = readdirSync(new URL('../content/animals/', import.meta.url))
+    .filter((f) => f.endsWith('.json'));
+  for (const f of names) {
+    const base = f.replace(/\.json$/, '');
+    for (const a of JSON.parse(readFileSync(new URL('../content/animals/' + f, import.meta.url), 'utf8'))) {
+      assert.equal(a.place, base, `${a.id} は place「${a.place}」なのに ${f} に ある`);
+    }
   }
 });

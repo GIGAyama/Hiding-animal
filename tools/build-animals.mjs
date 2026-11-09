@@ -46,12 +46,28 @@ export function buildAnimals() {
   const kinds = read('content/kinds.json');
   const photos = existsSync(new URL('content/photos.json', ROOT))
     ? read('content/photos.json') : {};
+  /* ライセンスの 名まえ → 本文の URL。CC BY 2.0/3.0 の 4(a) と
+     CC BY 4.0 の 3(a)(1)(C) は「ライセンスの うつし、または その URI」を
+     いっしょに 出すように いって いる。名まえを 字で 出すだけでは
+     条件を みたさない ので、ここで URL を 配信物へ 入れる。 */
+  const licenses = read('content/licenses.json');
 
   const dir = new URL('content/animals/', ROOT);
   const byId = new Map();
   for (const f of readdirSync(dir).filter((f) => f.endsWith('.json')).sort()) {
+    const base = f.replace(/\.json$/, '');
     for (const a of JSON.parse(readFileSync(new URL(f, dir), 'utf8'))) {
       if (byId.has(a.id)) throw new Error(`id が ダブって います: ${a.id}`);
+      /* ⚠️ ファイルの 名まえと place が ちがうと、ばしょ ごとに 文を
+            見なおす 作業で 1 ひきだけ 静かに もれる。
+            2026-11-09 まで アブラゼミ（place は mori）が tsuchi.json に
+            入って いて、README の 表の とおりに mori.json を 開いた 人は
+            11 ひきしか 見つけられなかった。 */
+      if (a.place !== base) {
+        throw new Error(
+          `${a.id}: place「${a.place}」なのに ${f} に 入って います。`
+          + ` content/animals/${a.place}.json へ うつして ください`);
+      }
       byId.set(a.id, a);
     }
   }
@@ -70,7 +86,13 @@ export function buildAnimals() {
   const out = animals.map((a) => {
     const rec = {};
     for (const k of FIELD_ORDER) {
-      if (k === 'photo') { rec.photo = photos[a.id] || {}; continue; }
+      if (k === 'photo') {
+        const ph = { ...(photos[a.id] || {}) };
+        const L = licenses[ph.license];
+        if (L) ph.licenseUrl = L.url;
+        rec.photo = ph;
+        continue;
+      }
       if (a[k] !== undefined) rec[k] = a[k];
     }
     const extra = Object.keys(a).filter((k) => !FIELD_ORDER.includes(k));

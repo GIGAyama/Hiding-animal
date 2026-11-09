@@ -12,9 +12,14 @@
    ===================================================================== */
 
 // ⚠️ この行は手で直さない。tools/build-sw.mjs が PRECACHE_URLS の中身から書き換える。
-const APP_VERSION = 'vde957073'; /* __APP_VERSION__ */
+const APP_VERSION = 'vac7b3ecb'; /* __APP_VERSION__ */
 const SHELL = `kakurenbo-shell-${APP_VERSION}`;
-const PHOTOS = `kakurenbo-photos-${APP_VERSION}`;
+/* ⚠️ 写真の 控えは 版を 付けない。APP_VERSION は data/animals.js の 中身まで
+   ふくめて 作るので、文を 1 字 直すと 名前が かわり、activate が 写真の 控えを
+   まるごと 消す。71 まいで 6.5MB、35台なら 230MB を 取りなおす ことに なる。
+   同じ 名前の 写真は 中身も かわらない（下の fetch も そう 書いて いる）ので、
+   差しかえる ときは content/photos.json の ファイル名を かえる。 */
+const PHOTOS = 'kakurenbo-photos-v1';
 const PHOTO_LIMIT = 160;   // ためこむ写真の上限
 
 const PRECACHE_URLS = [
@@ -41,7 +46,12 @@ self.addEventListener('install', (event) => {
     await Promise.allSettled(
       PRECACHE_URLS.map((url) => cache.add(new Request(url, { cache: 'reload' })))
     );
-    await self.skipWaiting();
+    /* ⚠️ ここで skipWaiting() を 呼んでは いけない。呼ぶと activate →
+       clients.claim() → controllerchange と つながり、giga-sw-updater.js が
+       ページを ひとりで 読みなおす。子どもが 文を 打ちはじめた ところで
+       ひらいて いた カードが 閉じる。下の message ハンドラが 'SKIP_WAITING' を
+       受けるので、「新しい ばんが あります／こうしん する」を おしたときだけ
+       入れかわる。 */
   })());
 });
 

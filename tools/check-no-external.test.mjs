@@ -80,3 +80,25 @@ test('知らない rel は 数える 側へ 倒れる', () => {
   assert.deepEqual(urls('<link rel="みらいの なにか" href="https://cdn.example/x">'),
                    ['https://cdn.example/x']);
 });
+
+/* ── SVG の 中の 読み込み ─────────────────────────────── */
+
+test('<image href> を 数える', () => {
+  // ⚠️ 2026-11-09 に 実際に 試したら、src / srcset / link / url() /
+  //    @import / importScripts の どれにも 当たらず 素通りして いた。
+  assert.deepEqual(loadsIn('<image href="https://evil.example.com/t.png"/>'),
+    [{ url: 'https://evil.example.com/t.png', how: '<image href>' }]);
+});
+
+test('<use xlink:href> を 数える。1 件を 二重に 数えない', () => {
+  assert.deepEqual(loadsIn('<use xlink:href="//cdn.example.com/s.svg#a"/>'),
+    [{ url: '//cdn.example.com/s.svg#a', how: 'xlink:href' }]);
+});
+
+test('<a href> は 読み込みでは ない', () => {
+  assert.deepEqual(loadsIn('<a href="https://commons.wikimedia.org/x">x</a>'), []);
+});
+
+test('link rel=license は 読み込みでは ない', () => {
+  assert.deepEqual(loadsIn('<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">'), []);
+});

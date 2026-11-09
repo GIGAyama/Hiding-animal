@@ -10,7 +10,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { problemsIn } from './check-data.mjs';
 
-const PLACES = [{ key: 'umi', label: 'うみの 中' }];
+const PLACES = [{ key: 'umi', label: 'うみの 中', glyph: '<circle cx="12" cy="12" r="8"/>' }];
 const KINDS = [{ key: 'moguru', label: 'もぐる' }];
 
 /** 1 ひきぶんの、どこも 壊れて いない データ */
@@ -23,8 +23,10 @@ function ok(over = {}) {
     naze: 'みを まもる ためです。', sumika: 'うみの すな。', size: '3cm ぐらい。',
     tabemono: 'かいそうを たべます。', itsu: 'なつ。', nakama: 'カニの なかま',
     karada: '足が ながいです。', motto: ['ひとつ。', 'ふたつ。'],
+    sources: ['https://ja.wikipedia.org/wiki/A', 'https://en.wikipedia.org/wiki/A'],
     photo: { file: 'a.jpg', w: 760, h: 570, by: 'だれか',
              license: 'CC BY-SA 4.0',
+             licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
              source: 'https://commons.wikimedia.org/wiki/File:A.jpg' },
     ...over,
   };
@@ -110,13 +112,122 @@ test('CC BY-SA なのに 作者が ないと 落ちる', () => {
 });
 
 test('CC0 は 作者が なくても 通る', () => {
-  const photo = { ...ok().photo, by: '', license: 'CC0' };
+  const photo = { ...ok().photo, by: '', license: 'CC0',
+                  licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/' };
   assert.deepEqual(run(four(ok({ photo }))), []);
 });
 
 test('Public domain は 作者が なくても 通る', () => {
-  const photo = { ...ok().photo, by: '', license: 'Public domain' };
+  const photo = { ...ok().photo, by: '', license: 'Public domain',
+                  licenseUrl: 'https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain' };
   assert.deepEqual(run(four(ok({ photo }))), []);
+});
+
+/* ── ライセンスは 名まえ ぴったりで 見る ─────────────────── */
+
+test('licenses.json に 無い ライセンスは 落ちる', () => {
+  // ⚠️ GFDL は 全文を いっしょに くばるのが 条件。全文が 無い のに
+  //    名まえだけ 出して いた（2026-11-09 に 8 まい）。
+  const photo = { ...ok().photo, license: 'GFDL' };
+  assert.ok(run(four(ok({ photo }))).some((m) => m.includes('つかえない ライセンス')));
+});
+
+test('あたまの もじ あわせに 戻って いない（2.0 と 2.0 de を 分ける）', () => {
+  const photo = { ...ok().photo, license: 'CC BY-SA 2.0 de',
+                  licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.0/' };
+  assert.ok(run(four(ok({ photo }))).some((m) => m.includes('licenseUrl')));
+});
+
+test('ライセンス本文の URL が 無いと 落ちる', () => {
+  const photo = { ...ok().photo };
+  delete photo.licenseUrl;
+  assert.ok(run(four(ok({ photo }))).some((m) => m.includes('本文の URL')));
+});
+
+test('作者の らんに のこりかすが あると 落ちる', () => {
+  for (const by of ['Koolah ( talk )', 'Stefan.Kuemmel ( )', ':ja:user:Dieno',
+                    '[[User:X|X]]', '<span>X</span>', 'self']) {
+    assert.ok(run(four(ok({ photo: { ...ok().photo, by } }))).some((m) => m.includes('作者の 欄')),
+      `${by} が 通って しまった`);
+  }
+});
+
+/* ── しらべた もと ───────────────────────────────────── */
+
+test('しらべた もとが 1 つしか 無いと 落ちる', () => {
+  // ⚠️ README・先生へ・きやく の 3 か所が「2 つ以上」と 約束して いる。
+  assert.ok(run(four(ok({ sources: ['https://ja.wikipedia.org/wiki/A'] })))
+    .some((m) => m.includes('2 つ 以上')));
+});
+
+test('しらべた もとが https:// で ないと 落ちる', () => {
+  assert.ok(run(four(ok({ sources: ['http://example.com/a', 'https://example.com/b'] })))
+    .some((m) => m.includes('https://')));
+});
+
+/* ── ばしょの 絵（glyph）───────────────────────────── */
+
+test('glyph に image や href が あると 落ちる', () => {
+  // ⚠️ innerHTML で 入れて いた あいだ、どの 検査も glyph を 見て いなかった。
+  const places = [{ ...PLACES[0], glyph: '<image href="https://evil.example.com/t.png"/>' }];
+  const bad = problemsIn({ places, kinds: KINDS, animals: four(ok()) });
+  assert.ok(bad.some((m) => m.includes('つかえない タグ')));
+  assert.ok(bad.some((m) => m.includes('href')));
+});
+
+test('glyph に on… の しかけが あると 落ちる', () => {
+  const places = [{ ...PLACES[0], glyph: '<circle cx="1" cy="1" r="1" onload="x()"/>' }];
+  assert.ok(problemsIn({ places, kinds: KINDS, animals: four(ok()) })
+    .some((m) => m.includes('on…')));
+});
+
+test('ふつうの glyph は 通る', () => {
+  const places = [{ ...PLACES[0], glyph: '<path d="M2 12h20" stroke="#000" stroke-width="2"/>' }];
+  assert.deepEqual(problemsIn({ places, kinds: KINDS, animals: four(ok()) }), []);
+});
+
+/* ── ばしょ・かくれ方の 名まえも 漢字検査に かける ───────────── */
+
+test('かくれ方の 名まえの 漢字も 見る', () => {
+  // ⚠️ 2026-11-09 まで ここが 検査の 外に あり、「もぐる・かくれ家」が
+  //    19 ひきぶんの ボタンと カードに 出て いた。
+  const kinds = [{ key: 'moguru', label: 'もぐる・かくれ家' }];
+  assert.ok(problemsIn({ places: PLACES, kinds, animals: four(ok()) })
+    .some((m) => m.includes('家')));
+});
+
+test('ばしょの 名まえの 漢字も 見る', () => {
+  const places = [{ ...PLACES[0], label: '磯' }];
+  assert.ok(problemsIn({ places, kinds: KINDS, animals: four(ok()) })
+    .some((m) => m.includes('磯')));
+});
+
+/* ── 画面に 出る 欄を 漢字検査から 落として いない ─────────── */
+
+test('size の 漢字も 見る', () => {
+  assert.ok(run(four(ok({ size: '体長 3cm です。' }))).some((m) => m.includes('体')));
+});
+
+test('写真の caption の 漢字も 見る', () => {
+  const photo = { ...ok().photo, caption: '撮影した すがた' };
+  assert.ok(run(four(ok({ photo }))).some((m) => m.includes('撮')));
+});
+
+/* ── 教材文の わく ─────────────────────────────────── */
+
+test('①が「〜に かくれて います。」で ないと 落ちる', () => {
+  // ⚠️ app.js の おてほんは この わくを ちょうど この 字で はずす。
+  assert.ok(run(four(ok({ placeS: 'テストガニが、すなの 中を およぎながら かくれて います。' })))
+    .some((m) => m.includes('①')));
+});
+
+test('②が「〜を もって います。」「〜ことが できます。」で ないと 落ちる', () => {
+  assert.ok(run(four(ok({ bodyS: 'テストガニは、ほる 足を からだに もって います。' })))
+    .some((m) => m.includes('②')));
+});
+
+test('②の「〜ことが できます。」は 通る', () => {
+  assert.deepEqual(run(four(ok({ bodyS: 'テストガニは、いろを かえる ことが できます。' }))), []);
 });
 
 test('出どころが Commons でないと 落ちる', () => {
