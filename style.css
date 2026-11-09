@@ -184,6 +184,14 @@ dialog.sheet::backdrop { background: rgba(14, 30, 26, .55); }
 }
 
 /* 写真の 出どころ。CC BY / CC BY-SA は 作者と ライセンスを 出すのが きまり */
+/* しゃしんが「かくれて いない ときの もの」だと 書く 行。
+   ⚠️ 小さくして 目だたなく しない。これを 読まないと、しゃしんを 見て
+      「どこに かくれて いるか」を さがす 子が、さがせない ものを さがす。 */
+.photo-note {
+  margin: 6px 0 0; padding: 7px 12px; border-radius: 8px;
+  background: #fff6e0; border: 1px solid #e8cf96;
+  font-size: 14px; line-height: 1.7; color: #6b4e14;
+}
 .credit { font-size: 12px; color: var(--ink-soft); line-height: 1.7; margin: 5px 0 14px; }
 /* ⚠️ 字だけの リンクは 行の 高さしか なく、48px 角を 割る。
       おとなが 押す ところでも 押せる ものは 押せる 大きさに する。 */
@@ -307,7 +315,7 @@ footer.site { border-top: 2px solid var(--line); background: #fff; padding: 18px
 /* 紙に 出すと、書いた 文だけが「かくれんぼカード」に なる */
 @media print {
   header.site, .toolbar, .grid, footer.site, .count-line, .empty,
-  .sheet-head, .hero, .credit, .facts, .why, .motto, .chips, .steps,
+  .sheet-head, .hero, .credit, .photo-note, .facts, .why, .motto, .chips, .steps,
   h3.sec, .howto, .sample, .choices, .tools, .notice, .writer h3 { display: none !important; }
 
   .field > label { display: none; }

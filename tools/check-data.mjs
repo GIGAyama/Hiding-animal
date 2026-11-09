@@ -194,16 +194,28 @@ export function problemsIn(DATA, { photoExists = () => true } = {}) {
     for (const j of BY_JUNK) {
       if (p.by && j.re.test(p.by)) add(id, `作者の 欄に ${j.why} が のこって います → 「${p.by}」`);
     }
+    /* かくれて いる ところの しゃしんが 見つからなかった ものは、
+       photo.notHiding: true と 書いて、カードに その ことを 出す。
+       ⚠️ 文字れつや 1 を 書くと、見た目は 通るのに 画面には 出ない。 */
+    if (p.notHiding !== undefined && typeof p.notHiding !== 'boolean') {
+      add(id, 'photo.notHiding は true か false だけに して ください');
+    }
     if (!p.source || !/^https:\/\/(commons\.wikimedia\.org|upload\.wikimedia\.org)/.test(p.source)) {
       add(id, '写真の 出どころ（Wikimedia Commons の ページ）が ありません');
     }
     if (p.w && p.h && (p.w < 400 || p.h < 300)) add(id, `写真が 小さすぎます（${p.w}×${p.h}）`);
   }
 
-  /* 7. ばしょ ごとの かたより */
-  for (const p of DATA.places || []) {
-    const n = DATA.animals.filter((a) => a.place === p.key).length;
-    if (n < 4) bad.push(`ばしょ「${p.label}」が ${n} ひきしか ありません（4 ひき以上に して ください）`);
+  /* 7. ばしょ・かくれかた ごとの かたより
+        ⚠️ かくれかたにも 同じ 下限を かける。ばしょだけに かけて いた あいだ、
+           「ひかりを つかう」と「すきとおる」が 2 ひきずつ しか なかった。
+           1クラス 30 人が そこを えらぶと、2 ひきを とりあう ことに なる。 */
+  for (const [what, list, key] of [['ばしょ', DATA.places, 'place'],
+                                   ['かくれかた', DATA.kinds, 'kind']]) {
+    for (const p of list || []) {
+      const n = DATA.animals.filter((a) => a[key] === p.key).length;
+      if (n < 4) bad.push(`${what}「${p.label}」が ${n} ひきしか ありません（4 ひき以上に して ください）`);
+    }
   }
 
   /* 8. ばしょ・かくれ方の 名まえ。

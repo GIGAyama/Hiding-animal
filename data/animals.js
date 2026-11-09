@@ -169,11 +169,12 @@
       ],
       "photo": {
         "by": "Almandine",
-        "caption": "ハマグリの しゃしん",
+        "caption": "すなから とり出した ハマグリ。ものさしと ならべて あります",
         "commonsFile": "File:Meretrix_lusoria.jpg",
         "file": "hamaguri.jpg",
         "h": 675,
         "license": "CC BY-SA 3.0",
+        "notHiding": true,
         "source": "https://commons.wikimedia.org/wiki/File:Meretrix_lusoria.jpg",
         "w": 900,
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
@@ -258,6 +259,45 @@
       }
     },
     {
+      "id": "hadakaiwashi",
+      "name": "ハダカイワシ",
+      "yomi": "はだかいわし",
+      "place": "umi",
+      "kind": "hikari",
+      "inJapan": true,
+      "placeS": "ハダカイワシが、ふかい うみの 中に かくれて います。",
+      "bodyS": "ハダカイワシは、おなかに ならんだ ひかる つぶを もって います。",
+      "howS": "おなかの つぶを ひからせて、上から さして くる よわい ひかりに とけこんで、かくれます。",
+      "naze": "下から 見上げる 大きな さかなに、かげを 見つけられない ように する ためです。",
+      "sumika": "せかいじゅうの うみの、ふかい ところ。にほんの まわりの うみにも います。",
+      "size": "おおくは 15cm より 小さい さかなです。",
+      "tabemono": "水の 中を ただよう 小さな 生きものを たべます。",
+      "itsu": "いちねんじゅう。ひるまは ふかく、よるは あさい ところに います。",
+      "nakama": "さかなの なかま（ハダカイワシの なかま）",
+      "karada": "からだの よこと おなかに、ひかる つぶが ならんで います。目が 大きく、くらい 水の 中でも よく 見えます。うろこが とれやすく、あみで とると はだかの ように なるので この 名まえです。",
+      "motto": [
+        "ひるまは ふかい ところ、よるは あさい ところへ、日に 1かい 上がったり 下がったり します。",
+        "うみで いちばん かずの おおい さかなの なかまと いわれ、マグロや クジラ、ペンギンの たべものに なって います。",
+        "ひかる つぶの ならびかたは しゅるいごとに ちがって いて、なかまを 見つける ときにも つかうと いわれて います。"
+      ],
+      "sources": [
+        "https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%80%E3%82%AB%E3%82%A4%E3%83%AF%E3%82%B7",
+        "https://en.wikipedia.org/wiki/Lanternfish"
+      ],
+      "photo": {
+        "by": "NOAA/OER",
+        "caption": "おなかに ひかる つぶが ならんで いる ハダカイワシの なかま",
+        "commonsFile": "File:Lanternfish by NOAA.jpg",
+        "file": "hadakaiwashi.jpg",
+        "h": 707,
+        "license": "Public domain",
+        "notHiding": true,
+        "source": "https://commons.wikimedia.org/wiki/File%3ALanternfish_by_NOAA.jpg",
+        "w": 900,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
+      }
+    },
+    {
       "id": "hanaokoze",
       "name": "ハナオコゼ",
       "yomi": "はなおこぜ",
@@ -284,15 +324,15 @@
         "https://www.pref.tottori.lg.jp/item/222484.htm"
       ],
       "photo": {
-        "by": "Totti",
-        "caption": "ハナオコゼの しゃしん",
-        "commonsFile": "File:Histrio_histrio_Shimoda.jpg",
+        "by": "Art Howard / Ross et al., NOAA-OE, HBOI",
+        "caption": "うみに ういた かいそうの 中で、かいそうと そっくりに なって いる ハナオコゼ",
+        "commonsFile": "File:Histrio histrio.jpg",
         "file": "hanaokoze.jpg",
-        "h": 617,
-        "license": "CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Histrio_histrio_Shimoda.jpg",
+        "h": 675,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File%3AHistrio_histrio.jpg",
         "w": 900,
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -361,15 +401,16 @@
         "https://en.wikipedia.org/wiki/Watasenia_scintillans"
       ],
       "photo": {
-        "by": "Dieno",
-        "caption": "ホタルイカの しゃしん",
-        "commonsFile": "File:Watasenia_scintillans.jpg",
+        "by": "kamataryo",
+        "caption": "うみべの 石の あいだに 入って きた、生きて いる ホタルイカ",
+        "commonsFile": "File:Watasenia scintillans 002.jpg",
         "file": "hotaruika.jpg",
-        "h": 1100,
-        "license": "Public domain",
-        "source": "https://commons.wikimedia.org/wiki/File:Watasenia_scintillans.jpg",
-        "w": 550,
-        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
+        "h": 675,
+        "license": "CC0",
+        "notHiding": true,
+        "source": "https://commons.wikimedia.org/wiki/File%3AWatasenia_scintillans_002.jpg",
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
@@ -554,15 +595,15 @@
         "https://www.natureasia.com/ja-jp/life-sci/research/12736"
       ],
       "photo": {
-        "by": "Kuribo",
-        "caption": "コウイカの しゃしん",
-        "commonsFile": "File:Sepia_esculenta_Osaka.jpg",
+        "by": "Rickard Zerpe",
+        "caption": "うみの そこの すなの 上で、すなと おなじ いろに なって いる コウイカ",
+        "commonsFile": "File:Golden Cuttlefish (Sepia esculenta) (49152874797).jpg",
         "file": "kouika.jpg",
-        "h": 598,
-        "license": "CC BY-SA 3.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Sepia_esculenta_Osaka.jpg",
+        "h": 675,
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File%3AGolden_Cuttlefish_%28Sepia_esculenta%29_%2849152874797%29.jpg",
         "w": 900,
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
@@ -644,6 +685,46 @@
       }
     },
     {
+      "id": "muneeso",
+      "name": "ムネエソの なかま",
+      "yomi": "むねえそのなかま",
+      "place": "umi",
+      "kind": "hikari",
+      "inJapan": true,
+      "placeS": "ムネエソの なかまが、ふかい うみの 中に かくれて います。",
+      "bodyS": "ムネエソの なかまは、かがみの ように ひかる うすい からだを もって います。",
+      "howS": "うすい からだで よこからの ひかりを はねかえし、おなかの つぶで 下に うつる かげを けして、かくれます。",
+      "naze": "よこから 見る てきにも、下から 見上げる てきにも 見つからない ように する ためです。",
+      "sumika": "せかいじゅうの うみの、ふかい ところ。ムネエソは にほんの たいへいようがわ、ほっかいどうから おきなわまでで 見られます。",
+      "size": "ムネエソは 5cm ぐらい、トガリムネエソは 7cm ぐらいに なる 小さな さかなです。",
+      "tabemono": "小さな えびや、水の 中を ただよう 生きものを たべます。",
+      "itsu": "いちねんじゅう、ふかい うみに います。",
+      "nakama": "さかなの なかま（ムネエソの なかま）",
+      "karada": "からだは よこから おしつぶされた ように うすく、たてに 大きいです。はだが かがみの ように ひかるので、よこから 見ると まわりの 水に とけこみます。目が 上を むいて いる しゅるいも います。",
+      "motto": [
+        "水の ふかさ 50m から 1500m の、うすぐらい ところに すんで います。",
+        "よこから 見ると 大きいのに、まえから 見ると かみの ように うすいです。",
+        "おなかの つぶの あかるさを じぶんで かえて、上から くる ひかりに あわせる ことが できます。"
+      ],
+      "sources": [
+        "https://ja.wikipedia.org/wiki/%E3%83%A0%E3%83%8D%E3%82%A8%E3%82%BD%E7%A7%91",
+        "https://ja.wikipedia.org/wiki/%E3%83%A0%E3%83%8D%E3%82%A8%E3%82%BD",
+        "https://en.wikipedia.org/wiki/Argyropelecus_aculeatus"
+      ],
+      "photo": {
+        "by": "SEFSC Pascagoula Laboratory",
+        "caption": "ムネエソの なかまの トガリムネエソ。おなかに ひかる つぶが ならんで います",
+        "commonsFile": "File:ArgyropelecusAculeatus.jpg",
+        "file": "muneeso.jpg",
+        "h": 604,
+        "license": "Public domain",
+        "notHiding": true,
+        "source": "https://commons.wikimedia.org/wiki/File%3AArgyropelecusAculeatus.jpg",
+        "w": 900,
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
+      }
+    },
+    {
       "id": "somenyadokari",
       "name": "ソメンヤドカリ",
       "yomi": "そめんやどかり",
@@ -712,11 +793,12 @@
       ],
       "photo": {
         "by": "A. C. Tatarinov",
-        "caption": "アゴハゼの しゃしん",
+        "caption": "アゴハゼ。いその 水たまりに すむ 小さな ハゼです",
         "commonsFile": "File:Chaenogobius_annularis.JPG",
         "file": "agohaze.jpg",
         "h": 455,
         "license": "CC0",
+        "notHiding": true,
         "source": "https://commons.wikimedia.org/wiki/File:Chaenogobius_annularis.JPG",
         "w": 900,
         "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
@@ -865,11 +947,12 @@
       ],
       "photo": {
         "by": "Almandine",
-        "caption": "ウミホタルの しゃしん",
+        "caption": "ウミホタル。かいの ような 2まいの からに つつまれて います",
         "commonsFile": "File:Vargula_hilgendorfii.jpg",
         "file": "umihotaru.jpg",
         "h": 760,
         "license": "CC BY-SA 3.0",
+        "notHiding": true,
         "source": "https://commons.wikimedia.org/wiki/File:Vargula_hilgendorfii.jpg",
         "w": 706,
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
@@ -903,15 +986,16 @@
         "https://www.fishbase.se/summary/Misgurnus-anguillicaudatus.html"
       ],
       "photo": {
-        "by": "",
-        "caption": "ドジョウの しゃしん",
-        "commonsFile": "File:Misgurnus_anguillicaudatus.jpg",
+        "by": "Manoel Jr.",
+        "caption": "すなの 上に いる ドジョウ。くちの まわりに ひげが あります",
+        "commonsFile": "File:Weather loach (cropped).jpg",
         "file": "dojou.jpg",
-        "h": 613,
-        "license": "Public domain",
-        "source": "https://commons.wikimedia.org/wiki/File:Misgurnus_anguillicaudatus.jpg",
+        "h": 649,
+        "license": "CC BY-SA 2.0",
+        "notHiding": true,
+        "source": "https://commons.wikimedia.org/wiki/File%3AWeather_loach_%28cropped%29.jpg",
         "w": 900,
-        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
       }
     },
     {
@@ -1101,12 +1185,92 @@
       ],
       "photo": {
         "by": "OpenCage",
-        "caption": "オニヤンマの ヤゴの しゃしん",
+        "caption": "オニヤンマの ヤゴ。水の 中の くさに つかまって います",
         "commonsFile": "File:Anotogaster sieboldii larva.jpg",
         "file": "oniyanma_yago.jpg",
         "h": 900,
         "license": "CC BY-SA 2.5",
+        "notHiding": true,
         "source": "https://commons.wikimedia.org/wiki/File:Anotogaster_sieboldii_larva.jpg",
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "id": "shirauo",
+      "name": "シラウオ",
+      "yomi": "しらうお",
+      "place": "mizube",
+      "kind": "sukitoru",
+      "inJapan": true,
+      "placeS": "シラウオが、川と うみの まじる 水の 中に かくれて います。",
+      "bodyS": "シラウオは、すきとおった ほそながい からだを もって います。",
+      "howS": "水の 中で すきとおって、うしろの ものが すけて 見える ように なって、かくれます。",
+      "naze": "大きな さかなや とりに 見つからない ように する ためです。",
+      "sumika": "にほんの 川の 口の あたりや、しおの まじる みずうみ。ほっかいどうから きゅうしゅうまで 見られます。",
+      "size": "おとなの ゆびぐらいの 小さな さかなです。",
+      "tabemono": "水の 中を ただよう 小さな えびや、小さな さかなを たべます。",
+      "itsu": "はるの はじめに、たまごを うみに 川の 口へ あつまります。",
+      "nakama": "さかなの なかま（シラウオの なかま）",
+      "karada": "生きて いる あいだは すきとおって いて、せぼねや おなかの 中まで すけて 見えます。しんで しまうと 白く にごります。目は 小さく、口は 大きいです。うろこは ほとんど ありません。",
+      "motto": [
+        "すきとおった すがたが 見られるのは 生きて いる あいだだけで、しんで しまうと 白く なります。",
+        "ほそくて 白い ゆびの ことを、「シラウオの ような ゆび」と いいます。",
+        "たまごを うむと、1ねんで みじかい いっしょうを おえます。"
+      ],
+      "sources": [
+        "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A9%E3%82%A6%E3%82%AA",
+        "https://en.wikipedia.org/wiki/Salangidae",
+        "https://en.wikipedia.org/wiki/Salangichthys"
+      ],
+      "photo": {
+        "by": "OpenCage",
+        "caption": "すきとおった からだの シラウオ。うしろの ものが すけて 見えます",
+        "commonsFile": "File:Salangichthys microdon.jpg",
+        "file": "shirauo.jpg",
+        "h": 320,
+        "license": "CC BY-SA 2.5",
+        "notHiding": true,
+        "source": "https://commons.wikimedia.org/wiki/File%3ASalangichthys_microdon.jpg",
+        "w": 1098,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "id": "sujiebi",
+      "name": "スジエビ",
+      "yomi": "すじえび",
+      "place": "mizube",
+      "kind": "sukitoru",
+      "inJapan": true,
+      "placeS": "スジエビが、いけの 石の 下に かくれて います。",
+      "bodyS": "スジエビは、ほとんど すきとおった からだを もって います。",
+      "howS": "ひるまは 石の 下や みずくさの 中で じっと して、すきとおった からだで まわりに とけこんで、かくれます。",
+      "naze": "さかなや とり、スッポンなどに たべられない ように する ためです。",
+      "sumika": "にほんの 川や いけ、ぬま。みずくさの しげった ところに います。にほんの まみずに すむ えびの 中で、いちばん ひろく 見られます。",
+      "size": "おとなの ゆびぐらいの 大きさです。",
+      "tabemono": "水の 中の むしや 小さな かい、ミミズなどを たべます。",
+      "itsu": "はるから あきに よく 見られます。うごくのは おもに よるです。",
+      "nakama": "えびの なかま（テナガエビの なかま）",
+      "karada": "からだが ほとんど すきとおって いて、中の ものまで すけて 見えます。からだに くろい すじの もようが あり、それが 名まえの もとです。",
+      "motto": [
+        "ひるまは 石の 下や みずくさの 中に かくれて いて、くらく なると うごきだします。",
+        "しんで しまうと 白く にごるので、すきとおった すがたは 生きて いる あいだだけです。",
+        "スッポンや ウナギ、コイ、サギなどに たべられます。"
+      ],
+      "sources": [
+        "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%B8%E3%82%A8%E3%83%93",
+        "https://en.wikipedia.org/wiki/Palaemon_paucidens"
+      ],
+      "photo": {
+        "by": "Daiju Azuma",
+        "caption": "すきとおった からだの スジエビ。くろい すじの もようが あります",
+        "commonsFile": "File:Palaemon paucidens.jpg",
+        "file": "sujiebi.jpg",
+        "h": 673,
+        "license": "CC BY-SA 2.5",
+        "notHiding": true,
+        "source": "https://commons.wikimedia.org/wiki/File%3APalaemon_paucidens.jpg",
         "w": 900,
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
       }
@@ -1138,15 +1302,15 @@
         "https://herpetology.jp/wamei/index_j.php"
       ],
       "photo": {
-        "by": "Clunio",
-        "caption": "スッポンの しゃしん",
-        "commonsFile": "File:Pelodiscus.jpg",
+        "by": "coniferconifer",
+        "caption": "どろの あさい 水から、はなの 先だけ 出して いる スッポン",
+        "commonsFile": "File:スッポン (14143042030).jpg",
         "file": "suppon.jpg",
-        "h": 760,
-        "license": "CC BY-SA 3.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Pelodiscus.jpg",
-        "w": 570,
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "h": 506,
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File%3A%E3%82%B9%E3%83%83%E3%83%9D%E3%83%B3_%2814143042030%29.jpg",
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
@@ -1333,11 +1497,12 @@
       ],
       "photo": {
         "by": "Hecke",
-        "caption": "カヤネズミの しゃしん",
+        "caption": "くさの くきに つかまった カヤネズミ。しっぽを まきつけます",
         "commonsFile": "File:Micromysminutus1.jpg",
         "file": "kayanezumi.jpg",
         "h": 623,
         "license": "CC BY-SA 3.0",
+        "notHiding": true,
         "source": "https://commons.wikimedia.org/wiki/File:Micromysminutus1.jpg",
         "w": 900,
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
@@ -1370,15 +1535,16 @@
         "https://kotobank.jp/word/%E3%81%91%E3%82%89-1310610"
       ],
       "photo": {
-        "by": "辻畠",
-        "caption": "ケラの しゃしん",
-        "commonsFile": "File:Mole_cricket03.jpg",
+        "by": "KKPCW",
+        "caption": "土を ほる ための まえあしが よく 見える ケラ",
+        "commonsFile": "File:Gryllotalpa orientalis Burmeister - 1.jpg",
         "file": "kera.jpg",
-        "h": 397,
-        "license": "CC BY-SA 3.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Mole_cricket03.jpg",
+        "h": 506,
+        "license": "CC BY-SA 4.0",
+        "notHiding": true,
+        "source": "https://commons.wikimedia.org/wiki/File%3AGryllotalpa_orientalis_Burmeister_-_1.jpg",
         "w": 900,
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -1487,15 +1653,15 @@
         "https://en.wikipedia.org/wiki/Locusta_migratoria"
       ],
       "photo": {
-        "by": "Matsumomushi",
-        "caption": "トノサマバッタの しゃしん",
-        "commonsFile": "File:Locusta_migratoria.jpg",
+        "by": "Nino Verde",
+        "caption": "かれくさの 中で、くさと おなじ いろに なって いる トノサマバッタ",
+        "commonsFile": "File:Locusta-migratoria-in-burnt-grass.jpg",
         "file": "tonosamabatta.jpg",
-        "h": 675,
-        "license": "Public domain",
-        "source": "https://commons.wikimedia.org/wiki/File:Locusta_migratoria.jpg",
+        "h": 600,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File%3ALocusta-migratoria-in-burnt-grass.jpg",
         "w": 900,
-        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -1793,15 +1959,15 @@
         "https://en.wikipedia.org/wiki/Phyllium"
       ],
       "photo": {
-        "by": "Drägüs",
-        "caption": "コノハムシの しゃしん",
-        "commonsFile": "File:Phyllium_siccifolium_-_female_larva_L4.JPG",
+        "by": "Fungus Guy",
+        "caption": "はの あいだで、はに そっくりな すがたで いる コノハムシ",
+        "commonsFile": "File:Leaf insect (Phyllium sp.), Entomica 2.jpg",
         "file": "konohamushi.jpg",
-        "h": 641,
-        "license": "Public domain",
-        "source": "https://commons.wikimedia.org/wiki/File:Phyllium_siccifolium_-_female_larva_L4.JPG",
-        "w": 900,
-        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
+        "h": 1100,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File%3ALeaf_insect_%28Phyllium_sp.%29%2C_Entomica_2.jpg",
+        "w": 825,
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
@@ -1831,15 +1997,15 @@
         "https://en.wikipedia.org/wiki/Bagworm_moth"
       ],
       "photo": {
-        "by": "Kyu3a",
-        "caption": "ミノムシの しゃしん",
-        "commonsFile": "File:Eumeta variegata on the window of convenience store.jpg",
+        "by": "小池 隆",
+        "caption": "木の えだに ぶらさがった ミノムシの みの。小さな えだで できて います",
+        "commonsFile": "File:Eumeta sp.jpg",
         "file": "minomushi.jpg",
-        "h": 760,
-        "license": "CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Eumeta_variegata_on_the_window_of_convenience_store.jpg",
-        "w": 570,
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "h": 1100,
+        "license": "CC BY 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File%3AEumeta_sp.jpg",
+        "w": 733,
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
       }
     },
     {
@@ -1869,15 +2035,15 @@
         "https://ja.wikipedia.org/wiki/擬態"
       ],
       "photo": {
-        "by": "Hsu Hong Lin",
-        "caption": "ムラサキシャチホコの しゃしん",
-        "commonsFile": "File:Uropyia_meticulodina.jpg",
+        "by": "LiCheng Shih",
+        "caption": "はの 上で、まるまった かれはの ように 見える ムラサキシャチホコ",
+        "commonsFile": "File:Uropyia meticulodina (43144930105).jpg",
         "file": "murasakishachihoko.jpg",
         "h": 600,
-        "license": "CC BY-SA 2.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Uropyia_meticulodina.jpg",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File%3AUropyia_meticulodina_%2843144930105%29.jpg",
         "w": 900,
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
@@ -1984,12 +2150,12 @@
       ],
       "photo": {
         "by": "LoKiLeCh",
-        "caption": "アリジゴクの しゃしん",
-        "commonsFile": "File:Ameisenlöwe.jpg",
+        "caption": "すなに ならんだ、すりばちの ような あな。その そこに アリジゴクが うまって います",
+        "commonsFile": "File:Ameisenlöwe (55722).jpg",
         "file": "arijigoku.jpg",
-        "h": 494,
+        "h": 506,
         "license": "CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Ameisenlöwe.jpg",
+        "source": "https://commons.wikimedia.org/wiki/File%3AAmeisenl%C3%B6we_%2855722%29.jpg",
         "w": 900,
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
@@ -2060,11 +2226,12 @@
       ],
       "photo": {
         "by": "Koolah",
-        "caption": "アズマモグラの しゃしん",
+        "caption": "土の 上に 出て きた アズマモグラ。土を ほる 手が 見えます",
         "commonsFile": "File:Mogera_imaizumii.jpg",
         "file": "azumamogura.jpg",
         "h": 675,
         "license": "CC BY-SA 3.0",
+        "notHiding": true,
         "source": "https://commons.wikimedia.org/wiki/File:Mogera_imaizumii.jpg",
         "w": 900,
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
@@ -2292,15 +2459,15 @@
         "https://kotobank.jp/word/%E3%82%B4%E3%83%9E%E3%83%95%E3%82%A2%E3%82%B6%E3%83%A9%E3%82%B7-3152574"
       ],
       "photo": {
-        "by": "コムケ",
-        "caption": "ゴマフアザラシの しゃしん",
-        "commonsFile": "File:Spotted_Seal_mombestu2.jpg",
+        "by": "Captain Budd Christman",
+        "caption": "ゆきの 上に ふせて いる、白い けの ゴマフアザラシの 子ども",
+        "commonsFile": "File:PhocaLarghaPup.jpg",
         "file": "gomafuazarashi.jpg",
-        "h": 675,
-        "license": "CC BY-SA 1.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Spotted_Seal_mombestu2.jpg",
+        "h": 450,
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File%3APhocaLarghaPup.jpg",
         "w": 900,
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/1.0/"
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
       }
     },
     {
@@ -2488,15 +2655,15 @@
         "https://www.pref.ishikawa.lg.jp/kisya/h28/documents/0420furekou.pdf"
       ],
       "photo": {
-        "by": "Arpingstone",
-        "caption": "シロフクロウの しゃしん",
-        "commonsFile": "File:Snowy.owl.overall.arp.750pix.jpg",
+        "by": "Jongsun Lee",
+        "caption": "ゆきの 上に じっと して いる シロフクロウ",
+        "commonsFile": "File:Snowy Owl (240866707).jpeg",
         "file": "shirofukurou.jpg",
-        "h": 760,
-        "license": "Public domain",
-        "source": "https://commons.wikimedia.org/wiki/File:Snowy.owl.overall.arp.750pix.jpg",
-        "w": 678,
-        "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing#Material_in_the_public_domain"
+        "h": 549,
+        "license": "CC BY 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File%3ASnowy_Owl_%28240866707%29.jpeg",
+        "w": 900,
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
       }
     },
     {
@@ -2566,15 +2733,15 @@
         "https://kotobank.jp/word/%E3%83%A6%E3%82%AD%E3%82%A6%E3%82%B5%E3%82%AE-3173946"
       ],
       "photo": {
-        "by": "H. Zell",
-        "caption": "ユキウサギの しゃしん",
-        "commonsFile": "File:Lepus_timidus_01.JPG",
+        "by": "NadezhdaKhaustova",
+        "caption": "ゆきの のこる 石の ところに いる、ふゆげの ユキウサギ",
+        "commonsFile": "File:Заяц-беляк.jpg",
         "file": "yukiusagi.jpg",
-        "h": 675,
-        "license": "CC BY-SA 3.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Lepus_timidus_01.JPG",
+        "h": 600,
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File%3A%D0%97%D0%B0%D1%8F%D1%86-%D0%B1%D0%B5%D0%BB%D1%8F%D0%BA.jpg",
         "w": 900,
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {

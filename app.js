@@ -331,6 +331,14 @@
         width: String(photo.w || 800), height: String(photo.h || 600),
       }));
       body.appendChild(hero);
+      /* ⚠️ かくれて いる ところの しゃしんが どうしても 見つからない 生きものが
+         いる（土の 中の モグラ、しんかいの イカ など）。その とき だまって
+         ふつうの しゃしんを 出すと、「しゃしんだけを 見て どこに かくれて
+         いるかを 話しあう」活動が 成りたたない。どちらなのかを 書く。 */
+      if (photo.notHiding) {
+        body.appendChild(el('p', { class: 'photo-note', text:
+          'この しゃしんは、かくれて いない ときの ものです。' }));
+      }
       body.appendChild(creditLine(photo));
     }
 
@@ -672,7 +680,7 @@
       render();
     });
 
-    /* にほんに いない 生きものは 71 ひきの うち 14 ひき。
+    /* にほんに いない 生きものは 75 ひきの うち 14 ひき。
        ⚠️ 実物を さがす 活動と あわせる とき、5 ひきに 1 ひきは
           日本では 見つからない。先生が えらぶ ときの ための ボタン。 */
     var jp = document.getElementById('jp-toggle');

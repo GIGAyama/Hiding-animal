@@ -12,7 +12,7 @@
    ===================================================================== */
 
 // ⚠️ この行は手で直さない。tools/build-sw.mjs が PRECACHE_URLS の中身から書き換える。
-const APP_VERSION = 'vac7b3ecb'; /* __APP_VERSION__ */
+const APP_VERSION = 'v7ec5dca6'; /* __APP_VERSION__ */
 const SHELL = `kakurenbo-shell-${APP_VERSION}`;
 /* ⚠️ 写真の 控えは 版を 付けない。APP_VERSION は data/animals.js の 中身まで
    ふくめて 作るので、文を 1 字 直すと 名前が かわり、activate が 写真の 控えを

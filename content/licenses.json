@@ -11,6 +11,14 @@
     "url": "https://creativecommons.org/licenses/by/2.0/",
     "attribution": true
   },
+  "CC BY 2.5": {
+    "url": "https://creativecommons.org/licenses/by/2.5/",
+    "attribution": true
+  },
+  "CC BY 3.0": {
+    "url": "https://creativecommons.org/licenses/by/3.0/",
+    "attribution": true
+  },
   "CC BY 4.0": {
     "url": "https://creativecommons.org/licenses/by/4.0/",
     "attribution": true
